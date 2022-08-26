@@ -30,6 +30,9 @@ def post_new(request):
         form = PostForm()
     return render(request, 'tsuda/post_edit.html', {'form': form})
 
+def move_to_menupage(request):
+    return render(request, 'tsuda/menupage.html')
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
