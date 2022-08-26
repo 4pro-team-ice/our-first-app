@@ -17,19 +17,24 @@
 
   <!-- 試しに書いてみた -->
   <div class="button03">
-    <a href="">時間割</a>
+    <a href="{% url 'move_to_jikannwari' %}">時間割</a>
+  </div>
+
+  <!--<form action="{% url 'move_to_jikannwari' %}" method="post">
+        {% csrf_token %}
+        <input type="button" value="時間割" class="button03">
+  </form>-->
+  <h1> </h1>
+  <div class="button03">
+    <a href="{% url 'move_to_konnzatsu' %}">混雑情報</a>
   </div>
   <h1> </h1>
   <div class="button03">
-    <a href="">混雑情報</a>
+    <a href="{% url 'move_to_syllabus' %}">シラバス</a>
   </div>
   <h1> </h1>
   <div class="button03">
-    <a href="">シラバス</a>
-  </div>
-  <h1> </h1>
-  <div class="button03">
-    <a href="">休講情報</a>
+    <a href="{% url 'move_to_kyukou' %}">休講情報</a>
   </div>
   <h1> </h1>
   <!-- 試しに書いてみた -->

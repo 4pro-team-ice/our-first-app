@@ -1,4 +1,4 @@
-/*メニューページ用*/
+/*時間割ページ用*/
 h1 a, h2 a {
     color: #C25100;
     font-family: monospace;
@@ -62,46 +62,11 @@ h1, h2, h3, h4 {
   position: absolute;
 }
 
-/** ボタン追加 **/
-
-.button03 a{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding: 1em 2em;
-  width: 300px;
-  color: #333333; /* 文字の色 */
-  font-size: 18px;
-  font-weight: 700;
-  border: 2px solid #e08899; /* ボタンと枠の色 */
-}
-
-.button03 a::after {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-top: 3px solid #e08899; /* ボタンの矢印の上部 */
-  border-right: 3px solid #e08899; /* ボタンの矢印の下部 */
-  transform: rotate(45deg);
-}
-
-.button03 a:hover {
-  color: #333333; /* ボタン選択後の文字の色 */
-  text-decoration: none;
-  background-color: #f2a0a1; /* ボタン選択後のボタンの中身の色 */
-}
-
-.button03 a:hover::after { /* 矢印 */
-  border-top: 3px solid #333333; /* ボタン選択後の矢印の上部 */
-  border-right: 3px solid #333333; /* ボタン選択後の矢印の下部 */
-}
-
 .page-footer{
   position: relative;
   width: 100%;
   height: auto !important;
-  height: 10%;
+  height: 100%;
   min-height: 20%; /*フッター枠の長さ*/
   background-color: #B3424A;
   padding: 30px 0;

@@ -29,9 +29,21 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'tsuda/post_edit.html', {'form': form})
-
+#画面遷移の動作
 def move_to_menupage(request):
     return render(request, 'tsuda/menupage.html')
+
+def move_to_jikannwari(request):
+    return render(request, 'tsuda/jikannwari.html')
+
+def move_to_konnzatsu(request):
+    return render(request, 'tsuda/konnzatsu.html')
+
+def move_to_syllabus(request):
+    return render(request, 'tsuda/syllabus.html')
+
+def move_to_kyukou(request):
+    return render(request, 'tsuda/kyukou.html')
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
