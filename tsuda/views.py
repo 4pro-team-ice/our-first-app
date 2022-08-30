@@ -36,14 +36,14 @@ def move_to_menupage(request):
 def move_to_jikannwari(request):
     return render(request, 'tsuda/jikannwari.html')
 
-def move_to_konnzatsu(request):
-    return render(request, 'tsuda/konnzatsu.html')
+def move_to_akikyoshitsu(request):
+    return render(request, 'tsuda/akikyoshitsu.html')
 
 def move_to_syllabus(request):
     return render(request, 'tsuda/syllabus.html')
 
-def move_to_kyukou(request):
-    return render(request, 'tsuda/kyukou.html')
+def move_to_map(request):
+    return render(request, 'tsuda/map.html')
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)

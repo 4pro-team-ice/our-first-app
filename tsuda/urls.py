@@ -8,7 +8,7 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),
-    path('konnzatsu/', views.move_to_konnzatsu, name='move_to_konnzatsu'),
+    path('akikyoshitsu/', views.move_to_akikyoshitsu, name='move_to_akikyoshitsu'),
     path('syllabus/', views.move_to_syllabus, name='move_to_syllabus'),
-    path('kyukou/', views.move_to_kyukou, name='move_to_kyukou'),
+    path('map/', views.move_to_map, name='move_to_map'),
 ]

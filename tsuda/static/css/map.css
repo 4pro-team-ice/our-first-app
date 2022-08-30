@@ -62,6 +62,13 @@ h1, h2, h3, h4 {
   position: absolute;
 }
 
+/* 画面の大きさに合わせて画像を表示する */
+img{
+  /*画像の幅を100%に設定*/
+  width:100%;
+}
+/* ここまで */
+
 .page-footer{
   position: relative;
   width: 100%;
