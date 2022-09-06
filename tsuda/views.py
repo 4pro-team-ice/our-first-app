@@ -45,6 +45,33 @@ def move_to_syllabus(request):
 def move_to_map(request):
     return render(request, 'tsuda/map.html')
 
+def move_to_honkan(request):
+    return render(request, 'tsuda/honkan.html')
+
+def move_to_shinkan(request):
+    return render(request, 'tsuda/shinkan.html')
+
+def move_to_minami(request):
+    return render(request, 'tsuda/minami.html')
+
+def move_to_tokkyo(request):
+    return render(request, 'tsuda/tokkyo.html')
+
+def move_to_ichigokan(request):
+    return render(request, 'tsuda/ichigokan.html')
+
+def move_to_gogokan(request):
+    return render(request, 'tsuda/gogokan.html')
+
+def move_to_nanagokan(request):
+    return render(request, 'tsuda/nanagokan.html')
+
+def move_to_library(request):
+    return render(request, 'tsuda/library.html')
+
+def move_to_shokudo(request):
+    return render(request, 'tsuda/shokudo.html')
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":

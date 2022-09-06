@@ -1,4 +1,4 @@
-/*空き教室ページ用*/
+/*メニューページ用*/
 h1 a, h2 a {
     color: #C25100;
     font-family: monospace;
@@ -62,40 +62,24 @@ h1, h2, h3, h4 {
   position: absolute;
 }
 
-/* 画面の大きさに合わせて画像を表示する */
 img{
   /*画像の幅を100%に設定*/
   width:100%;
 }
-/* ここまで */
 
-.page-footer{
-  position: relative;
-  width: 100%;
-  height: auto !important;
-  height: 100%;
-  min-height: 20%; /*フッター枠の長さ*/
-  background-color: #B3424A;
-  padding: 30px 0;
-}
+/** ボタン追加 **/
 
-/*ボタンのデザイン*/
-/* a{
-  width: 30%;
-} */
 .button03 a{
-  padding-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   padding: 1em 2em;
-  width: 150px;
+  width: 300px;
   color: #333333; /* 文字の色 */
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   border: 2px solid #e08899; /* ボタンと枠の色 */
-  border-radius: 100px;
 }
 
 .button03 a::after {
@@ -118,7 +102,12 @@ img{
   border-right: 3px solid #333333; /* ボタン選択後の矢印の下部 */
 }
 
-.button_line{
-  display: flex;
-  justify-content: space-evenly;
+.page-footer{
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  height: 10%;
+  min-height: 20%; /*フッター枠の長さ*/
+  background-color: #B3424A;
+  padding: 30px 0;
 }
