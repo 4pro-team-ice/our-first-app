@@ -11,6 +11,7 @@ urlpatterns = [
     path('akikyoshitsu/', views.move_to_akikyoshitsu, name='move_to_akikyoshitsu'),
     path('syllabus/', views.move_to_syllabus, name='move_to_syllabus'),
     path('map/', views.move_to_map, name='move_to_map'),
+    path('eigyoujikan/', views.move_to_eigyoujikan, name='move_to_eigyoujikan'),
 
     path('honkan/', views.move_to_honkan, name='move_to_honkan'),
     path('shinkan/', views.move_to_shinkan, name='move_to_shinkan'),

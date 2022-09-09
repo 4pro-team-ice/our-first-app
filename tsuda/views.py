@@ -45,6 +45,9 @@ def move_to_syllabus(request):
 def move_to_map(request):
     return render(request, 'tsuda/map.html')
 
+def move_to_eigyoujikan(request):
+    return render(request, 'tsuda/eigyoujikan.html')
+
 def move_to_honkan(request):
     return render(request, 'tsuda/honkan.html')
 

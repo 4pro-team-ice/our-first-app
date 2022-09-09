@@ -1,0 +1,65 @@
+{% load static %}
+<html>
+<head>
+    <title>Tsuda app</title> <!--サイト名-->
+    <!-- <link rel="stylesheet" href="menupage.css"> -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/eigyoujikan.css' %}">
+</head>
+<body>
+  <div class="page-header">
+    <div style="text-align: center">
+      <h1><a href="/">T S U D A　　　A P P</a></h1> <!--ページタイトル-->
+    </div>
+  </div>
+
+<!--  試しに写真を入れてみた -->
+<!-- <img src="../../static/img/campus_map.jpeg"> -->
+
+<ul>
+  <li><span class="mgr-50">学生生活課 / 教務課</span>9:00〜11:15 12:15〜16:00</li>
+  <li><span class="mgr-50">食堂</span>10:00〜17:00</li>
+  <li><span class="mgr-50">カフェ・ルポ</span>11:00〜13:30</li>
+  <li><span class="mgr-50">うめコープ / co-umeこうめ</span><a href="https://www.univcoop.jp/tsuda/schedule/schedule_202209.html">営業時間</a></li>
+  <!-- URLの月の部分をその時の月になるようにしたい -->
+  <li><span class="mgr-50">図書館</span><a href="https://lib.tsuda.ac.jp/AL.aspx">営業時間</a></li>
+  <li><span class="mgr-50">AVライブラリー</span><a href="https://lib.tsuda.ac.jp/AA.aspx">営業時間</a></li>
+  <li><span class="mgr-50">計算センター</span>8:30〜16:30</li>
+  <li><span class="mgr-50">ウェルネスセンター</span>8:30〜11:15 12:15〜16:00</li>
+  <li><span class="mgr-50">各学科の事務室</span>10:00〜11:15 12:15〜15:00</li>
+  <div class="button03">
+    <a href="https://www.tsuda.ac.jp/contact.html">電話番号一覧</a>
+  </div>
+
+
+<!-- <div class="button03">
+  <a href="{% url 'move_to_eigyoujikan' %}">学生生活課</a>
+</div>
+
+<div class="button03">
+  <a href="{% url 'move_to_eigyoujikan' %}">各施設の営業時間</a>
+</div>
+
+<div class="button03">
+  <a href="{% url 'move_to_eigyoujikan' %}">各施設の営業時間</a>
+</div>
+
+<div class="button03">
+  <a href="{% url 'move_to_eigyoujikan' %}">各施設の営業時間</a>
+</div>
+
+<div class="button03">
+  <a href="{% url 'move_to_eigyoujikan' %}">各施設の営業時間</a>
+</div> -->
+
+<h1></h1>
+
+  <div class="page-footer">
+    <footer>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-/*マップページ用*/
+/*営業時間用*/
 h1 a, h2 a {
     color: #C25100;
     font-family: monospace;
@@ -90,9 +90,9 @@ img{
   align-items: center;
   margin: 0 auto;
   padding: 1em 2em;
-  width: 250px;
+  width: 150px;
   color: #333333; /* 文字の色 */
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   border: 2px solid #e08899; /* ボタンと枠の色 */
   border-radius: 100px;
@@ -121,4 +121,8 @@ img{
 .button_line{
   display: flex;
   justify-content: space-evenly;
+}
+
+.mgr-50{
+  margin-right: 50px;
 }
