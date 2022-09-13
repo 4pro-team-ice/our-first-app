@@ -70,6 +70,19 @@ img{
 }
 /* ここまで */
 
+/*画像を重ねる*/
+.relative {
+  position: relative; /*相対的に動く*/
+  width:100%;
+}
+.absolute {
+  position: absolute; /*絶対的に動く*/
+  width: 2.75%;
+  top: 15%;
+  left: 55%;
+  bottom:55%;
+}
+
 .page-footer{
   position: relative;
   width: 100%;
