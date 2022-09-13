@@ -123,6 +123,36 @@ img{
   justify-content: space-evenly;
 }
 
-.mgr-50{
-  margin-right: 50px;
+.mgr-70{
+  margin-right: 70px;
+}
+.mgr-166{
+  margin-right: 166.5px;
+}
+.mgr-110{
+  margin-right: 110.5px;
+}
+.mgr-24{
+  margin-right: 24.5px;
+}
+.mgr-152{
+  margin-right: 152.5px;
+}
+.mgr-93{
+  margin-right: 93.5px;
+}
+.mgr-110{
+  margin-right: 110.5px;
+}
+.mgr-69{
+  margin-right: 69px;
+}
+.mgr-96{
+  margin-right: 96.5px;
+}
+
+ul {
+    width: 60%;
+    font-size: 15pt;
+    margin: auto;
 }
