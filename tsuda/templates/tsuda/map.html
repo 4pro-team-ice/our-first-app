@@ -18,11 +18,55 @@
 <h2>マップページ</h2>
 <!--  試しに写真を入れてみた -->
 <div class="relative">
-<img src="../../static/img/campus_map.jpeg" class="relative">
+<img src="../../static/img/campus_map_2.jpeg" class="relative">
 <img src="../../static/img/drink1.png" class="absolute">
 </div>
 
+<!-- 試しに書いてみた -->
+<br>
+<div class="button_line">
 <div class="button03">
+  <a href="{% url 'move_to_honkan' %}">①本館</a>
+</div>
+<div class="button03">
+  <a href="{% url 'move_to_shinkan' %}">②新館</a>
+</div>
+<div class="button03">
+  <a href="{% url 'move_to_minami' %}">③南校舎</a>
+</div>
+</div>
+<h1> </h1>
+
+<div class="button_line">
+
+<div class="button03">
+  <a href="{% url 'move_to_tokkyo' %}">④特別教室</a>
+</div>
+<div class="button03">
+  <a href="{% url 'move_to_ichigokan' %}">⑤1号館</a>
+</div>
+<div class="button03">
+  <a href="{% url 'move_to_gogokan' %}">⑧5号館</a>
+</div>
+</div>
+<h1> </h1>
+
+
+<div class="button_line">
+
+<div class="button03">
+  <a href="{% url 'move_to_nanagokan' %}">⑩7号館</a>
+</div>
+<div class="button03">
+  <a href="{% url 'move_to_shokudo' %}">⑫食堂</a>
+</div>
+<div class="button03">
+  <a href="{% url 'move_to_library' %}">⑲図書館</a>
+</div>
+</div>
+<br> <br>
+
+<div class="button04">
   <a href="{% url 'move_to_eigyoujikan' %}">各施設の営業時間</a>
 </div>
 

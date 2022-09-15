@@ -17,70 +17,44 @@
 
 <h2>遷移成功 空き教室ページ</h2>
 <!--  試しに写真を入れてみた -->
-<img src="../../static/img/campus_map_2.jpeg">
+<img src="../../static/img/campus_map.jpeg">
 
 
 
-<!-- 試しに書いてみた -->
-<div class="button_line">
+<!-- 検索機能 -->
+<form method="post" action="URL" method="get">
+  <select name="曜日" required>
+    <option value="">曜日を選択</option>
+    <option>月曜日</option>
+    <option>火曜日</option>
+    <option>水曜日</option>
+    <option>木曜日</option>
+    <option>金曜日</option>
+  </select>
 
-<div class="button03">
-  <a href="{% url 'move_to_honkan' %}">①本館</a>
-</div>
-<div class="button03">
-  <a href="{% url 'move_to_shinkan' %}">②新館</a>
-</div>
-<div class="button03">
-  <a href="{% url 'move_to_minami' %}">③南校舎</a>
-</div>
-</div>
-<h1> </h1>
+  <select name="時限" required>
+    <option value="">時限を選択</option>
+    <option>1限</option>
+    <option>2限</option>
+    <option>3限</option>
+    <option>4限</option>
+    <option>5限</option>
+  </select>
 
-<div class="button_line">
+  <select name="号館" required>
+    <option value="">号館を選択</option>
+    <option>本館</option>
+    <option>新館</option>
+    <option>南校舎</option>
+    <option>特別教室</option>
+    <option>1号館</option>
+    <option>5号館</option>
+    <option>7号館</option>
+  </select>
 
-<div class="button03">
-  <a href="{% url 'move_to_tokkyo' %}">④特別教室</a>
-</div>
-<div class="button03">
-  <a href="{% url 'move_to_ichigokan' %}">⑤1号館</a>
-</div>
-<div class="button03">
-  <a href="{% url 'move_to_gogokan' %}">⑧5号館</a>
-</div>
-</div>
-<h1> </h1>
+	<input type="submit" value="検索する" />
+</form>
 
-
-<div class="button_line">
-
-<div class="button03">
-  <a href="{% url 'move_to_nanagokan' %}">⑩7号館</a>
-</div>
-<div class="button03">
-  <a href="{% url 'move_to_shokudo' %}">⑫食堂</a>
-</div>
-<div class="button03">
-  <a href="{% url 'move_to_library' %}">⑲図書館</a>
-</div>
-</div>
-<h1> </h1>
-<!-- 試しに書いてみた -->
-
-<!-- 後でどうにかしよう -->
-<!--
-<p>
-  <p align = "center"> ①本館 </p>
-  <p align = "center"> ②新館 </p>
-  <p align = "center"> ③南校舎 </p>
-  <p align = "center"> ④特別教室 </p>
-  <p align = "center"> ⑤1号館 </p>
-  <p align = "center"> ⑧5号館 </p>
-  <p align = "center"> ⑩7号館 </p>
-  <p align = "center"> ⑲図書館 </p>
-  <p align = "center"> ※食堂 </p>
-</p>
--->
-<!-- 後でどうにかしよう -->
 
 
   <div class="page-footer">
