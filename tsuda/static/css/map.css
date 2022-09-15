@@ -78,50 +78,50 @@ img{
 .absolute1 {
   position: absolute; /*7号館*/
   width: 3.5%;
-  top: 47%;
+  top: 20%;
   left: 53.5%;
   bottom:55%;
 }
 .absolute2 {/*食堂裏*/
   position: absolute; /*絶対的に動く*/
   width: 3.5%;
-  top: 64%;
+  top: 40%;
   left: 42.5%;
   bottom:25%;
 }
 .absolute3 { /*食堂とカフェルポの間*/
   position: absolute; /*絶対的に動く*/
   width: 3.5%;
-  top: 61%;
+  top: 38%;
   left: 50%;
   bottom:25%;
 }
 .absolute4 {/*食堂の中*/
   position: absolute; /*絶対的に動く*/
   width: 3.5%;
-  top: 64%;
+  top: 42%;
   left: 52.5%;
   bottom:25%;
 }
 .absolute5 {/*食堂の裏の公衆電話*/
   position: absolute; /*絶対的に動く*/
   width: 3.5%;
-  top: 74%;
+  top: 52%;
   left: 42%;
   bottom:25%;
 }
 .absolute6 {/*5号館前の自販機*/
   position: absolute; /*絶対的に動く*/
   width: 3.5%;
-  top: 50%;
+  top: 26%;
   left: 76.5%;
   bottom:25%;
 }
 .absolute7 {/*1号館前の自販機*/
   position: absolute; /*絶対的に動く*/
   width: 3.5%;
-  top: 83%;
-  left: 83%;
+  top: 65%;
+  left: 82.5%;
   bottom:25%;
 }
 .page-footer{
