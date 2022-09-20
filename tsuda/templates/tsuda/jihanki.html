@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'css/map.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jihanki.css' %}">
 </head>
 <body>
   <div class="page-header">
@@ -15,21 +15,36 @@
     </div>
   </div>
 
-<h2>マップページ</h2>
+<h2>自動販売機の一覧</h2>
 
 <!-- 試しに書いてみた -->
 <br>
 <div class="relative">
-<img src="../../static/img/campus_map_2.jpeg" class="relative">
-<img src="../../static/img/drink3.png" class="absolute1"> <!--7号館前の自販機-->
-<img src="../../static/img/drink-ice-photo.png" class="absolute2"> <!--食堂裏のアイスがある所-->
-<img src="../../static/img/drink4.png" class="absolute3"> <!--食堂とカフェルポの間-->
-<img src="../../static/img/drink2.png" class="absolute4"><!--食堂の中-->
-<img src="../../static/img/phone.png" class="absolute5"><!--食堂の裏の公衆電話-->
-<img src="../../static/img/drink3.png" class="absolute6"><!--5号館前の自販機-->
-<img src="../../static/img/drink3.png" class="absolute7"><!--1号館前の自販機-->
+  <div style="text-align: center">
+    <h3> 食堂の横 </h3>
+    <img src="../../static/img/shokudoyoko.jpeg">
+    <br>
+    <h3> 食堂の裏 </h3>
+    <img src="../../static/img/shokudoura.jpeg">
+    <br>
+    <h3> 食堂の中 </h3>
+    <img src="../../static/img/shokudonaka.jpeg">
+    <br>
+    <h3> 1号館前 </h3>
+    <img src="../../static/img/ichigokanyoko.jpeg">
+    <br>
+    <h3> 5号館前 </h3>
+    <img src="../../static/img/gogokanmae.jpeg">
+    <br>
+    <h3> 7号館前 </h3>
+    <img src="../../static/img/nanagokanmae.jpeg">
+    <br>
+    <h3> 食堂裏の公衆電話 </h3>
+    <img src="../../static/img/koshudenwa.jpeg">
+    <br> <br>
+  </div>
 </div>
-
+<!--
 <div class="button_line">
 <div class="button03">
   <a href="{% url 'move_to_honkan' %}">①本館</a>
@@ -74,17 +89,18 @@
 <div class="button04">
   <a href="{% url 'move_to_eigyoujikan' %}">各施設の営業時間</a>
 </div>
-<div class="button05">
-  <a href="{% url 'move_to_jihanki' %}">自販機の場所</a>
+<div class="button04">
+  <a href="{% url 'move_to_eigyoujikan' %}">自販機の場所</a>
 </div>
 </div>
 
-<h1></h1>
+<h1></h1> -->
 
-  <div class="page-footer">
-    <footer>
-    </footer>
-  </div>
+
+<div class="page-footer">
+  <footer>
+  </footer>
+</div>
 
 </body>
 </html>
