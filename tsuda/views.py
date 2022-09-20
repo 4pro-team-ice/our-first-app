@@ -48,6 +48,9 @@ def move_to_map(request):
 def move_to_eigyoujikan(request):
     return render(request, 'tsuda/eigyoujikan.html')
 
+def move_to_jihanki(request):
+    return render(request, 'tsuda/jihanki.html')    
+
 def move_to_honkan(request):
     return render(request, 'tsuda/honkan.html')
 
