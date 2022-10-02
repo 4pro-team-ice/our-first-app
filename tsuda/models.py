@@ -273,3 +273,28 @@ class Friday6(models.Model):
 
     def __str__(self):
         return self.className
+        
+class Syllabus(models.Model):
+    #授業ID
+    #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
+    classID = models.TextField() #授業ID
+    class_name = models.TextField() #授業名
+
+    term_1 = models.TextField() #開講ターム
+    term_2 = models.TextField() #開講ターム
+    term_3 = models.TextField() #開講ターム
+    term_4 = models.TextField() #開講ターム
+    day_of_week = models.TextField() #曜日
+    period_of_time = models.TextField() #時限
+    teacher_name = models.TextField() #教員名
+    #ここから学科の名前
+    eibun = models.TextField()
+    kokkan = models.TextField()
+    tabunka = models.TextField()
+    sugaku = models.TextField()
+    johou = models.TextField()
+
+    syllabus_info = models.TextField()
+
+    def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
+        return self.class_name
