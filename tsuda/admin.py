@@ -70,7 +70,6 @@ admin.site.register(Friday4)
 admin.site.register(Friday5)
 admin.site.register(Friday6)
 
-admin.site.register(Post)
-admin.site.register(Classroom)
-admin.site.register(Syllabus)
 
+
+admin.site.register(Syllabus)
