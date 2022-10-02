@@ -298,3 +298,16 @@ class Syllabus(models.Model):
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_name
+
+
+class SyllabusComment(models.Model): #シラバスのコメント用
+    class_name = models.TextField() #授業名
+    juko_year = models.TextField() #受講年度
+    test_or_report = models.TextField() #テストかレポート
+    jugyo_document = models.TextField() #Google Classroom か moodle か ポートフォリオか
+    kadai_ryo = models.TextField() #課題の量
+    comment = models.TextField() #自由にコメント
+
+
+    def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
+        return self.class_name

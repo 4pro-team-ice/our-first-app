@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Post
 from .models import Classroom
 from .models import Syllabus
+from .models import SyllabusComment
 
 from .models import Monday1
 from .models import Monday2
@@ -73,3 +74,4 @@ admin.site.register(Friday6)
 
 
 admin.site.register(Syllabus)
+admin.site.register(SyllabusComment)
