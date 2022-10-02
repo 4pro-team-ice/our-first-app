@@ -32,6 +32,248 @@ class Classroom(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
+class Monday1(models.Model):
+    #授業ID
+    #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
+    className = models.TextField()#授業名
+    class_number = models.TextField()#教室名
+    profName = models.TextField()#教授名
+
+    def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
+        return self.className
+
+class Monday2(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Monday3(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Monday4(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Monday5(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Monday6(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Tuesday1(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Tuesday2(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Tuesday3(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Tuesday4(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Tuesday5(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Tuesday6(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Wednesday1(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Wednesday2(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Wednesday3(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Wednesday4(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Wednesday5(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Wednesday6(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Thursday1(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Thursday2(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Thursday3(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Thursday4(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Thursday5(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Thursday6(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Friday1(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Friday2(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Friday3(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Friday4(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Friday5(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+
+class Friday6(models.Model):
+    className = models.TextField()
+    class_number = models.TextField()
+    profName = models.TextField()
+
+    def __str__(self):
+        return self.className
+        
 class Syllabus(models.Model):
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
