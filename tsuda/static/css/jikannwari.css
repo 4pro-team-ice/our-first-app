@@ -1,7 +1,8 @@
 /*時間割ページ用*/
 h1 a, h2 a {
     color: #C25100;
-    font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+    font-family: monospace;
+    /* font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"; */
 }
 body {
     padding-left: 0px;
