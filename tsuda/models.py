@@ -38,6 +38,12 @@ class Monday1(models.Model):
     className = models.TextField()#授業名
     class_number = models.TextField()#教室名
     profName = models.TextField()#教授名
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
@@ -273,7 +279,7 @@ class Friday6(models.Model):
 
     def __str__(self):
         return self.className
-        
+
 class Syllabus(models.Model):
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される

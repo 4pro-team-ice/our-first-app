@@ -1,33 +1,51 @@
 {% load static %}
 <html>
 <head>
-    <title>Tsuda app</title> <!--サイト名-->
-    <!-- <link rel="stylesheet" href="menupage.css"> -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'css/jikannwari.css' %}">
+  <title>Tsuda app</title> <!--サイト名-->
+  <!-- <link rel="stylesheet" href="menupage.css"> -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/jikannwari.css' %}">
 </head>
 <body>
   <div class="page-header">
+
+    <!-- {% if user.is_authenticated %}
+    <a href="{% url 'monday1_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    {% endif %} -->
+
     <div style="text-align: center">
       <h1><a href="/menupage">T S U D A　　　A P P</a></h1> <!--ページタイトル-->
     </div>
   </div>
- <div class="wrapper">
-   <section class="main">
-     <h2>時間割</h2>
-  </section>
-  <section  class="side">
-    <div>
-      <h2><a href="{% url 'move_to_menupage' %}">メニュー</a></h2>
+
+  {% if user.is_authenticated %}
+  <a href="{% url 'monday1_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+  {% endif %}
+
+  <div class="wrapper">
+    <section class="main">
+      <h2>時間割</h2>
+    </section>
+    <section  class="side">
+      <div>
+        <h2><a href="{% url 'move_to_menupage' %}">メニュー</a></h2>
+      </div>
+    </section>
+  </div>
+  <!--ここから-->
+  {% csrf_token %}
+
+  <div class="row">
+    <div class="col-md-8">
+      {% block content %}
+      {% endblock %}
     </div>
-  </section>
- </div>
+  </div>
   <div class="page-footer">
     <footer>
     </footer>
   </div>
-
 </body>
 </html>

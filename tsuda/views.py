@@ -4,6 +4,8 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from .models import Monday1
+from .forms import JikannwariForm
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -29,6 +31,21 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'tsuda/post_edit.html', {'form': form})
+
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'tsuda/post_edit.html', {'form': form})
+
 #画面遷移の動作
 def move_to_menupage(request):
     return render(request, 'tsuda/menupage.html')
@@ -49,7 +66,7 @@ def move_to_eigyoujikan(request):
     return render(request, 'tsuda/eigyoujikan.html')
 
 def move_to_jihanki(request):
-    return render(request, 'tsuda/jihanki.html')    
+    return render(request, 'tsuda/jihanki.html')
 
 def move_to_honkan(request):
     return render(request, 'tsuda/honkan.html')
@@ -78,16 +95,42 @@ def move_to_library(request):
 def move_to_shokudo(request):
     return render(request, 'tsuda/shokudo.html')
 
-def post_edit(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+#時間割登録用
+def monday1_list(request):
+    monday1s = Monday1.objects.all()
+    return render(request, 'tsuda/monday1_list.html', {'monday1s': monday1s})
+
+def monday1_detail(request, pk):
+    monday1 = get_object_or_404(Monday1, pk=pk)
+    return render(request, 'tsuda/monday1_detail.html', {'monday1': monday1})
+
+def monday1_new(request):
+    form = JikannwariForm()
+    return render(request, 'tsuda/monday1_edit.html', {'form': form})
+
+def monday1_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = JikannwariForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('post_detail', pk=post.pk)
+            monday1 = form.save(commit=False)
+            monday1.author = request.user
+            monday1.published_date = timezone.now()
+            monday1.save()
+            return redirect('monday1_detail', pk=monday1.pk)
     else:
-        form = PostForm(instance=post)
-    return render(request, 'tsuda/post_edit.html', {'form': form})
+        form = JikannwariForm()
+    return render(request, 'tsuda/monday1_edit.html', {'form': form})
+
+def monday1_edit(request, pk):
+    monday1 = get_object_or_404(Monday1, pk=pk)
+    if request.method == "POST":
+        form = JikannwariForm(request.POST, instance=monday1)
+        if form.is_valid():
+            monday1 = form.save(commit=False)
+            monday1.author = request.user
+            monday1.published_date = timezone.now()
+            monday1.save()
+            return redirect('monday1_detail', pk=monday1.pk)
+    else:
+        form = JikannwariForm(instance=monday1)
+    return render(request, 'tsuda/monday1_edit.html', {'form': form})
