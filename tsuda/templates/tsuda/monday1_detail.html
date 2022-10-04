@@ -1,0 +1,17 @@
+{% extends 'tsuda/jikannwari.html' %}
+
+{% block content %}
+    <div class="post">
+        <!-- {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %} -->
+        {% if user.is_authenticated %}
+          <a class="btn btn-default" href="{% url 'monday1_edit' pk=monday1.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <h2>{{ monday1.className }}</h2>
+        <p>{{ monday1.class_number|linebreaksbr }}</p>
+        <p>{{ monday1.profName|linebreaksbr }}</p>
+    </div>
+{% endblock %}

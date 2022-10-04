@@ -6,6 +6,14 @@ urlpatterns = [
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/new/', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+
+    #時間割登録用のURL
+    path('jikannwari/', views.monday1_list, name='monday1'),
+    path('jikannwari/post/<int:pk>/', views.monday1_detail, name='monday1_detail'),
+    path('jikannwari/new/', views.monday1_new, name='monday1_new'),
+    path('jikannwari/post/<int:pk>/edit/', views.monday1_edit, name='monday1_edit'),
+
+
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),
     path('akikyoshitsu/', views.move_to_akikyoshitsu, name='move_to_akikyoshitsu'),
