@@ -16,4 +16,4 @@ class JikannwariForm(forms.ModelForm):
 
     class Meta:
         model = Monday1
-        fields = ('className', 'class_number' ,'profName',)
+        fields = ('dow','pot','className', 'class_number' ,'profName')
