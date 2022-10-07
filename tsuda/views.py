@@ -97,8 +97,16 @@ def move_to_shokudo(request):
 
 #時間割登録用
 def monday1_list(request):
-    monday1s = Monday1.objects.all()
-    return render(request, 'tsuda/monday1_list.html', {'monday1s': monday1s})
+    # monday1s = Monday1.objects.all()
+    first = Monday1.objects.filter(pot = 0).order_by('dow')[0:5]
+    second = Monday1.objects.filter(pot = 1).order_by('dow')[0:5]
+    third = Monday1.objects.filter(pot = 2).order_by('dow')[0:5]
+    fourth = Monday1.objects.filter(pot = 3).order_by('dow')[0:5]
+    fifth = Monday1.objects.filter(pot = 4).order_by('dow')[0:5]
+    sixth = Monday1.objects.filter(pot = 5).order_by('dow')[0:5]
+    params = {'data1': first , 'data2': second , 'data3': third ,
+              'data4': fourth , 'data5':fifth , 'data6':sixth}
+    return render(request, 'tsuda/monday1_list.html', params)
 
 def monday1_detail(request, pk):
     monday1 = get_object_or_404(Monday1, pk=pk)

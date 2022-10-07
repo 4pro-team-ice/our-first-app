@@ -48,9 +48,11 @@ class Monday1(models.Model):
         (Day_Of_Week.Thursday, '木'),
         (Day_Of_Week.Friday, '金')
     )
+    
     dow = models.CharField(verbose_name='曜日',
                             choices=DAY_OF_WEEK_CHOICES,
                             max_length=50)
+
     class Period_Of_Time(): #時限にIDを与える
         First = '0'
         Second = '1'
@@ -73,9 +75,9 @@ class Monday1(models.Model):
                             max_length=50)
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
-    className = models.TextField(verbose_name='授業名')
-    class_number = models.TextField(verbose_name='教室名')
-    profName = models.TextField(verbose_name='教授名')
+    className = models.TextField(verbose_name='授業名' , default = '-----')
+    class_number = models.TextField(verbose_name='教室名', default = '-----')
+    profName = models.TextField(verbose_name='教授名', default = '-----')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 

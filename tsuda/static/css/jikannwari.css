@@ -27,6 +27,16 @@ h1, h2, h3, h4 {
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 5px;
+  border: 1px solid #333;
+}
+
 .date {
     color: #828282;
 }
