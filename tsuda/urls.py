@@ -13,6 +13,13 @@ urlpatterns = [
     path('jikannwari/new/', views.monday1_new, name='monday1_new'),
     path('jikannwari/post/<int:pk>/edit/', views.monday1_edit, name='monday1_edit'),
 
+    #シラバスコメント用のURL
+    path('syllabus/', views.syllabuscomment_list, name='syllabuscomment'),
+    path('syllabus/post/<int:pk>/', views.syllabuscomment_detail, name='syllabuscomment_detail'),
+    path('syllabus/new/', views.syllabuscomment_new, name='syllabuscomment_new'),
+    path('syllabus/post/<int:pk>/edit/', views.syllabuscomment_edit, name='syllabuscomment_edit'),
+
+
 
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),

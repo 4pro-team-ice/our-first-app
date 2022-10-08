@@ -323,7 +323,7 @@ class Syllabus(models.Model):
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
     classID = models.TextField() #授業ID
-    class_name = models.TextField() #授業名
+    className = models.TextField() #授業名
 
     term_1 = models.TextField() #開講ターム
     term_2 = models.TextField() #開講ターム
@@ -339,20 +339,87 @@ class Syllabus(models.Model):
     sugaku = models.TextField()
     johou = models.TextField()
 
-    syllabus_info = models.TextField()
+    syllabusinfo = models.TextField()
+
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
-        return self.class_name
+        return self.className
 
 
-class SyllabusComment(models.Model): #シラバスのコメント用
-    class_name = models.TextField() #授業名
-    juko_year = models.TextField() #受講年度
-    test_or_report = models.TextField() #テストかレポート
-    jugyo_document = models.TextField() #Google Classroom か moodle か ポートフォリオか
-    kadai_ryo = models.TextField() #課題の量
-    comment = models.TextField() #自由にコメント
+class SyllabusComment(models.Model): #シラバス用のコメント
+    className = models.TextField(verbose_name='授業名') #授業名
+    juko_year = models.TextField(verbose_name='受講年度' , blank=True, null=True) #受講年度
 
+    class Test_or_Report(): #IDを与える
+        Test = '0'
+        Report = '1'
+        Nothing = '2'
+
+    TEST_OR_REPORT_CHOICES = ( #IDと紐付け
+        (Test_or_Report.Test, 'テスト'),
+        (Test_or_Report.Report, 'レポート'),
+        (Test_or_Report.Nothing, 'なし'),
+    )
+
+    tor = models.CharField(verbose_name='テスト or レポート',
+    choices=TEST_OR_REPORT_CHOICES,
+    max_length=50)
+
+
+    class Learning_Manegemet_System():
+        Moodle = '0'
+        Google_Classroom = '1'
+        Portfolio = '2'
+        Else = '3'
+        Nothing = '4'
+
+    LEARNING_MANEGMENT_SYSTEM_CHOICES = (
+        (Learning_Manegemet_System.Moodle, 'moodle'),
+        (Learning_Manegemet_System.Google_Classroom, 'Google Classroom'),
+        (Learning_Manegemet_System.Portfolio, 'ポートフォリオ'),
+        (Learning_Manegemet_System.Else, 'その他'),
+        (Learning_Manegemet_System.Nothing, 'なし')
+    )
+
+    lms = models.CharField(verbose_name='学習管理システム',
+    choices = LEARNING_MANEGMENT_SYSTEM_CHOICES,
+    max_length=50)
+
+    class Assignment_amont(): #IDを与える
+        Too_much = '0'
+        Much = '1'
+        Normal = '2'
+        Little = '3'
+        Too_little = '4'
+        Nothing = '5'
+
+    ASSIGNMENT_AMOUNT_CHOICES = (
+        (Assignment_amont.Too_much, 'とても多い'),
+        (Assignment_amont.Much, '多い'),
+        (Assignment_amont.Normal, '普通'),
+        (Assignment_amont.Little, '少ない'),
+        (Assignment_amont.Too_little, 'ほとんどない'),
+        (Assignment_amont.Nothing, 'ない'),
+    )
+
+    aa = models.CharField(verbose_name='課題量',
+    choices=ASSIGNMENT_AMOUNT_CHOICES,
+    max_length=50)
+
+    comment = models.TextField(verbose_name='コメント' , blank=True, null=True) #自由にコメント
+
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
-        return self.class_name
+        return self.className

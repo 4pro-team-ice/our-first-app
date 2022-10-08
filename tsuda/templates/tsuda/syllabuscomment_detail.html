@@ -1,0 +1,16 @@
+{% extends 'tsuda/syllabus.html' %}
+
+{% block content %}
+<div class="post">
+
+  {% if user.is_authenticated %}
+  <a class="btn btn-default" href="{% url 'syllabuscomment_edit' pk=syllabuscomment.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+  {% endif %}
+  <h3>{{ syllabuscomment.className }}</h3>
+  <p>{{ syllabuscomment.juko_year|linebreaksbr }}</p>
+  <p>{{ syllabuscomment.tor|linebreaksbr }}</p>
+  <p>{{ syllabuscomment.lms|linebreaksbr }}</p>
+  <p>{{ syllabuscomment.aa|linebreaksbr }}</p>
+  <p>{{ syllabuscomment.comment|linebreaksbr }}</p>
+</div>
+{% endblock %}
