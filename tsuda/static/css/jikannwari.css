@@ -26,15 +26,28 @@ body {
 h1, h2, h3, h4 {
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
+/* .table_tbl {
+    margin: 100px;
+} */
 
 table {
   border-collapse: collapse;
   text-align: center;
+  display: inline;
+  margin-right: 3px;
+  width: 16px;
+  height: 16px;
 }
 
 th, td {
   padding: 5px;
-  border: 1px solid #333;
+  border: 1px solid #7a4171;
+  text-align: center;
+}
+
+th {
+  background-color: #fdede4;
+  color: #333333;
 }
 
 .date {
@@ -105,4 +118,60 @@ th, td {
 .side {
     background: #e8d3c7;
     width: 20%;
+}
+
+
+
+.sample a {
+   display: inline-block;      /* リンクをインラインブロック化して表示 */
+   width: 5em;                 /* 横幅を15文字分にする(※値は自由に調節して下さい) */
+   border: 1px solid #e08899;    /* 枠線を加える(※値は自由に調節して下さい) */
+   border-radius: 0.75em;        /* 枠線の角を丸くする(※値は自由に調節して下さい) */
+   padding: 0.7em;               /* 内側の余白量を0.7文字分にする。この余白は「クリック可能な空白」になります。(※値は自由に調節して下さい) */
+   margin: 0px 0.15em 0.5em 0px; /* 外側の余白量として、右に0.15文字分、下に0.5文字分を用意。この余白は「クリック対象外」です。(※値は自由に調節して下さい) */
+   background-color: #ffffff;    /* 背景色として淡い水色を指定。(※値は自由に調節して下さい) */
+   text-decoration: none;        /* リンクの下線を消す */
+   line-height: 1.4;             /* 行の高さを1.4倍にする(※値は自由に調節して下さい) */
+   color: #333333; /* 文字の色 */
+}
+
+/* ▼リンクの上にマウスが載った際の装飾(背景色だけ指定) */
+.sample a:hover { background-color: #f2a0a1; }
+
+/*ステッチボタン */
+.btn-stitch a {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #e08899;
+  color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px #e08899;
+  border: dashed 1px #ffffff;
+}
+
+.btn-stitch a:hover {
+  border: dotted 1px #ffffff;
+}
+
+/*付箋風ボタン */
+.btn-sticky a {
+  display: inline-block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  background: #f0f0f0;
+  /* border: 1px solid #e08899; */   /* 枠線を加える(※値は自由に調節して下さい) */
+  border-left: solid 6px #e08899;/*左線*/
+  color: #333333;/*文字色*/
+  font-weight: normal;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+.btn-sticky a:hover {
+  border: 1px solid #e08899;  /* 枠線を加える(※値は自由に調節して下さい) */
+  border-left: solid 6px #e08899;/*左線*/
+}
+.btn-sticky a:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
 }
