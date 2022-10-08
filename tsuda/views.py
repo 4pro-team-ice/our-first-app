@@ -6,6 +6,9 @@ from .forms import PostForm
 from django.shortcuts import redirect
 from .models import Monday1
 from .forms import JikannwariForm
+from .models import SyllabusComment
+from .forms import SyllabusCommentForm
+
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -142,3 +145,43 @@ def monday1_edit(request, pk):
     else:
         form = JikannwariForm(instance=monday1)
     return render(request, 'tsuda/monday1_edit.html', {'form': form})
+
+# シラバスコメント用
+def syllabuscomment_list(request):
+    syllabuscomments = SyllabusComment.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'tsuda/syllabuscomment_list.html', {'syllabuscomments': syllabuscomments})
+
+def syllabuscomment_detail(request, pk):
+    syllabuscomment = get_object_or_404(Post, pk=pk)
+    return render(request, 'tsuda/syllabuscomment_detail.html', {'syllabuscomment': syllabuscomment})
+
+def syllabuscomment_new(request):
+    form = SyllabusCommentForm()
+    return render(request, 'tsuda/syllabuscomment_edit.html', {'form': form})
+
+def syllabuscomment_new(request):
+    if request.method == "POST":
+        form = SyllabusCommentForm(request.POST)
+        if form.is_valid():
+            syllabuscomment = form.save(commit=False)
+            syllabuscomment.author = request.user
+            syllabuscomment.published_date = timezone.now()
+            syllabuscomment.save()
+            return redirect('syllabuscomment_detail', pk=syllabuscomment.pk)
+    else:
+        form = SyllabusCommentForm()
+    return render(request, 'tsuda/syllabuscomment_edit.html', {'form': form})
+
+def syllabuscomment_edit(request, pk):
+    syllabuscomment = get_object_or_404(SyllabusComment, pk=pk)
+    if request.method == "POST":
+        form = SyllabusCommentForm(request.POST, instance=syllabuscomment)
+        if form.is_valid():
+            syllabuscomment = form.save(commit=False)
+            syllabuscomment.author = request.user
+            syllabuscomment.published_date = timezone.now()
+            syllabuscomment.save()
+            return redirect('syllabuscomment_detail', pk=syllabuscomment.pk)
+    else:
+        form = SyllabusCommentForm(instance=syllabuscomment)
+    return render(request, 'tsuda/syllabuscomment_edit.html', {'form': form})

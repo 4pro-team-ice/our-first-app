@@ -15,6 +15,20 @@
     </div>
   </div>
 
+  {% if user.is_authenticated %}
+  <!-- <a href="{% url 'monday1_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> -->
+  {% endif %}
+
+  {% csrf_token %}
+
+  <div class="row">
+    <div class="col-md-8">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+  <br> <br> <br> <br> <br>
+
   <div class="page-footer">
     <footer>
     </footer>
