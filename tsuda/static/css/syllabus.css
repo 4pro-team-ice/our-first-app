@@ -1,8 +1,7 @@
 /*シラバスページ用*/
 h1 a, h2 a {
     color: #C25100;
-    font-family: monospace;
-    /* font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"; */
+    font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 body {
     padding-left: 0px;
@@ -55,9 +54,9 @@ th, td {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: #000000;
     float: right;
-    font-size: 26pt;
+    font-size: 15pt;
     margin-right: 20px;
 }
 
@@ -109,4 +108,18 @@ th, td {
 .side {
     background: #e8d3c7;
     width: 20%;
+}
+
+.btn-gradient-radius a {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color:#000000;
+  background:#ffe4e1;
+  transition: .4s;
+}
+
+.btn-gradient-radius a:hover {
+  background:#d3d3d3;
 }

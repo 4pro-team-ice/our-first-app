@@ -148,11 +148,11 @@ def monday1_edit(request, pk):
 
 # シラバスコメント用
 def syllabuscomment_list(request):
-    syllabuscomments = SyllabusComment.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    syllabuscomments = SyllabusComment.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
     return render(request, 'tsuda/syllabuscomment_list.html', {'syllabuscomments': syllabuscomments})
 
 def syllabuscomment_detail(request, pk):
-    syllabuscomment = get_object_or_404(Post, pk=pk)
+    syllabuscomment = get_object_or_404(SyllabusComment, pk=pk)
     return render(request, 'tsuda/syllabuscomment_detail.html', {'syllabuscomment': syllabuscomment})
 
 def syllabuscomment_new(request):

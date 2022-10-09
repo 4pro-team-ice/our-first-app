@@ -2,15 +2,16 @@
 
 {% block content %}
 <div class="post">
-
+  <a class="btn btn-default" href="/syllabus"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
+  <br><h1></h1>
   {% if user.is_authenticated %}
-  <a class="btn btn-default" href="{% url 'syllabuscomment_edit' pk=syllabuscomment.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+  <a class="btn btn-default" href="{% url 'syllabuscomment_edit' pk=syllabuscomment.pk %}"><span class="glyphicon glyphicon-pencil"></span>　編集</a>
   {% endif %}
   <h3>{{ syllabuscomment.className }}</h3>
   <p>{{ syllabuscomment.juko_year|linebreaksbr }}</p>
-  <p>{{ syllabuscomment.tor|linebreaksbr }}</p>
-  <p>{{ syllabuscomment.lms|linebreaksbr }}</p>
-  <p>{{ syllabuscomment.aa|linebreaksbr }}</p>
+  <p>{{ syllabuscomment.get_tor_display|linebreaksbr }}</p>
+  <p>{{ syllabuscomment.get_lms_display|linebreaksbr }}</p>
+  <p>{{ syllabuscomment.get_aa_display|linebreaksbr }}</p>
   <p>{{ syllabuscomment.comment|linebreaksbr }}</p>
 </div>
 {% endblock %}

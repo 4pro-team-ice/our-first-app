@@ -1,41 +1,41 @@
 {% load static %}
 <html>
-    <head>
-        <title>Tsuda app</title> <!--サイト名-->
-        <link rel="stylesheet" href="tsuda.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/tsuda.css' %}">
-    </head>
-    <body>
-      <div class="page-header">
-        {% if user.is_authenticated %}
-          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
-        <div style="text-align: center">
-          <h1><a href="/">T S U D A　　　A P P</a></h1> <!--ページタイトル-->
-        </div>
+<head>
+  <title>Tsuda app</title> <!--サイト名-->
+  <link rel="stylesheet" href="tsuda.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/tsuda.css' %}">
+</head>
+<body>
+  <div class="page-header">
+    <div style="text-align: center">
+      <h1><a href="/">T S U D A　　　A P P</a></h1> <!--ページタイトル-->
+    </div>
+  </div>
+  <h1> </h1>
+
+  <div class="login">
+    <div class="text-align: center">
+      <!-- <pre> -->
+        <h3>利用者ID</h3>
+        <h3>パスワード</h3>
+      <!-- </pre> -->
+    </div>
+
+    <div class="btn-flat-simple">
+      <a href="{% url 'move_to_menupage' %}">ログイン</a>
+    </div>
+  </div>
+  <!-- {% block content %}
+  {% endblock %} -->
+  <div class="page-footer">
+    <footer>
+      <div style="text-align: center">
+        <img src=" static ../../static/img/Tsudauni.jpeg">
       </div>
-      <div class="content container">
-        <div style="text-align: center">
-          <!-- > <img class ="image" src = "../../static/img/Tsudauni.jpeg" width="300" height="150"> -->
-          <!-- <button type="button">クリック！</button> -->
-          <form action="{% url 'move_to_menupage' %}" method="post">
-            {% csrf_token %}
-            <input type="image" src="{% static "../../static/img/Tsudauni.jpeg" %}" name="start_button">
-          </form>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-          <!-- {% block content %}
-          {% endblock %} -->
-          </div>
-        </div>
-      </div>
-      <div class="page-footer">
-        <footer>
-        </footer>
-      </div>
-    </body>
+    </footer>
+  </div>
+</body>
 </html>
