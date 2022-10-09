@@ -2,6 +2,7 @@
 
 {% block content %}
     <div class="post">
+      <a class="btn btn-default" href="/jikannwari"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
       <h3>{{monday1.get_dow_display}} /
       {{monday1.get_pot_display}}</h3>
         <!-- {% if post.published_date %}
@@ -10,7 +11,7 @@
             </div>
         {% endif %} -->
         {% if user.is_authenticated %}
-          <a class="btn btn-default" href="{% url 'monday1_edit' pk=monday1.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="btn btn-default" href="{% url 'monday1_edit' pk=monday1.pk %}"><span class="glyphicon glyphicon-pencil"></span> 編集</a>
         {% endif %}
         <h3>{{ monday1.className }}</h3>
         <p>{{ monday1.class_number|linebreaksbr }}</p>
