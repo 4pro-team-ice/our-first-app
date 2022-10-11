@@ -27,6 +27,15 @@ h1, h2, h3, h4 {
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
+/* h3{
+  text-align: center;
+} */
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .date {
     color: #828282;
 }
@@ -67,7 +76,7 @@ h1, h2, h3, h4 {
 /* 画面の大きさに合わせて画像を表示する */
 img{
   /*画像の幅を100%に設定*/
-  width:50%;
+  width:90%;
 }
 /* ここまで */
 
@@ -78,11 +87,6 @@ img{
 }
 
 
-/*ボタンのデザイン*/
-/* a{
-  width: 30%;
-} */
-
 .page-footer{
   position: relative;
   width: 100%;
@@ -91,4 +95,18 @@ img{
   min-height: 20%; /*フッター枠の長さ*/
   background-color: #B3424A;
   padding: 30px 0;
+}
+
+.btn-gradient-radius a {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color:#000000;
+  background:#ffe4e1;
+  transition: .4s;
+}
+
+.btn-gradient-radius a:hover {
+  background:#d3d3d3;
 }

@@ -23,7 +23,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
 .date {
@@ -105,4 +105,19 @@ h1, h2, h3, h4 {
   min-height: 20%; /*フッター枠の長さ*/
   background-color: #B3424A;
   padding: 30px 0;
+}
+
+
+.btn-gradient-radius a {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color:#000000;
+  background:#ffe4e1;
+  transition: .4s;
+}
+
+.btn-gradient-radius a:hover {
+  background:#d3d3d3;
 }

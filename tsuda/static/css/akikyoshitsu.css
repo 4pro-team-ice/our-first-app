@@ -23,7 +23,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
 .date {
@@ -121,4 +121,18 @@ img{
 .button_line{
   display: flex;
   justify-content: space-evenly;
+}
+
+.btn-gradient-radius a {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color:#000000;
+  background:#ffe4e1;
+  transition: .4s;
+}
+
+.btn-gradient-radius a:hover {
+  background:#d3d3d3;
 }
