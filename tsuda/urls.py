@@ -29,6 +29,9 @@ urlpatterns = [
     path('eigyoujikan/', views.move_to_eigyoujikan, name='move_to_eigyoujikan'),
     path('jihanki/', views.move_to_jihanki, name='move_to_jihanki'),
 
+    path('syllabuskensaku/', views.move_to_syllabuskensaku, name='move_to_syllabuskensaku'),
+    path('syllabuskekka/', views.move_to_syllabuskekka, name='move_to_syllabuskekka'),
+
     path('honkan/', views.move_to_honkan, name='move_to_honkan'),
     path('shinkan/', views.move_to_shinkan, name='move_to_shinkan'),
     path('minami/', views.move_to_minami, name='move_to_minami'),

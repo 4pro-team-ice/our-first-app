@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'css/syllabus.css' %}">
+    <link rel="stylesheet" href="{% static 'css/syllabuskensaku.css' %}">
 </head>
 <body>
   <div class="page-header">
@@ -20,8 +20,10 @@
   {% if user.is_authenticated %}
    <a href="{% url 'syllabuscomment_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>　コメント追加</a>
   {% endif %}
-  <h1>シラバス</h1>
-
+  <h1>シラバス検索結果</h1>
+  <div class="btn-gradient-radius">
+  <a href="/syllabus">コメント</a>
+</div>
   {% csrf_token %}
 
   <div class="row">
