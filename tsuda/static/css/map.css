@@ -249,3 +249,16 @@ img{
   display: flex;
   justify-content: space-evenly;
 }
+.btn-gradient-radius a {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color:#000000;
+  background:#ffe4e1;
+  transition: .4s;
+}
+
+.btn-gradient-radius a:hover {
+  background:#d3d3d3;
+}
