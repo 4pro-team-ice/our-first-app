@@ -185,3 +185,9 @@ def syllabuscomment_edit(request, pk):
     else:
         form = SyllabusCommentForm(instance=syllabuscomment)
     return render(request, 'tsuda/syllabuscomment_edit.html', {'form': form})
+
+def move_to_syllabuskensaku(request):
+    return render(request, 'tsuda/syllabuskensaku.html')
+
+def move_to_syllabuskekka(request):
+    return render(request, 'tsuda/syllabuskekka.html')
