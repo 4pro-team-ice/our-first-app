@@ -70,7 +70,10 @@ img{
   width:100%;
 }
 /* ここまで */
-
+.hukidashi {
+  position: relative; /*相対的に動く*/
+  width:3%;
+}
 /*画像を重ねる*/
 .relative {
   position: relative; /*相対的に動く*/
