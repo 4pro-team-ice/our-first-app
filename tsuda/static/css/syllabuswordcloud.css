@@ -1,4 +1,4 @@
-/*シラバス検索用*/
+/*シラバスワードクラウド用*/
 h1 a, h2 a {
     color: #C25100;
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
@@ -122,8 +122,4 @@ th, td {
 
 .btn-gradient-radius a:hover {
   background:#d3d3d3;
-}
-
-mark {
-  background-color: #ffdab9;
 }

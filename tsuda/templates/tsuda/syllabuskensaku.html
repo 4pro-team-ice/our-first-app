@@ -1,12 +1,12 @@
 {% load static %}
 <html>
 <head>
-    <title>Tsuda app</title> <!--サイト名-->
-    <!-- <link rel="stylesheet" href="menupage.css"> -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{% static 'css/syllabuskensaku.css' %}">
+  <title>Tsuda app</title> <!--サイト名-->
+  <!-- <link rel="stylesheet" href="menupage.css"> -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/syllabuskensaku.css' %}">
 </head>
 <body>
   <div class="page-header">
@@ -14,31 +14,73 @@
       <h1>T S U D A　　　A P P</h1> <!--ページタイトル-->
     </div>
     <div class="btn-gradient-radius">
-    <a href="/menupage">MENU PAGE</a>
-  </div>
-  </div>
-  {% if user.is_authenticated %}
-   <a href="{% url 'syllabuscomment_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>　コメント追加</a>
-  {% endif %}
-  <h1>シラバス検索</h1>
-  <div class="btn-gradient-radius">
-  <a href="/syllabuskekka">結果</a>
-</div>
-
-  {% csrf_token %}
-
-  <div class="row">
-    <div class="col-md-8">
-      {% block content %}
-      {% endblock %}
+      <a href="/menupage">MENU PAGE</a>
     </div>
   </div>
-  <br> <br> <br> <br> <br>
 
-  <div class="page-footer">
-    <footer>
-    </footer>
-  </div>
+  <h1>シラバス検索</h1>
+  <h1></h1><br>
+  <form method="post" action="{% url 'move_to_syllabuskekka' %}" method="get"> {% csrf_token %}
+    <p><strong><mark>学科</mark></strong></p>
+    <select name="学部/学科">
+      <option hidden>学科を選択</option>
+      <option>英語英文学科</option>
+      <option>国際関係学科</option>
+      <option>多文化・国際協力学科</option>
+      <option>数学科</option>
+      <option>情報科学科</option>
+    </select>
 
-</body>
-</html>
+    <h1></h1>
+    <p><strong><mark>科目名</mark></strong></p>
+    <input type="search" name="search" placeholder="科目名を入力">
+
+    <h1></h1>
+    <p><strong><mark>担当教員</mark></strong></p>
+    <input type="search" name="search" placeholder="担当教員を入力">
+    <h1></h1>
+    <p><strong><mark>開講ターム</mark></strong><h6>*複数選択可能</h6></p> <h5></h5>
+    <input type="checkbox" name="term" value="1">第1ターム
+    <input type="checkbox" name="term" value="2">第2ターム
+    <input type="checkbox" name="term" value="3">第3ターム
+    <input type="checkbox" name="term" value="4">第4ターム
+
+    <h1></h1>
+    <p><strong><mark>曜日</mark></strong></p>
+    <select name="曜日">
+      <option hidden>曜日を選択</option>
+      <option>月</option>
+      <option>火</option>
+      <option>水</option>
+      <option>木</option>
+      <option>金</option>
+      <option>土</option>
+    </select>
+
+    <h1></h1>
+    <p><strong><mark>キーワード</strong></p>
+      <input type="search" name="search" placeholder="キーワードを入力">
+
+      <h1></h1>
+      <div class="btn-gradient-radius">
+        <input type="submit" name="submit" value="結果を表示" >
+      </form>
+    </div>
+
+    {% csrf_token %}
+
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+    <br> <br> <br> <br> <br>
+
+    <div class="page-footer">
+      <footer>
+      </footer>
+    </div>
+
+  </body>
+  </html>

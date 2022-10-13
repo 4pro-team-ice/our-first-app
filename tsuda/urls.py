@@ -24,6 +24,7 @@ urlpatterns = [
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),
     path('akikyoshitsu/', views.move_to_akikyoshitsu, name='move_to_akikyoshitsu'),
+    path('akikyoshitsukekka/', views.move_to_akikyoshitsukekka, name='move_to_akikyoshitsukekka'),
     path('syllabus/', views.move_to_syllabus, name='move_to_syllabus'),
     path('map/', views.move_to_map, name='move_to_map'),
     path('eigyoujikan/', views.move_to_eigyoujikan, name='move_to_eigyoujikan'),
@@ -31,6 +32,8 @@ urlpatterns = [
 
     path('syllabuskensaku/', views.move_to_syllabuskensaku, name='move_to_syllabuskensaku'),
     path('syllabuskekka/', views.move_to_syllabuskekka, name='move_to_syllabuskekka'),
+    path('syllabuskamoku/', views.move_to_syllabuskamoku, name='move_to_syllabuskamoku'),
+    path('syllabuswordcloud/', views.move_to_syllabuswordcloud, name='move_to_syllabuswordcloud'),
 
     path('honkan/', views.move_to_honkan, name='move_to_honkan'),
     path('shinkan/', views.move_to_shinkan, name='move_to_shinkan'),
