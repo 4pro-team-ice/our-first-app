@@ -59,6 +59,9 @@ def move_to_jikannwari(request):
 def move_to_akikyoshitsu(request):
     return render(request, 'tsuda/akikyoshitsu.html')
 
+def move_to_akikyoshitsukekka(request):
+    return render(request, 'tsuda/akikyoshitsukekka.html')
+
 def move_to_syllabus(request):
     return render(request, 'tsuda/syllabus.html')
 
@@ -191,3 +194,9 @@ def move_to_syllabuskensaku(request):
 
 def move_to_syllabuskekka(request):
     return render(request, 'tsuda/syllabuskekka.html')
+
+def move_to_syllabuskamoku(request):
+    return render(request, 'tsuda/syllabuskamoku.html')
+
+def move_to_syllabuswordcloud(request):
+    return render(request, 'tsuda/syllabuswordcloud.html')
