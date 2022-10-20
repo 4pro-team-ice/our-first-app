@@ -1,0 +1,30 @@
+{% extends 'tsuda/syllabuskekka.html' %}
+{% block content %}
+    {% for syllabus in syllabuss %}
+        <div class="post">
+            <!-- <div class="date">
+                {{ syllabus.published_date }}
+            </div> -->
+
+            <h2>{{ syllabus.className }}</h2>
+            <br>
+            {% if syllabus.term_1 == "1" %}
+            <span class = "mgr-10"> T1 </span>
+            {% endif %}
+            {% if syllabus.term_2 == "1" %}
+            <span class = "mgr-10"> T2 </span>
+            {% endif %}
+            {% if syllabus.term_3 == "1" %}
+            <span class = "mgr-10"> T3 </span>
+            {% endif %}
+            {% if syllabus.term_4 == "1" %}
+            <span class = "mgr-10"> T4 </span>
+            {% endif %}
+            <br><br>
+            <p>{{ syllabus.day_of_week|linebreaksbr }}</p>
+            <p>{{ syllabus.period_of_time|linebreaksbr }}</p>
+            <p>{{ syllabus.teacher_name|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+    {% now "Y年m月d日 H:i:s" %}
+{% endblock %}

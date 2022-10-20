@@ -26,8 +26,17 @@
 
 <!-- 検索機能 -->
 <form method="post" action="{% url 'move_to_akikyoshitsukekka' %}" method="get"> {% csrf_token %}
+
+  <select name="ターム" required>
+    <option hidden>タームを選択</option>
+    <option>第1ターム</option>
+    <option>第2ターム</option>
+    <option>第3ターム</option>
+    <option>第4ターム</option>
+  </select>
+
   <select name="曜日" required>
-    <option value="">曜日を選択</option>
+    <option hidden>曜日を選択</option>
     <option>月曜日</option>
     <option>火曜日</option>
     <option>水曜日</option>
@@ -36,7 +45,7 @@
   </select>
 
   <select name="時限" required>
-    <option value="">時限を選択</option>
+    <option hidden>時限を選択</option>
     <option>1限</option>
     <option>2限</option>
     <option>3限</option>
@@ -45,7 +54,7 @@
   </select>
 
   <select name="号館">
-    <option value="">号館を選択</option>
+    <option hidden>号館を選択</option>
     <option>本館</option>
     <option>新館</option>
     <option>南校舎</option>

@@ -20,24 +20,25 @@
 
   <h1>シラバス検索</h1>
   <h1></h1><br>
-  <form method="post" action="{% url 'move_to_syllabuskekka' %}" method="get"> {% csrf_token %}
+  <!-- <form method="post" action="{% url 'move_to_syllabuskekka' %}" method="get"> {% csrf_token %} -->
+  <form method="post" action="{% url 'move_to_syllabuskekka' %}"> {% csrf_token %}
     <p><strong><mark>学科</mark></strong></p>
-    <select name="学部/学科">
+    <select name="gakka">
       <option hidden>学科を選択</option>
-      <option>英語英文学科</option>
-      <option>国際関係学科</option>
-      <option>多文化・国際協力学科</option>
-      <option>数学科</option>
-      <option>情報科学科</option>
+      <option value="eibun">英語英文学科</option>
+      <option value="kokkan">国際関係学科</option>
+      <option value="tabunka">多文化・国際協力学科</option>
+      <option value="sugaku">数学科</option>
+      <option value="johou">情報科学科</option>
     </select>
 
     <h1></h1>
     <p><strong><mark>科目名</mark></strong></p>
-    <input type="search" name="search" placeholder="科目名を入力">
+    <input type="search" name="kamoku" placeholder="科目名を入力">
 
     <h1></h1>
     <p><strong><mark>担当教員</mark></strong></p>
-    <input type="search" name="search" placeholder="担当教員を入力">
+    <input type="search" name="kyoin" placeholder="担当教員を入力">
     <h1></h1>
     <p><strong><mark>開講ターム</mark></strong><h6>*複数選択可能</h6></p> <h5></h5>
     <input type="checkbox" name="term" value="1">第1ターム
@@ -47,7 +48,7 @@
 
     <h1></h1>
     <p><strong><mark>曜日</mark></strong></p>
-    <select name="曜日">
+    <select name="yobi">
       <option hidden>曜日を選択</option>
       <option>月</option>
       <option>火</option>
@@ -55,6 +56,18 @@
       <option>木</option>
       <option>金</option>
       <option>土</option>
+    </select>
+
+    <h1></h1>
+    <p><strong><mark>時限</mark></strong></p>
+    <select name="jigen">
+      <option hidden>時限を選択</option>
+      <option>1限</option>
+      <option>2限</option>
+      <option>3限</option>
+      <option>4限</option>
+      <option>5限</option>
+      <option>6限</option>
     </select>
 
     <h1></h1>

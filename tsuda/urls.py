@@ -30,6 +30,7 @@ urlpatterns = [
     path('eigyoujikan/', views.move_to_eigyoujikan, name='move_to_eigyoujikan'),
     path('jihanki/', views.move_to_jihanki, name='move_to_jihanki'),
 
+    path('syllabuskekka/', views.syllabuskekka_list, name='syllabuskekka'),
     path('syllabuskensaku/', views.move_to_syllabuskensaku, name='move_to_syllabuskensaku'),
     path('syllabuskekka/', views.move_to_syllabuskekka, name='move_to_syllabuskekka'),
     path('syllabuskamoku/', views.move_to_syllabuskamoku, name='move_to_syllabuskamoku'),

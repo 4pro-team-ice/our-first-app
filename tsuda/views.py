@@ -8,6 +8,7 @@ from .models import Monday1
 from .forms import JikannwariForm
 from .models import SyllabusComment
 from .forms import SyllabusCommentForm
+from .models import Syllabus
 
 # Create your views here.
 def post_list(request):
@@ -200,3 +201,24 @@ def move_to_syllabuskamoku(request):
 
 def move_to_syllabuswordcloud(request):
     return render(request, 'tsuda/syllabuswordcloud.html')
+
+# ここから
+def syllabuskekka_list(request):
+    # syllabuss = Syllabus.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    # return render(request, 'tsuda/syllabuskekka_list.html', {'syllabuss': syllabuss})
+
+
+
+    if request.POST:
+        kamoku = request.POST["kamoku"]
+        # kyoin = request.POST["kyoin"]
+        # eibun_c = request.POST["eibun_c"]
+
+        # if gakka == eibun_c:
+
+        # syllabuss = Syllabus.objects.filter(className__contains = kamoku , teacher_name__contains = kyoin).all()
+        syllabuss = Syllabus.objects.filter(className__contains = kamoku ).all()
+        syllabus_kekka = 'tsuda/syllabuskekka_list.html'
+
+    return render(request, syllabus_kekka, {'syllabuss': syllabuss})
+    # ここまで
