@@ -19,7 +19,13 @@ urlpatterns = [
     path('syllabus/new/', views.syllabuscomment_new, name='syllabuscomment_new'),
     path('syllabus/post/<int:pk>/edit/', views.syllabuscomment_edit, name='syllabuscomment_edit'),
 
-
+    #シラバス検索用のURL
+    path('syllabuskekka/', views.syllabuskekka_list, name='syllabuskekka'),
+    path('syllabuskensaku/', views.move_to_syllabuskensaku, name='move_to_syllabuskensaku'),
+    path('syllabuskekka/post/<int:pk>/', views.syllabus_detail, name='syllabus_detail'),#科目名を押すと飛ぶ
+    path('syllabuskekka/', views.move_to_syllabuskekka, name='move_to_syllabuskekka'),
+    path('syllabuskamoku/', views.move_to_syllabuskamoku, name='move_to_syllabuskamoku'),
+    path('syllabuswordcloud/', views.move_to_syllabuswordcloud, name='move_to_syllabuswordcloud'),
 
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),
@@ -30,11 +36,7 @@ urlpatterns = [
     path('eigyoujikan/', views.move_to_eigyoujikan, name='move_to_eigyoujikan'),
     path('jihanki/', views.move_to_jihanki, name='move_to_jihanki'),
 
-    path('syllabuskekka/', views.syllabuskekka_list, name='syllabuskekka'),
-    path('syllabuskensaku/', views.move_to_syllabuskensaku, name='move_to_syllabuskensaku'),
-    path('syllabuskekka/', views.move_to_syllabuskekka, name='move_to_syllabuskekka'),
-    path('syllabuskamoku/', views.move_to_syllabuskamoku, name='move_to_syllabuskamoku'),
-    path('syllabuswordcloud/', views.move_to_syllabuswordcloud, name='move_to_syllabuswordcloud'),
+
 
     path('honkan/', views.move_to_honkan, name='move_to_honkan'),
     path('shinkan/', views.move_to_shinkan, name='move_to_shinkan'),

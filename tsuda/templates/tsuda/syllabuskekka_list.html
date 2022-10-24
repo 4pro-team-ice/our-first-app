@@ -6,7 +6,7 @@
                 {{ syllabus.published_date }}
             </div> -->
 
-            <h2>{{ syllabus.className }}</h2>
+            <h2><a href="{% url 'syllabus_detail' pk=syllabus.pk %}">{{ syllabus.className }}</a></h2>
             <br>
             <!-- {% if syllabus.term_1 == "1" %}
             <span class = "mgr-10"> T1 </span>

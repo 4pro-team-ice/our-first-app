@@ -225,3 +225,10 @@ def syllabuskekka_list(request):
 
     return render(request, syllabus_kekka, {'syllabuss': syllabuss})
     # ここまで
+def syllabus_detail(request, pk):
+    syllabus = get_object_or_404(Syllabus, pk=pk)
+    return render(request, 'tsuda/syllabus_detail.html', {'syllabus': syllabus})
+
+def syllabus_wordcloud(request, pk):
+    syllabus = get_object_or_404(Syllabus, pk=pk)
+    return render(request, 'tsuda/syllabus_wordcloud.html', {'syllabus': syllabus})
