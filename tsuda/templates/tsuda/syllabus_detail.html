@@ -1,0 +1,15 @@
+{% extends 'tsuda/syllabuskekka.html' %}
+
+{% block content %}
+    <div class="post">
+      <div class="btn-gradient-radius">
+        <a href="/syllabuswordcloud">ワードクラウド</a>
+      <a href="/syllabus">コメント</a>
+    </div>
+        <h2>{{ syllabus.className }}</h2>
+        <p>T{{ syllabus.term|linebreaksbr }}</p>
+        <p>{{ syllabus.day_of_week|linebreaksbr }}</p>
+        <p>{{ syllabus.period_of_time|linebreaksbr }}限</p>
+        <p>{{ syllabus.teacher_name|linebreaksbr }}</p>
+    </div>
+{% endblock %}
