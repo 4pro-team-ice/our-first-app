@@ -22,15 +22,22 @@
   <h1></h1><br>
   <!-- <form method="post" action="{% url 'move_to_syllabuskekka' %}" method="get"> {% csrf_token %} -->
   <form method="post" action="{% url 'move_to_syllabuskekka' %}"> {% csrf_token %}
-    <p><strong><mark>学科</mark></strong></p>
-    <select name="gakka">
+    <p><strong><mark>学科</mark></strong>
+      <h5>英語英文学科→"英文", 国際関係学科→"国際関係",
+        <h4></h4>多文化・国際協力学科→"多文化", 数学科→"数学",　
+        <h4></h4>情報科学科→"情報"　と入力してください。
+      </h5>
+    </p>
+    <h4></h4>
+    <input type="search" name="gakka" placeholder="学科名を入力">
+    <!-- <select name="gakka">
       <option hidden>学科を選択</option>
       <option value="eibun">英語英文学科</option>
       <option value="kokkan">国際関係学科</option>
       <option value="tabunka">多文化・国際協力学科</option>
       <option value="sugaku">数学科</option>
       <option value="johou">情報科学科</option>
-    </select>
+    </select> -->
 
     <h1></h1>
     <p><strong><mark>科目名</mark></strong></p>
@@ -39,16 +46,31 @@
     <h1></h1>
     <p><strong><mark>担当教員</mark></strong></p>
     <input type="search" name="kyoin" placeholder="担当教員を入力">
+
     <h1></h1>
-    <p><strong><mark>開講ターム</mark></strong><h6>*複数選択可能</h6></p> <h5></h5>
+    <p><strong><mark>開講ターム</mark></strong>
+      <h5>第1ターム→"1", 第2ターム→"2",
+        <h4></h4>第3ターム→"3", 第4ターム→"4"　と<strong>半角英数字</strong>で入力してください。
+      </h5>
+    </p>
+    <h4></h4>
+    <input type="search" name="term" placeholder="開講タームを入力">
+    <!-- <p><strong><mark>開講ターム</mark></strong><h6>*複数選択可能</h6></p> <h5></h5>
     <input type="checkbox" name="term" value="1">第1ターム
     <input type="checkbox" name="term" value="2">第2ターム
     <input type="checkbox" name="term" value="3">第3ターム
-    <input type="checkbox" name="term" value="4">第4ターム
+    <input type="checkbox" name="term" value="4">第4ターム -->
 
     <h1></h1>
-    <p><strong><mark>曜日</mark></strong></p>
-    <select name="yobi">
+    <p><strong><mark>曜日</mark></strong>
+      <h5>月曜日→"月", 火曜日→"火",
+        <h4></h4>水曜日→"水", 木曜日→"木",
+        <h4></h4>金曜日→"金", 土曜日→"土"　と入力してください。
+      </h5>
+    </p>
+    <h4></h4>
+    <input type="search" name="yobi" placeholder="曜日を入力">
+    <!-- <select name="yobi">
       <option hidden>曜日を選択</option>
       <option>月</option>
       <option>火</option>
@@ -56,11 +78,18 @@
       <option>木</option>
       <option>金</option>
       <option>土</option>
-    </select>
+    </select> -->
 
     <h1></h1>
-    <p><strong><mark>時限</mark></strong></p>
-    <select name="jigen">
+    <p><strong><mark>時限</mark></strong>
+      <h5>1限→"1", 2限→"2",
+        <h4></h4>3限→"3", 4限→"4",
+        <h4></h4>5限→"5", 6限→"6"　と<strong>半角英数字</strong>で入力してください。
+      </h5>
+    </p>
+    <h4></h4>
+    <input type="search" name="jigen" placeholder="時限を入力">
+    <!-- <select name="jigen">
       <option hidden>時限を選択</option>
       <option>1限</option>
       <option>2限</option>
@@ -68,7 +97,7 @@
       <option>4限</option>
       <option>5限</option>
       <option>6限</option>
-    </select>
+    </select> -->
 
     <h1></h1>
     <p><strong><mark>キーワード</strong></p>

@@ -8,7 +8,7 @@
 
             <h2>{{ syllabus.className }}</h2>
             <br>
-            {% if syllabus.term_1 == "1" %}
+            <!-- {% if syllabus.term_1 == "1" %}
             <span class = "mgr-10"> T1 </span>
             {% endif %}
             {% if syllabus.term_2 == "1" %}
@@ -20,9 +20,10 @@
             {% if syllabus.term_4 == "1" %}
             <span class = "mgr-10"> T4 </span>
             {% endif %}
-            <br><br>
+            <br><br> -->
+            <p>T{{ syllabus.term|linebreaksbr }}</p>
             <p>{{ syllabus.day_of_week|linebreaksbr }}</p>
-            <p>{{ syllabus.period_of_time|linebreaksbr }}</p>
+            <p>{{ syllabus.period_of_time|linebreaksbr }}限</p>
             <p>{{ syllabus.teacher_name|linebreaksbr }}</p>
         </div>
     {% endfor %}
