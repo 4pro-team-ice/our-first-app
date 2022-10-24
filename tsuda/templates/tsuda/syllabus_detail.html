@@ -3,7 +3,7 @@
 {% block content %}
     <div class="post">
       <div class="btn-gradient-radius">
-        <a href="/syllabuswordcloud">ワードクラウド</a>
+        <a href="{% url 'syllabus_wordcloud' pk=syllabus.pk %}">ワードクラウド</a>
       <a href="/syllabus">コメント</a>
     </div>
         <h2>{{ syllabus.className }}</h2>

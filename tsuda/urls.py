@@ -26,6 +26,8 @@ urlpatterns = [
     path('syllabuskekka/', views.move_to_syllabuskekka, name='move_to_syllabuskekka'),
     path('syllabuskamoku/', views.move_to_syllabuskamoku, name='move_to_syllabuskamoku'),
     path('syllabuswordcloud/', views.move_to_syllabuswordcloud, name='move_to_syllabuswordcloud'),
+    path('syllabuswordcloud/wordcloud/<int:pk>/', views.syllabus_wordcloud, name='syllabus_wordcloud'),#科目名を押すと飛ぶ
+
 
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),
