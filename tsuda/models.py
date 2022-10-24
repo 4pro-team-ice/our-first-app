@@ -325,19 +325,21 @@ class Syllabus(models.Model):
     classID = models.TextField() #授業ID
     className = models.TextField() #授業名
 
-    term_1 = models.TextField() #開講ターム
-    term_2 = models.TextField() #開講ターム
-    term_3 = models.TextField() #開講ターム
-    term_4 = models.TextField() #開講ターム
+    term = models.TextField() #開講ターム
+    # term_1 = models.TextField() #開講ターム
+    # term_2 = models.TextField() #開講ターム
+    # term_3 = models.TextField() #開講ターム
+    # term_4 = models.TextField() #開講ターム
     day_of_week = models.TextField() #曜日
     period_of_time = models.TextField() #時限
     teacher_name = models.TextField() #教員名
     #ここから学科の名前
-    eibun = models.TextField()
-    kokkan = models.TextField()
-    tabunka = models.TextField()
-    sugaku = models.TextField()
-    johou = models.TextField()
+    gakka = models.TextField() #開講ターム
+    # eibun = models.TextField()
+    # kokkan = models.TextField()
+    # tabunka = models.TextField()
+    # sugaku = models.TextField()
+    # johou = models.TextField()
 
     syllabusinfo = models.TextField()
 
