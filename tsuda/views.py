@@ -152,7 +152,15 @@ def monday1_edit(request, pk):
 
 # シラバスコメント用
 def syllabuscomment_list(request):
-    syllabuscomments = SyllabusComment.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
+    # これは何も表示されなくなる
+
+    # k = {'className': request.GET.get("className")}
+    # print(k)
+    if request.POST:
+        className = request.POST["className"]
+    syllabuscomments = SyllabusComment.objects.filter(className__contains = className, published_date__lte=timezone.now()).order_by('published_date').reverse()
+    # syllabuscomments = SyllabusComment.objects.filter(className__contains = "4年ゼミ", published_date__lte=timezone.now()).order_by('published_date').reverse()
+
     return render(request, 'tsuda/syllabuscomment_list.html', {'syllabuscomments': syllabuscomments})
 
 def syllabuscomment_detail(request, pk):
@@ -206,8 +214,6 @@ def move_to_syllabuswordcloud(request):
 def syllabuskekka_list(request):
     # syllabuss = Syllabus.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     # return render(request, 'tsuda/syllabuskekka_list.html', {'syllabuss': syllabuss})
-
-
 
     if request.POST:
         gakka = request.POST["gakka"]

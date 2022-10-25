@@ -8,6 +8,7 @@
             <h2><a href="{% url 'syllabuscomment_detail' pk=syllabuscomment.pk %}">{{ syllabuscomment.className }}</a></h2>
             <table>
               <td>
+                <h3>教員名：{{ syllabuscomment.kyoin_name|linebreaksbr }}</h3>
                 <h3>受講年度：{{ syllabuscomment.juko_year|linebreaksbr }}</h3>
                 <h3>評価方法(テスト or レポート)：{{ syllabuscomment.get_tor_display|linebreaksbr }}</h3>
                 <h3>学習管理システム：{{ syllabuscomment.get_lms_display|linebreaksbr }}</h3>
