@@ -2,10 +2,16 @@
 
 {% block content %}
     <div class="post">
-      <div class="btn-gradient-radius">
+      <div class="btn-gradient-radius1">
         <a href="{% url 'syllabus_wordcloud' pk=syllabus.pk %}">ワードクラウド</a>
-      <a href="/syllabus">コメント</a>
-    </div>
+        <h2></h2>
+        <form action="{% url 'syllabuscomment' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden"  name="className" value ="{{syllabus.className}}">
+          <input type="submit" value="コメント" class="comment">
+        </form>
+        <!-- <a href="/syllabus">コメント</a> -->
+      </div>
         <h2>{{ syllabus.className }}</h2>
         <p>T{{ syllabus.term|linebreaksbr }}</p>
         <p>{{ syllabus.day_of_week|linebreaksbr }}</p>

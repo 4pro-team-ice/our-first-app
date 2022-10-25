@@ -356,6 +356,7 @@ class Syllabus(models.Model):
 
 class SyllabusComment(models.Model): #シラバス用のコメント
     className = models.TextField(verbose_name='授業名') #授業名
+    kyoin_name = models.TextField(verbose_name='教員名') #教員名
     juko_year = models.TextField(verbose_name='受講年度' , blank=True, null=True) #受講年度
 
     class Test_or_Report(): #IDを与える

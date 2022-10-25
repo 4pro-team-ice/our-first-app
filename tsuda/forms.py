@@ -24,4 +24,4 @@ class SyllabusCommentForm(forms.ModelForm):
 
     class Meta:
         model = SyllabusComment
-        fields = ('className', 'juko_year' ,'tor' , 'lms', 'aa' ,'comment')
+        fields = ('className','kyoin_name', 'juko_year' ,'tor' , 'lms', 'aa' ,'comment')
