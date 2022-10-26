@@ -32,7 +32,10 @@ urlpatterns = [
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),
     path('akikyoshitsu/', views.move_to_akikyoshitsu, name='move_to_akikyoshitsu'),
+    path('akikyoshitsukekka/', views.akikyoshitsu_list, name='akikyoshitsukekka'),
     path('akikyoshitsukekka/', views.move_to_akikyoshitsukekka, name='move_to_akikyoshitsukekka'),
+    
+
     path('syllabus/', views.move_to_syllabus, name='move_to_syllabus'),
     path('map/', views.move_to_map, name='move_to_map'),
     path('eigyoujikan/', views.move_to_eigyoujikan, name='move_to_eigyoujikan'),

@@ -86,6 +86,7 @@ class Monday1(models.Model):
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
+
 class Monday2(models.Model):
     className = models.TextField()
     class_number = models.TextField()

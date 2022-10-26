@@ -9,6 +9,7 @@ from .forms import JikannwariForm
 from .models import SyllabusComment
 from .forms import SyllabusCommentForm
 from .models import Syllabus
+from .models import Classroom
 
 # Create your views here.
 def post_list(request):
@@ -235,3 +236,16 @@ def syllabus_detail(request, pk):
 def syllabus_wordcloud(request, pk):
     syllabus = get_object_or_404(Syllabus, pk=pk)
     return render(request, 'tsuda/syllabus_wordcloud.html', {'syllabus': syllabus})
+
+
+def akikyoshitsu_list(request):
+
+    if request.POST:
+        term = request.POST["term"]
+        yobi = request.POST["yobi"]
+        jigen = request.POST["jigen"]
+        gokan = request.POST["gokan"]
+
+        # classrooms = Classroom.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+        classrooms = Classroom.objects.exclude(className = 'a').filter(period_of_time = '1') # ここはできてないよ〜
+    return render(request, 'tsuda/akikyoshitsu_list.html', {'classrooms': classrooms})
