@@ -1,11 +1,13 @@
 {% extends 'tsuda/syllabus.html' %}
 {% block content %}
+<a class="btn btn-default" href="{{request.META.HTTP_REFERER}}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
+
     {% for syllabuscomment in syllabuscomments %}
         <div class="post">
             <div class="date">
                 {{ post.published_date }}
             </div>
-            <h2><a href="{% url 'syllabuscomment_detail' pk=syllabuscomment.pk %}">{{ syllabuscomment.className }}</a></h2>
+            <h2>{{ syllabuscomment.className }}</h2>
             <table>
               <td>
                 <h3>教員名：{{ syllabuscomment.kyoin_name|linebreaksbr }}</h3>
