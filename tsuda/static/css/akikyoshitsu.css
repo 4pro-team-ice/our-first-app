@@ -136,3 +136,7 @@ img{
 .btn-gradient-radius a:hover {
   background:#d3d3d3;
 }
+
+mark {
+  background-color: #ffdab9;
+}
