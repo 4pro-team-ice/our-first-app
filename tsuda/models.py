@@ -20,15 +20,14 @@ class Post(models.Model):
 class Classroom(models.Model):
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
-    classID = models.TextField()
-    #title = models.CharField(max_length=200)
-    #text = models.TextField()
-    #created_date = models.DateTimeField(default=timezone.now)
-    #published_date = models.DateTimeField(blank=True, null=True)
-
-    class_number = models.TextField()
-    building_number = models.TextField()
-
+    day_of_week = models.TextField(verbose_name='曜日')
+    period_of_time = models.TextField(verbose_name='時限')
+    className = models.TextField(verbose_name='授業名')
+    term = models.TextField(verbose_name='ターム')
+    class_number = models.TextField(verbose_name='教室名')
+    # building_number = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
