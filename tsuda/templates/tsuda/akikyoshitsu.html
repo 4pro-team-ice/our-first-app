@@ -21,7 +21,7 @@
 <h2>空き教室検索</h2>
 <h1></h1><br>
 <!-- 検索機能 -->
-<form method="post" action="{% url 'move_to_akikyoshitsukekka' %}" method="get"> {% csrf_token %}
+<form method="post" action="{% url 'move_to_akikyoshitsukekka' %}"> {% csrf_token %}
 
   <p><strong><mark>ターム</mark></strong>
     <h5>第1ターム→"1", 第2ターム→"2",
@@ -59,7 +59,7 @@
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="gakka" placeholder="号館を入力">
+  <input type="search" name="gokan" placeholder="号館を入力">
 
   <!-- <select name="ターム" required>
     <option hidden>タームを選択</option>
