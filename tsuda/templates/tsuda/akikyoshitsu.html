@@ -24,32 +24,38 @@
 <form method="post" action="{% url 'move_to_akikyoshitsukekka' %}"> {% csrf_token %}
 
   <p><strong><mark>ターム</mark></strong>
+    <strong><span class ="moji">*必須</span></strong> <!-- ここ -->
+
     <h5>第1ターム→"1", 第2ターム→"2",
       <h4></h4>第3ターム→"3", 第4ターム→"4"　と<strong>半角英数字</strong>で入力してください。
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="term" placeholder="タームを入力">
+  <input type="search" name="term" placeholder="タームを入力" required> <!-- ここ -->
 
   <h1></h1>
   <p><strong><mark>曜日</mark></strong>
+    <strong><span class ="moji">*必須</span></strong> <!-- ここ -->
+
     <h5>月曜日→"月", 火曜日→"火",
       <h4></h4>水曜日→"水", 木曜日→"木",
       <h4></h4>金曜日→"金", 土曜日→"土"　と入力してください。
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="yobi" placeholder="曜日を入力">
+  <input type="search" name="yobi" placeholder="曜日を入力" required> <!-- ここ -->
 
   <h1></h1>
   <p><strong><mark>時限</mark></strong>
+    <strong><span class ="moji">*必須</span></strong> <!-- ここ -->
+
     <h5>1限→"1", 2限→"2",
       <h4></h4>3限→"3", 4限→"4",
       <h4></h4>5限→"5", 6限→"6"　と<strong>半角英数字</strong>で入力してください。
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="jigen" placeholder="時限を入力">
+  <input type="search" name="jigen" placeholder="時限を入力" required> <!-- ここ -->
 
   <h1></h1>
   <p><strong><mark>号館</mark></strong>

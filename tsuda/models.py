@@ -31,7 +31,6 @@ class Classroom(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
-# ここから
 class Allclass(models.Model):
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
@@ -41,7 +40,6 @@ class Allclass(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
-# ここまで
 
 class Monday1(models.Model):
     #inquiry_id = models.IntegerField(verbose_name='day')
