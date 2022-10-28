@@ -138,5 +138,12 @@ img{
 }
 
 mark {
-  background-color: #ffdab9;
+  background-color: #A7F1FF;
 }
+
+/* ここから */
+.moji {
+  color:#aa0000;
+  font-size: 12px;
+}
+/* ここまで */
