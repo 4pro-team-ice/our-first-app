@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="post">
-  <a class="btn btn-default" href="/syllabus"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
+  <a class="btn btn-default" href="/syllabuskensaku"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
   <br><h1></h1>
   {% if user.is_authenticated %}
   <a class="btn btn-default" href="{% url 'syllabuscomment_edit' pk=syllabuscomment.pk %}"><span class="glyphicon glyphicon-pencil"></span>　編集</a>

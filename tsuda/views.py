@@ -10,6 +10,7 @@ from .models import SyllabusComment
 from .forms import SyllabusCommentForm
 from .models import Syllabus
 from .models import Classroom
+from .models import Allclass
 
 # Create your views here.
 def post_list(request):
@@ -208,7 +209,6 @@ def move_to_syllabuskamoku(request):
 def move_to_syllabuswordcloud(request):
     return render(request, 'tsuda/syllabuswordcloud.html')
 
-# ここから
 def syllabuskekka_list(request):
     # syllabuss = Syllabus.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     # return render(request, 'tsuda/syllabuskekka_list.html', {'syllabuss': syllabuss})
@@ -228,7 +228,7 @@ def syllabuskekka_list(request):
         syllabus_kekka = 'tsuda/syllabuskekka_list.html'
 
     return render(request, syllabus_kekka, {'syllabuss': syllabuss})
-    # ここまで
+
 def syllabus_detail(request, pk):
     syllabus = get_object_or_404(Syllabus, pk=pk)
     return render(request, 'tsuda/syllabus_detail.html', {'syllabus': syllabus})
@@ -237,7 +237,7 @@ def syllabus_wordcloud(request, pk):
     syllabus = get_object_or_404(Syllabus, pk=pk)
     return render(request, 'tsuda/syllabus_wordcloud.html', {'syllabus': syllabus})
 
-
+# ここから
 def akikyoshitsu_list(request):
 
     if request.POST:
@@ -247,5 +247,11 @@ def akikyoshitsu_list(request):
         gokan = request.POST["gokan"]
 
         # classrooms = Classroom.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-        classrooms = Classroom.objects.exclude(className = 'a').filter(period_of_time = '1') # ここはできてないよ〜
-    return render(request, 'tsuda/akikyoshitsu_list.html', {'classrooms': classrooms})
+        classrooms = Classroom.objects.filter(term__contains = term, day_of_week__contains = yobi, period_of_time__contains = jigen)
+        # print(classrooms)
+        for allclass in classrooms:
+            # allclass = Allclass.objects.all().exclude(class_number = '1111') # これは表示できる
+            allclass = Allclass.objects.all().exclude(class_number = Classroom.class_number) # これだと全部表示されちゃう
+    return render(request, 'tsuda/akikyoshitsu_list.html', {'allclass': allclass})
+    # return render(request, 'tsuda/akikyoshitsu_list.html', {'classrooms': classrooms})
+# ここまで

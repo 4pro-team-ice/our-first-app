@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Post
 from .models import Classroom
+from .models import Allclass # ここ
 from .models import Syllabus
 from .models import SyllabusComment
 
@@ -40,6 +41,7 @@ from .models import Friday6
 
 admin.site.register(Post)
 admin.site.register(Classroom)
+admin.site.register(Allclass)# ここ
 admin.site.register(Monday1)
 admin.site.register(Monday2)
 admin.site.register(Monday3)
