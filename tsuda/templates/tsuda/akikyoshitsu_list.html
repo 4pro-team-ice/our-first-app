@@ -1,9 +1,13 @@
+<!-- ここから -->
 {% extends 'tsuda/akikyoshitsukekka.html' %}
 {% block content %}
-    {% for classroom in classrooms %}
+   {% for allclass in allclass %}
         <div class="post">
-            <h2>{{ classroom.class_number }}</h2>
+          <h2>{{ allclass.class_number }}</h2>
+          <!-- <p>{{ classrooms.day_of_week|linebreaksbr }}</p> -->
+            <!-- <h2>{{ allclass.class_number }}</h2> -->
         </div>
     {% endfor %}
     {% now "Y年m月d日 H:i:s" %}
 {% endblock %}
+<!-- ここまで -->

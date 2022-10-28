@@ -3,12 +3,14 @@
 {% block content %}
     <div class="post">
       <div class="btn-gradient-radius1">
-        <a href="{% url 'syllabus_wordcloud' pk=syllabus.pk %}">ワードクラウド</a>
+        <a href="{% url 'syllabus_wordcloud' pk=syllabus.pk %}">授業の内容が一目でわかる！</a>
+        <h5>シラバスに多く使われているキーワードを、視覚的に表示・把握できる機能</h5>
         <h2></h2>
         <form action="{% url 'syllabuscomment' %}" method="POST">
           {% csrf_token %}
           <input type="hidden"  name="className" value ="{{syllabus.className}}">
-          <input type="submit" value="コメント" class="comment">
+          <input type="submit" value="授業のリアルを知ろう！" class="comment">
+          <h5>授業に対する過去の受講生からのコメントを表示</h5>
         </form>
         <!-- <a href="/syllabus">コメント</a> -->
       </div>

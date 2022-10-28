@@ -31,6 +31,18 @@ class Classroom(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
+# ここから
+class Allclass(models.Model):
+    #授業ID
+    #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
+    class_number = models.TextField(verbose_name='教室名')
+    # building_number = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+    def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
+        return self.class_number
+# ここまで
+
 class Monday1(models.Model):
     #inquiry_id = models.IntegerField(verbose_name='day')
     class Day_Of_Week(): #曜日にIDを与える
