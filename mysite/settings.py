@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tsuda.apps.TsudaConfig' #変更点
+    'tsuda.apps.TsudaConfig', #変更点
+    'import_export',  # 追加
 ]
 
 MIDDLEWARE = [

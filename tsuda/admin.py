@@ -35,12 +35,16 @@ from .models import Friday3
 from .models import Friday4
 from .models import Friday5
 from .models import Friday6
+from import_export import resources  # 追加
+from import_export.admin import ImportExportModelAdmin  # 追加
+from import_export.fields import Field # 追加
+
 
 
 
 
 admin.site.register(Post)
-admin.site.register(Classroom)
+# admin.site.register(Classroom)
 admin.site.register(Allclass)
 admin.site.register(Monday1)
 admin.site.register(Monday2)
@@ -77,3 +81,27 @@ admin.site.register(Friday6)
 
 admin.site.register(Syllabus)
 admin.site.register(SyllabusComment)
+
+class ClassroomResource(resources.ModelResource):
+   # field名とcsvの列名が異なる場合はここで指定する。
+   # ここでは、postalcode / postalCode、category / categoriesと微妙に異なる。
+   day_of_week = Field(attribute='day_of_week', column_name='day_of_week')
+   period_of_time = Field(attribute='period_of_time', column_name='period_of_time')
+   className = Field(attribute='className', column_name='className')
+   term = Field(attribute='term', column_name='term')
+   class_number = Field(attribute='class_number', column_name='class_number')
+   # django-import-exportのModel設定
+   class Meta:
+       model = Classroom
+       # Controls if the import should skip unchanged records. Default value is False
+       skip_unchanged = True
+       use_bulk = True
+
+@admin.register(Classroom)
+# ImportExportModelAdminを継承したAdminクラスを作成する
+class ClassroomAdmin(ImportExportModelAdmin):
+   # ordering = ['id']
+   # list_display = ('id', 'day_of_week', 'period_of_time', 'className', 'term', 'class_number')
+   list_display = ('day_of_week', 'period_of_time', 'className', 'term', 'class_number')
+   # resource_classにModelResourceを継承したクラス設定
+   resource_class = ClassroomResource

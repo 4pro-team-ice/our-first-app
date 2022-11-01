@@ -31,6 +31,11 @@ class Classroom(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
+    class Meta:
+       db_table = 'akikyoushitu'
+       verbose_name = '空き教室'
+       verbose_name_plural = '空き教室リスト'
+
 class Allclass(models.Model):
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
