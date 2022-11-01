@@ -12,6 +12,19 @@ from .models import Syllabus
 from .models import Classroom
 from .models import Allclass
 
+#ワードクラウド用ライブラリ
+from janome.tokenizer import Tokenizer
+from PIL import Image
+import numpy as np
+import os
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+import matplotlib,cv2
+import matplotlib.pyplot as plt
+import sys
+sys.path.append('../')
+
+
+
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -235,6 +248,53 @@ def syllabus_detail(request, pk):
 
 def syllabus_wordcloud(request, pk):
     syllabus = get_object_or_404(Syllabus, pk=pk)
+    text = syllabus.syllabusinfo
+    # 形態素解析（tokenize）をインスタンスにする
+    t = Tokenizer()
+
+    # 単語リスト
+    noun = []
+    others = []
+
+    # 文章を形態素（token）に分ける
+    for token in t.tokenize(text):
+        pos = token.part_of_speech.split(',')  # 品詞情報抜き出し
+        if '名詞' == pos[0]:                    # 品詞名が名詞なら
+            noun.append(token.base_form)      # nounに追加
+        elif 'その他' == pos[0]:
+            others.append(token.base_form)
+
+    #非表示単語の設定
+    stop_words = ['教科書','こと','よう','テキスト','講義','なか','ため','授業','の','ところ','目標','学習','学び','これら']
+
+    #画像データの読み込み
+    FILE_PATH = './tsuda/static/img/donuts.png'
+    donuts_coloring = np.array(Image.open(FILE_PATH))
+
+    # wordcloudの準備
+    wc = WordCloud(background_color="white",  # 背景色
+               max_words=100,             # 最大表示単語数
+               max_font_size=100,         # 最大フォントサイズ
+               random_state=42,           # 乱数設定
+               # font_path=r"RictyDiminished-Regular.ttf",
+               font_path="/Library/Fonts//Arial Unicode.ttf",
+               mask=donuts_coloring,
+               colormap='tab10',
+               stopwords=stop_words) # フォント
+
+    text = " ".join(noun)
+
+    # 文章をword cloudに読み込ませる
+    wc.generate(text)
+    wc.to_file('./tsuda/static/img/wordcloud.png')
+
+    # matplotlib.use('agg')
+    #
+    # plt.figure(figsize=(18,10))
+    # plt.imshow(wc, interpolation="bilinear")
+    # plt.axis("off")
+    # plt.show()
+
     return render(request, 'tsuda/syllabus_wordcloud.html', {'syllabus': syllabus})
 
 # ここから
