@@ -57,7 +57,8 @@
       </h5>
     </p>
     <h4></h4>
-    <input type="search" name="term" placeholder="開講タームを入力">
+    <!-- <input type="search" name="term" placeholder="開講タームを入力"> -->
+    <input type="text" name="term" placeholder="タームを入力" pattern="^[0-9]+$"> <!-- 半角数字のみ -->
     <!-- <p><strong><mark>開講ターム</mark></strong><h6>*複数選択可能</h6></p> <h5></h5>
     <input type="checkbox" name="term" value="1">第1ターム
     <input type="checkbox" name="term" value="2">第2ターム
@@ -72,7 +73,8 @@
       </h5>
     </p>
     <h4></h4>
-    <input type="search" name="yobi" placeholder="曜日を入力">
+    <!-- <input type="search" name="yobi" placeholder="曜日を入力"> -->
+    <input type="search" name="yobi" placeholder="曜日を入力" maxlength="1"> <!-- ここ -->
     <!-- <select name="yobi">
       <option hidden>曜日を選択</option>
       <option>月</option>
@@ -91,7 +93,8 @@
       </h5>
     </p>
     <h4></h4>
-    <input type="search" name="jigen" placeholder="時限を入力">
+    <!-- <input type="search" name="jigen" placeholder="時限を入力"> -->
+    <input type="text" name="jigen" placeholder="時限を入力" pattern="^[0-9]+$"> <!-- 半角数字のみ -->
     <!-- <select name="jigen">
       <option hidden>時限を選択</option>
       <option>1限</option>
@@ -102,9 +105,9 @@
       <option>6限</option>
     </select> -->
 
-    <h1></h1>
+    <!-- <h1></h1>
     <p><strong><mark>キーワード</strong></p>
-      <input type="search" name="search" placeholder="キーワードを入力">
+      <input type="search" name="search" placeholder="キーワードを入力"> -->
 
       <h1></h1>
       <div class="btn-gradient-radius">
