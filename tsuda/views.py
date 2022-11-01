@@ -311,7 +311,7 @@ def akikyoshitsu_list(request):
                                                period_of_time__contains = jigen).values("class_number")
         # for allclass in classrooms:
             # allclass = Allclass.objects.all().exclude(class_number = '1111') # これは表示できる
-        allclass = Allclass.objects.filter(class_number__startswith=gokan).all().exclude(class_number__in = classrooms) # これだと全部表示されちゃう
+        allclass = Allclass.objects.filter(published_date__lte=timezone.now(), class_number__startswith=gokan).all().exclude(class_number__in = classrooms).order_by('published_date') # これだと全部表示されちゃう
     return render(request, 'tsuda/akikyoshitsu_list.html', {'allclass': allclass})
     # return render(request, 'tsuda/akikyoshitsu_list.html', {'classrooms': classrooms})
 

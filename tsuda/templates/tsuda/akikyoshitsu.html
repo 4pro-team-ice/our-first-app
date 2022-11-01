@@ -31,7 +31,8 @@
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="term" placeholder="タームを入力" required> <!-- ここ -->
+  <!-- <input type="search" name="term" placeholder="タームを入力" required>--> <!-- ここ -->
+  <input type="text" name="term" placeholder="タームを入力" pattern="^[0-9]+$" required> <!-- 半角数字のみ -->
 
   <h1></h1>
   <p><strong><mark>曜日</mark></strong>
@@ -43,7 +44,7 @@
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="yobi" placeholder="曜日を入力" required> <!-- ここ -->
+  <input type="search" name="yobi" placeholder="曜日を入力" maxlength="1" required> <!-- ここ -->
 
   <h1></h1>
   <p><strong><mark>時限</mark></strong>
@@ -55,7 +56,8 @@
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="jigen" placeholder="時限を入力" required> <!-- ここ -->
+  <!-- <input type="search" name="jigen" placeholder="時限を入力" required>--> <!-- ここ -->
+  <input type="text" name="jigen" placeholder="時限を入力" pattern="^[0-9]+$" required> <!-- 半角数字のみ -->
 
   <h1></h1>
   <p><strong><mark>号館</mark></strong>
@@ -65,7 +67,7 @@
     </h5>
   </p>
   <h4></h4>
-  <input type="search" name="gokan" placeholder="号館を入力">
+  <input type="search" name="gokan" placeholder="号館を入力" maxlength="1" pattern="^[\u4E00-\u9FFFa-zA-Z0-9]+$">
 
   <!-- <select name="ターム" required>
     <option hidden>タームを選択</option>
