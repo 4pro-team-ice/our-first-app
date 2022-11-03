@@ -350,7 +350,7 @@ def Login(request):
             return HttpResponse("ログインIDまたはパスワードが間違っています")
     # GET
     else:
-        return render(request, 'Tsuda/base.html')
+        return render(request, 'tsuda/base.html')
 
 
 #ログアウト
@@ -365,7 +365,7 @@ def Logout(request):
 @login_required
 def home(request):
     params = {"UserID":request.user,}
-    return render(request, "Tsuda/menupage.html",context=params)
+    return render(request, "tsuda/menupage.html",context=params)
 
 
 #新規登録
@@ -383,7 +383,7 @@ class  AccountRegistration(TemplateView):
         self.params["account_form"] = AccountForm()
         self.params["add_account_form"] = AddAccountForm()
         self.params["AccountCreate"] = False
-        return render(request,"Tsuda/register.html",context=self.params)
+        return render(request,"tsuda/register.html",context=self.params)
 
     #Post処理
     def post(self,request):
@@ -416,4 +416,4 @@ class  AccountRegistration(TemplateView):
             # フォームが有効でない場合
             print(self.params["account_form"].errors)
 
-        return render(request,"Tsuda/register.html",context=self.params)
+        return render(request,"tsuda/register.html",context=self.params)
