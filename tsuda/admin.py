@@ -35,12 +35,12 @@ from .models import Friday3
 from .models import Friday4
 from .models import Friday5
 from .models import Friday6
-from import_export import resources  # 追加
-from import_export.admin import ImportExportModelAdmin  # 追加
-from import_export.fields import Field # 追加
 
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+from import_export.fields import Field
 
-
+from .models import Account
 
 
 admin.site.register(Post)
@@ -77,10 +77,10 @@ admin.site.register(Friday4)
 admin.site.register(Friday5)
 admin.site.register(Friday6)
 
-
-
 admin.site.register(Syllabus)
 admin.site.register(SyllabusComment)
+
+admin.site.register(Account)
 
 class ClassroomResource(resources.ModelResource):
    # field名とcsvの列名が異なる場合はここで指定する。

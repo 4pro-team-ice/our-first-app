@@ -15,19 +15,36 @@
     </div>
   </div>
   <h1> </h1>
+  <h1>ログイン画面</h1>
+  <div class="reg">
+  <form method="post" action="{% url 'Login' %}">
+    {% csrf_token %}
 
-  <div class="login">
+    <table class="reg_form">
+    <tr>
+    <td><label for="userid">ユーザーID:</label></td>
+    <td><input type="text" name="userid"></td>
+    <td><label for="password">パスワード：</label></td>
+    <td><input type="password" name="password"></td>
+    </tr>
+    </table>
+
+    <input type="submit" class="btn" value="Login">
+ </form>
+</div>
+   <p class="message">アカウントをお持ちですか？：
+   <a href="{% url 'register' %}">アカウントを作成</a>
+   </p>
+  <!-- <div class="login">
     <div class="text-align: center">
-      <!-- <pre> -->
         <h3>利用者ID</h3>
-        <h3>パスワード</h3>
-      <!-- </pre> -->
-    </div>
+        <h3>パスワード</h3> -->
+    <!-- </div>
 
     <div class="btn-flat-simple">
       <a href="{% url 'move_to_menupage' %}">ログイン</a>
     </div>
-  </div>
+  </div> -->
   <!-- {% block content %}
   {% endblock %} -->
   <div class="page-footer">
