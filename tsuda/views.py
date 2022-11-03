@@ -12,6 +12,14 @@ from .models import Syllabus
 from .models import Classroom
 from .models import Allclass
 
+from django.views.generic import TemplateView #テンプレートタグ
+from .forms import AccountForm, AddAccountForm #ユーザーアカウントフォーム
+# ログイン・ログアウト処理に利用
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+
 #ワードクラウド用ライブラリ
 from janome.tokenizer import Tokenizer
 from PIL import Image
@@ -22,6 +30,8 @@ import matplotlib,cv2
 import matplotlib.pyplot as plt
 import sys
 sys.path.append('../')
+
+
 
 
 
@@ -268,7 +278,9 @@ def syllabus_wordcloud(request, pk):
     stop_words = ['教科書','こと','よう','テキスト','講義','なか','ため','授業','の','ところ','目標','学習','学び','これら']
 
     #画像データの読み込み
-    FILE_PATH = './tsuda/static/img/donuts.png'
+    FILE_PATH = './tsuda/static/img/donuts.png' # ローカル用の画像パス
+    # FILE_PATH = './nakano2022seminar.pythonanywhere.com/static/img/donuts.png' # pythonanywhere上の画像パス
+
     donuts_coloring = np.array(Image.open(FILE_PATH))
 
     # wordcloudの準備
@@ -276,8 +288,8 @@ def syllabus_wordcloud(request, pk):
                max_words=100,             # 最大表示単語数
                max_font_size=100,         # 最大フォントサイズ
                random_state=42,           # 乱数設定
-               # font_path=r"RictyDiminished-Regular.ttf",
-               font_path="/Library/Fonts//Arial Unicode.ttf",
+               font_path="/Library/Fonts//Arial Unicode.ttf", # ローカル用のフォントパス
+               # font_path=r'/usr/share/fonts/truetype/fonts-japanese-gothic.ttf' # pythonanywhere上のフォントパス
                mask=donuts_coloring,
                colormap='tab10',
                stopwords=stop_words) # フォント
@@ -286,18 +298,13 @@ def syllabus_wordcloud(request, pk):
 
     # 文章をword cloudに読み込ませる
     wc.generate(text)
-    wc.to_file('./tsuda/static/img/wordcloud.png')
+    wc.to_file('./tsuda/static/img/wordcloud.png') # ローカル上の画像パス
+    # wc.to_file('./nakano2022seminar.pythonanywhere.com/static/img/wordcloud.png') # pythonanywhere上の画像パス
 
-    # matplotlib.use('agg')
-    #
-    # plt.figure(figsize=(18,10))
-    # plt.imshow(wc, interpolation="bilinear")
-    # plt.axis("off")
-    # plt.show()
 
     return render(request, 'tsuda/syllabus_wordcloud.html', {'syllabus': syllabus})
 
-# ここから
+
 def akikyoshitsu_list(request):
 
     if request.POST:
@@ -315,4 +322,98 @@ def akikyoshitsu_list(request):
     return render(request, 'tsuda/akikyoshitsu_list.html', {'allclass': allclass})
     # return render(request, 'tsuda/akikyoshitsu_list.html', {'classrooms': classrooms})
 
-# ここまで
+
+#ログイン
+def Login(request):
+    # POST
+    if request.method == 'POST':
+        # フォーム入力のユーザーID・パスワード取得
+        ID = request.POST.get('userid')
+        Pass = request.POST.get('password')
+
+        # Djangoの認証機能
+        user = authenticate(username=ID, password=Pass)
+
+        # ユーザー認証
+        if user:
+            #ユーザーアクティベート判定
+            if user.is_active:
+                # ログイン
+                login(request,user)
+                # ホームページ遷移
+                return HttpResponseRedirect(reverse('move_to_menupage'))
+            else:
+                # アカウント利用不可
+                return HttpResponse("アカウントが有効ではありません")
+        # ユーザー認証失敗
+        else:
+            return HttpResponse("ログインIDまたはパスワードが間違っています")
+    # GET
+    else:
+        return render(request, 'Tsuda/base.html')
+
+
+#ログアウト
+@login_required
+def Logout(request):
+    logout(request)
+    # ログイン画面遷移
+    return HttpResponseRedirect(reverse('Login'))
+
+
+#ホーム
+@login_required
+def home(request):
+    params = {"UserID":request.user,}
+    return render(request, "Tsuda/menupage.html",context=params)
+
+
+#新規登録
+class  AccountRegistration(TemplateView):
+
+    def __init__(self):
+        self.params = {
+        "AccountCreate":False,
+        "account_form": AccountForm(),
+        "add_account_form":AddAccountForm(),
+        }
+
+    #Get処理
+    def get(self,request):
+        self.params["account_form"] = AccountForm()
+        self.params["add_account_form"] = AddAccountForm()
+        self.params["AccountCreate"] = False
+        return render(request,"Tsuda/register.html",context=self.params)
+
+    #Post処理
+    def post(self,request):
+        self.params["account_form"] = AccountForm(data=request.POST)
+        self.params["add_account_form"] = AddAccountForm(data=request.POST)
+
+        #フォーム入力の有効検証
+        if self.params["account_form"].is_valid() and self.params["add_account_form"].is_valid():
+            # アカウント情報をDB保存
+            account = self.params["account_form"].save()
+            # パスワードをハッシュ化
+            account.set_password(account.password)
+            # ハッシュ化パスワード更新
+            account.save()
+
+            # 下記追加情報
+            # 下記操作のため、コミットなし
+            add_account = self.params["add_account_form"].save(commit=False)
+            # AccountForm & AddAccountForm 1vs1 紐付け
+            add_account.user = account
+
+
+            # モデル保存
+            add_account.save()
+
+            # アカウント作成情報更新
+            self.params["AccountCreate"] = True
+
+        else:
+            # フォームが有効でない場合
+            print(self.params["account_form"].errors)
+
+        return render(request,"Tsuda/register.html",context=self.params)

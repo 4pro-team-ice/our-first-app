@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+# ユーザー認証
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
@@ -441,3 +443,16 @@ class SyllabusComment(models.Model): #シラバス用のコメント
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
+
+# ユーザーアカウントのモデルクラス
+class Account(models.Model):
+
+    # ユーザー認証のインスタンス(1vs1関係)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    # 追加フィールド
+    gakka = models.CharField(max_length=10)
+    gakunen = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.user.username
