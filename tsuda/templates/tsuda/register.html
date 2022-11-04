@@ -4,32 +4,57 @@
 
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>Tsuda App</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"><!--これを入れると左上よりになる-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href='{% static "css/register.css" %}'/>
 </head>
 
 <body>
+  <div class="page-header">
+    <div style="text-align: center">
+      <h1>T S U D A　　　A P P</h1> <!--ページタイトル-->
+    </div>
+  </div>
+  <h1> </h1>
 <h1>新規登録</h1>
 
  {% if AccountCreate %}
    <h1>登録完了!</h1>
-   <a href="{% url 'Login' %}">ログインページへ</a>
+   <h1><br></h1>
+   <div class="btn-gradient-radius" style="text-align: center">
+     <a href="{% url 'Login' %}">ログインページへ</a>
+   </div>
+   <h1><br><br></h1>
  {% else %}
-   <div class="reg">
+ <a class="btn btn-default" href="/"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
+   <div class="login">
    <table class="reg_form">
+     <!-- <p class="reg_form"> -->
 
    <form enctype="multipart/form-data" method="post">
    {% csrf_token %}
-   {{ account_form.as_table }}
-   {{ add_account_form.as_table }}
+   <h1> </h1>
+   {{ account_form.as_p}}
+   {{ add_account_form.as_p }}
    <tr><td></td><td>
-   <input class="btn" type="submit" name="" value="登録">
+     <h1> </h1>
+   <input class="btn-flat-simple" type="submit" name="" value="登録">
    </td></tr>
    </form>
+   <!-- </p> -->
 
    </table>
    </div>
  {% endif %}
-
+ <h1> </h1>
+ <div class="page-footer">
+   <footer>
+     <!-- <div style="text-align: center">
+       <img src=" static ../../static/img/Tsudauni.jpeg">
+     </div> -->
+   </footer>
+ </div>
 </body>
 </html>
