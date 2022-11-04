@@ -32,7 +32,7 @@ class SyllabusCommentForm(forms.ModelForm):
 
 class AccountForm(forms.ModelForm):
     # パスワード入力：非表示対応
-    password = forms.CharField(widget=forms.PasswordInput(),label="パスワード")
+    password = forms.CharField(widget=forms.PasswordInput(),label="パスワード　　 ")
 
     class Meta():
         # ユーザー認証
@@ -40,11 +40,11 @@ class AccountForm(forms.ModelForm):
         # フィールド指定
         fields = ('username','email','password')
         # フィールド名指定
-        labels = {'username':"ユーザーID",'email':"メール"}
+        labels = {'username':"ユーザーID　　 ",'email':"メールアドレス "}
 
 class AddAccountForm(forms.ModelForm):
     class Meta():
         # モデルクラスを指定
         model = Account
         fields = ('gakka','gakunen',)
-        labels = {'gakka':"学科",'gakunen':"学年",}
+        labels = {'gakka':"学科　　　　　 ",'gakunen':"学年　　　　　 ",}

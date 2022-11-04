@@ -13,17 +13,17 @@
     <div style="text-align: center">
       <h1>T S U D A　　　A P P</h1> <!--ページタイトル-->
     </div>
-    <!-- <div class="btn-gradient-radius" style="text-align: right">
-    <a href="/">LOGIN PAGE</a>
-  </div> -->
+    <div class="btn-gradient-radius" style="text-align: right">
+    <a href="{% url 'Logout' %}">ログアウトはこちら</a>
+  </div>
   </div>
 
   <h1>{{ user }}さんようこそ！！</h1>
 
-<p> ログアウトは
+<!-- <p> ログアウトは
 <a href="{% url 'Logout' %}">こちら</a>
-</p>
-<h1><br></h1>
+</p> -->
+<h1></h1>
   <!-- 試しに書いてみた -->
   <div class="button03">
     <a href="{% url 'move_to_jikannwari' %}">時間割</a>

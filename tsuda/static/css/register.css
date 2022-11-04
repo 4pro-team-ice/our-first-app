@@ -1,3 +1,31 @@
+/*新規登録用*/
+h1 a, h2 a {
+    color: #C25100;
+    font-family: monospace;
+}
+body {
+    padding-left: 0px;
+}
+.page-header {
+    background-color: #B3424A;
+    margin-top: 0;
+    padding: 20px 20px 20px 20px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
 h1{
   text-align: center;
 }
@@ -14,7 +42,11 @@ table.reg_form{
   padding-left:20px;
 }
 
-.btn{
+/* p.reg_form{
+  text-align: center;
+} */
+
+/* .btn{
     color: #fff;
     background-color: #000033;
     font-size: 1.0em;
@@ -25,4 +57,68 @@ table.reg_form{
 .btn:hover{
   color: #fff;
   background: #000099;
+} */
+
+
+.btn-flat-simple{
+  height: 50px; /*高さ*/
+  width: 120px; /*幅*/
+
+  /*ボタン上下左右中央寄せ*/
+  display: flex;
+  justify-content: center; /*ボタンの中の文字の位置*/
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em 2em; /*内側の余白を調整*/
+
+  text-decoration: none; /*下線*/
+  color: #000000;
+  border: 1px solid #000000;
+  background: #fdfeff;
+  font-weight: bold;
+  transition: .4s; /*状態変化にかかる時間*/
+}
+
+.btn-flat-simple:hover {
+  background: #c9c9c4;
+  color: #000000;
+}
+
+.login {
+  border: 3px solid #B3424A;
+  width: 600px;
+  height: 450px;
+  background-color: #fdede4;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.page-footer{
+  position: absolute;
+  width: 100%;
+  height: auto !important;
+  height: 100%;
+  min-height: 20%; /*フッター枠の長さ*/
+  background-color: #B3424A;
+  padding: 30px 0;
+}
+
+
+.btn-gradient-radius a {
+  font-size: 20pt;
+  /* width: 10em;
+  height: 3em; */
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color:#000000;
+  background:#ffe4e1;
+  transition: .4s;
+}
+
+.btn-gradient-radius a:hover {
+  background:#d3d3d3;
 }
