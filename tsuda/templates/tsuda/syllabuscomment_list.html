@@ -10,6 +10,7 @@
             <h2>{{ syllabuscomment.className }}</h2>
             <table>
               <td>
+                <h3>投稿者：{{ syllabuscomment.author|linebreaksbr }}</h3>
                 <h3>教員名：{{ syllabuscomment.kyoin_name|linebreaksbr }}</h3>
                 <h3>受講年度：{{ syllabuscomment.juko_year|linebreaksbr }}</h3>
                 <h3>評価方法(テスト or レポート)：{{ syllabuscomment.get_tor_display|linebreaksbr }}</h3>
