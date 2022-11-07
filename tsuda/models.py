@@ -372,8 +372,7 @@ class Syllabus(models.Model):
 
 
 class SyllabusComment(models.Model): #シラバス用のコメント
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    # userName = models.ForeignKey(User, verbose_name = "投稿者" , on_delete=models.CASCADE, null=True,blank=True) #投稿者
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True,blank=True) #投稿者
     className = models.TextField(verbose_name='授業名') #授業名
     kyoin_name = models.TextField(verbose_name='教員名') #教員名
     juko_year = models.TextField(verbose_name='受講年度' , blank=True, null=True) #受講年度
