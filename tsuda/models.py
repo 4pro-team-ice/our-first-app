@@ -95,7 +95,7 @@ class Monday1(models.Model):
     class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
     profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -437,7 +437,7 @@ class SyllabusComment(models.Model): #シラバス用のコメント
     comment = models.TextField(verbose_name='コメント' , blank=True, null=True) #自由にコメント
 
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
