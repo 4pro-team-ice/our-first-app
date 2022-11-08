@@ -44,7 +44,7 @@ class Allclass(models.Model):
     class_number = models.TextField(verbose_name='教室名')
     # building_number = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(default=timezone.now)
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
@@ -95,7 +95,7 @@ class Monday1(models.Model):
     class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
     profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -372,6 +372,7 @@ class Syllabus(models.Model):
 
 
 class SyllabusComment(models.Model): #シラバス用のコメント
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     className = models.TextField(verbose_name='授業名') #授業名
     kyoin_name = models.TextField(verbose_name='教員名') #教員名
     juko_year = models.TextField(verbose_name='受講年度' , blank=True, null=True) #受講年度
@@ -435,7 +436,7 @@ class SyllabusComment(models.Model): #シラバス用のコメント
     comment = models.TextField(verbose_name='コメント' , blank=True, null=True) #自由にコメント
 
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
