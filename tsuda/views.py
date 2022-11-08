@@ -198,7 +198,7 @@ def syllabuscomment_new(request):
         form = SyllabusCommentForm(request.POST)
         if form.is_valid():
             syllabuscomment = form.save(commit=False)
-            syllabuscomment.author = request.user
+            syllabuscomment.author_comment = request.user
             syllabuscomment.published_date = timezone.now()
             syllabuscomment.save()
             return redirect('syllabuscomment_detail', pk=syllabuscomment.pk)
@@ -212,7 +212,7 @@ def syllabuscomment_edit(request, pk):
         form = SyllabusCommentForm(request.POST, instance=syllabuscomment)
         if form.is_valid():
             syllabuscomment = form.save(commit=False)
-            syllabuscomment.author = request.user
+            syllabuscomment.author_comment = request.user
             syllabuscomment.published_date = timezone.now()
             syllabuscomment.save()
             return redirect('syllabuscomment_detail', pk=syllabuscomment.pk)
