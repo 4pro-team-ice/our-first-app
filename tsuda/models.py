@@ -50,6 +50,8 @@ class Allclass(models.Model):
 
 class Monday1(models.Model):
     #inquiry_id = models.IntegerField(verbose_name='day')
+    author_jikanwari = models.TextField(blank=True, null=True, verbose_name='作成者')
+
     class Day_Of_Week(): #曜日にIDを与える
         Monday = '0'
         Tuesday = '1'

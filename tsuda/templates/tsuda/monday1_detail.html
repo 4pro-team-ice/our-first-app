@@ -2,7 +2,13 @@
 
 {% block content %}
     <div class="post">
-      <a class="btn btn-default" href="/jikannwari"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
+      <form action="{% url 'move_to_jikannwari' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden"  name="user" value ="{{monday1.author_jikanwari}}">
+        <input type="submit" value="戻る" class="jikanwari">
+        <!-- <a class="btn btn-default" href="/jikannwari"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a> -->
+      </form>
+
       <h3>{{monday1.get_dow_display}} /
       {{monday1.get_pot_display}}</h3>
         <!-- {% if post.published_date %}
