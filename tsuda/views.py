@@ -130,12 +130,16 @@ def move_to_shokudo(request):
 #時間割登録用
 def monday1_list(request):
     # monday1s = Monday1.objects.all()
-    first = Monday1.objects.filter(pot = 0).order_by('dow')[0:5]
-    second = Monday1.objects.filter(pot = 1).order_by('dow')[0:5]
-    third = Monday1.objects.filter(pot = 2).order_by('dow')[0:5]
-    fourth = Monday1.objects.filter(pot = 3).order_by('dow')[0:5]
-    fifth = Monday1.objects.filter(pot = 4).order_by('dow')[0:5]
-    sixth = Monday1.objects.filter(pot = 5).order_by('dow')[0:5]
+    if request.POST:
+        user = request.POST["user"]
+        print(user)
+
+    first = Monday1.objects.filter(author_jikanwari = user, pot = 0).order_by('dow')[0:5]
+    second = Monday1.objects.filter(author_jikanwari = user,pot = 1).order_by('dow')[0:5]
+    third = Monday1.objects.filter(author_jikanwari = user,pot = 2).order_by('dow')[0:5]
+    fourth = Monday1.objects.filter(author_jikanwari = user,pot = 3).order_by('dow')[0:5]
+    fifth = Monday1.objects.filter(author_jikanwari = user,pot = 4).order_by('dow')[0:5]
+    sixth = Monday1.objects.filter(author_jikanwari = user,pot = 5).order_by('dow')[0:5]
     params = {'data1': first , 'data2': second , 'data3': third ,
               'data4': fourth , 'data5':fifth , 'data6':sixth}
     return render(request, 'tsuda/monday1_list.html', params)
@@ -153,7 +157,7 @@ def monday1_new(request):
         form = JikannwariForm(request.POST)
         if form.is_valid():
             monday1 = form.save(commit=False)
-            monday1.author = request.user
+            # monday1.author = request.user
             monday1.published_date = timezone.now()
             monday1.save()
             return redirect('monday1_detail', pk=monday1.pk)
@@ -167,7 +171,7 @@ def monday1_edit(request, pk):
         form = JikannwariForm(request.POST, instance=monday1)
         if form.is_valid():
             monday1 = form.save(commit=False)
-            monday1.author = request.user
+            # monday1.author = request.user
             monday1.published_date = timezone.now()
             monday1.save()
             return redirect('monday1_detail', pk=monday1.pk)
@@ -411,6 +415,46 @@ class  AccountRegistration(TemplateView):
 
             # アカウント作成情報更新
             self.params["AccountCreate"] = True
+
+            if request.method == "POST":
+                if "toroku" in request.POST:
+
+                    first = []
+                    for i in range(5):
+                        obj = Monday1(dow=i,pot=0)
+                        # first.append(obj)????
+                    # Monday1.objects.bulk_create(obj)
+
+                    Monday1.objects.create(author_jikanwari = account.username, pot = 0, dow = 0)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 1)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 2)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 3)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 4)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 0)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 1)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 2)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 3)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 4)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 0)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 1)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 2)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 3)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 4)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 0)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 1)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 2)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 3)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 4)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 0)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 1)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 2)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 3)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 4)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 0)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 1)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 2)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 3)
+                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 4)
 
         else:
             # フォームが有効でない場合

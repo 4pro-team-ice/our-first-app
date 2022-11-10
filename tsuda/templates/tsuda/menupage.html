@@ -25,9 +25,15 @@
 </p> -->
 <h1></h1>
   <!-- 試しに書いてみた -->
-  <div class="button03">
+  <form action="{% url 'move_to_jikannwari' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden"  name="user" value ="{{user}}">
+    <input type="submit" value="時間割" class="button03">
+  </form>
+  <!-- <div class="button03">
     <a href="{% url 'move_to_jikannwari' %}">時間割</a>
-  </div>
+  </div> -->
+
 
   <!--<form action="{% url 'move_to_jikannwari' %}" method="post">
         {% csrf_token %}
