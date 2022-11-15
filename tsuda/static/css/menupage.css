@@ -123,35 +123,48 @@ h1, h2, h3, h4 {
 }
 
 
-.button03 input{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding: 1em 2em;
-  width: 300px;
-  color: #333333; /* 文字の色 */
+/*時間割(submit型)用のボタン*/
+
+input[type="submit"]{
   font-size: 18px;
-  font-weight: 700;
-  border: 2px solid #e08899; /* ボタンと枠の色 */
+  display: flex;
+  border: 2px solid #e08899;
+  /* outline: 0; */
+  /* margin: 0 auto; */
+  cursor: pointer;
+  color: #333333;
+  background: #ffffff;
+  font-weight: bold;
+  height: 3.5em;
+  line-height: 3.0em;
+  width: 100%;
+  padding: 0 2.5em 0 0.8em;
 }
 
-.button03 input::after {
-  content: '';
+.button_wrap{
+  color: #fff;
+  position: relative;
+  line-height: 2.8em;
+  width: 300px;
+  margin:0 auto;
+}
+.button_wrap::after{
+  content: "";
   width: 5px;
   height: 5px;
-  border-top: 3px solid #e08899; /* ボタンの矢印の上部 */
-  border-right: 3px solid #e08899; /* ボタンの矢印の下部 */
+  border-top: 3px solid #e08899;
+  border-right: 3px solid #e08899;
   transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 38px;
+  margin: auto;
 }
-
-.button03 input:hover {
-  color: #333333; /* ボタン選択後の文字の色 */
-  text-decoration: none;
-  background-color: #f2a0a1; /* ボタン選択後のボタンの中身の色 */
+.button_wrap:hover::after{
+  border-top: 3px solid #333333;
+  border-right: 3px solid #333333;
 }
-
-.button03 input:hover::after { /* 矢印 */
-  border-top: 3px solid #333333; /* ボタン選択後の矢印の上部 */
-  border-right: 3px solid #333333; /* ボタン選択後の矢印の下部 */
+input[type="submit"]:hover {
+  background: #f2a0a1;
 }
