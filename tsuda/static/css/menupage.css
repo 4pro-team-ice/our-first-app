@@ -187,7 +187,7 @@ input[type="submit"]:hover {
 
   .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
       color: #ffffff;
-      font-size: 24pt;
+      font-size: 20pt;
       text-decoration: none;
   }
 
@@ -197,7 +197,7 @@ input[type="submit"]:hover {
 
   h1, h2, h3, h4 {
       font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-      font-size: 20pt;
+      font-size: 18pt;
   }
 
   .date {
