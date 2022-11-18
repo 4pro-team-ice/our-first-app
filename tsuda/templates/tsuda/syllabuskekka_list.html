@@ -21,10 +21,10 @@
             <span class = "mgr-10"> T4 </span>
             {% endif %}
             <br><br> -->
-            <p>T{{ syllabus.term|linebreaksbr }}</p>
-            <p>{{ syllabus.day_of_week|linebreaksbr }}</p>
-            <p>{{ syllabus.period_of_time|linebreaksbr }}限</p>
-            <p>{{ syllabus.teacher_name|linebreaksbr }}</p>
+            <p><span style="white-space:nowrap;">T{{ syllabus.term|linebreaksbr }}</span></p>
+            <p><span style="white-space:nowrap;">{{ syllabus.day_of_week|linebreaksbr }}</span></p>
+            <p><span style="white-space:nowrap;">{{ syllabus.period_of_time|linebreaksbr }}限</span></p>
+            <p><span style="white-space:nowrap;">{{ syllabus.teacher_name|linebreaksbr }}</span></p>
         </div>
     {% endfor %}
     {% now "Y年m月d日 H:i:s" %}
