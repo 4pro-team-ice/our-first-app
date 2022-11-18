@@ -10,13 +10,13 @@
             <h2>{{ syllabuscomment.className }}</h2>
             <table>
               <td>
-                <h3>投稿者：{{ syllabuscomment.author_comment|linebreaksbr }}</h3>
-                <h3>教員名：{{ syllabuscomment.kyoin_name|linebreaksbr }}</h3>
-                <h3>受講年度：{{ syllabuscomment.juko_year|linebreaksbr }}</h3>
-                <h3>評価方法(テスト or レポート)：{{ syllabuscomment.get_tor_display|linebreaksbr }}</h3>
-                <h3>学習管理システム：{{ syllabuscomment.get_lms_display|linebreaksbr }}</h3>
-                <h3>課題の量(5段階)：{{ syllabuscomment.get_aa_display|linebreaksbr }}</h3>
-                <h3>コメント(感想)：{{ syllabuscomment.comment|linebreaksbr }}</h3>
+                <h3><span style="white-space:nowrap;">投稿者：{{ syllabuscomment.author_comment|linebreaksbr }}</span></h3>
+                <h3><span style="white-space:nowrap;">教員名：{{ syllabuscomment.kyoin_name|linebreaksbr }}</span></h3>
+                <h3><span style="white-space:nowrap;">受講年度：{{ syllabuscomment.juko_year|linebreaksbr }}</span></h3>
+                <h3><span style="white-space:nowrap;">評価方法(テスト or レポート)：{{ syllabuscomment.get_tor_display|linebreaksbr }}</span></h3>
+                <h3><span style="white-space:nowrap;">学習管理システム：{{ syllabuscomment.get_lms_display|linebreaksbr }}</span></h3>
+                <h3><span style="white-space:nowrap;">課題の量(5段階)：{{ syllabuscomment.get_aa_display|linebreaksbr }}</span></h3>
+                <h3><span style="white-space:nowrap;">コメント(感想)：{{ syllabuscomment.comment|linebreaksbr }}</span></h3>
               </td>
             </table>
         </div>

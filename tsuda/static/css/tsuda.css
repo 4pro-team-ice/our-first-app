@@ -14,7 +14,7 @@ body {
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 36px;
     text-decoration: none;
 }
 
@@ -41,7 +41,7 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 26px;
     margin-right: 20px;
 }
 
@@ -137,7 +137,7 @@ input[type="submit"]:hover {
 
   .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
       color: #ffffff;
-      font-size: 20pt;
+      font-size: 28px;
       text-decoration: none;
   }
 
@@ -147,6 +147,7 @@ input[type="submit"]:hover {
 
   h1, h2, h3, h4 {
       font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+      font-size: 24px;
   }
 
   .date {
@@ -164,7 +165,7 @@ input[type="submit"]:hover {
   .top-menu, .top-menu:hover, .top-menu:visited {
       color: #ffffff;
       float: right;
-      font-size: 26pt;
+      font-size: 26px;
       margin-right: 20px;
   }
 
@@ -230,7 +231,7 @@ input[type="submit"]:hover {
 
   .login {
     border: 2px solid #7a4171;
-    width: 400px;
+    width: 350px;
     height: 250px;
     background-color: #fdede4;
     /* display: flex; */

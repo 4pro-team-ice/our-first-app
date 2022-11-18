@@ -21,11 +21,13 @@
     </div>
   </div>
 
-  <h1>シラバス検索</h1>
+  <h1>　シラバス検索</h1>
   {% if user.is_authenticated %}
-   <a href="{% url 'syllabuscomment_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>　授業のリアルを教えよう！</a>
+  <div class = "comment_marker">
+    <a href="{% url 'syllabuscomment_new' %}"><span class="glyphicon glyphicon-plus"></span>　授業のリアルを教えよう！</a>
+  </div>
   {% endif %}
-    <h1><br></h1>
+    <h1><br><br><br></h1>
   <!-- <form method="post" action="{% url 'move_to_syllabuskekka' %}" method="get"> {% csrf_token %} -->
   <form method="post" action="{% url 'move_to_syllabuskekka' %}"> {% csrf_token %}
     <p><strong><mark>学科</mark></strong>
