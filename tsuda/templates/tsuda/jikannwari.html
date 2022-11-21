@@ -36,40 +36,41 @@
   <!--ここから-->
   <!--4つのボタン-->
 
-
-
+<div style="display:inline-flex" class = "example">
 
   <form action="{% url 'monday1_list' %}" method="POST">
     {% csrf_token %}
     <input type="hidden"  name="user" value ="{{user}}">
-    <div class="button_wrap">
-      <input type="submit" value="    T1"/>
-    </div>
+    <!-- <div class="button_wrap"> -->
+      <input type="submit" value="　T1　" class="button_wrap"/>
+    <!-- </div> -->
   </form>
 
   <form action="{% url 'monday2_list' %}" method="POST">
     {% csrf_token %}
     <input type="hidden"  name="user" value ="{{user}}">
-    <div class="button_wrap">
-      <input type="submit" value="    T2"/>
-    </div>
+    <!-- <div class="button_wrap"> -->
+      <input type="submit" value="　T2　" class="button_wrap"/>
+    <!-- </div> -->
   </form>
 
   <form action="{% url 'monday3_list' %}" method="POST">
     {% csrf_token %}
     <input type="hidden"  name="user" value ="{{user}}">
-    <div class="button_wrap">
-      <input type="submit" value="    T3"/>
-    </div>
+    <!-- <div class="button_wrap"> -->
+      <input type="submit" value="　T3　" class="button_wrap"/>
+    <!-- </div> -->
   </form>
 
   <form action="{% url 'monday4_list' %}" method="POST">
     {% csrf_token %}
     <input type="hidden"  name="user" value ="{{user}}">
-    <div class="button_wrap">
-      <input type="submit" value="    T4"/>
-    </div>
+    <!-- <div class="button_wrap"> -->
+      <input type="submit" value="　T4　" class="button_wrap"/>
+    <!-- </div> -->
   </form>
+
+</div>
 
 
 
