@@ -34,6 +34,9 @@ h1, h2, h3, h4 {
     background: #FFF;
     border: solid 3px #6091d3;/*線*/
     border-radius: 10px;/*角の丸み*/
+    float: right;
+    margin-right: 20px;
+
 }
 
 table {

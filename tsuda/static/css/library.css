@@ -14,7 +14,7 @@ body {
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 36px;
     text-decoration: none;
 }
 
@@ -41,7 +41,7 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 26px;
     margin-right: 20px;
 }
 
@@ -123,4 +123,135 @@ img{
 
 .btn-gradient-radius a:hover {
   background:#d3d3d3;
+}
+
+
+/*スマホ用*/
+@media screen and (max-width:480px) {
+  h1 a, h2 a {
+      color: #C25100;
+      font-family: monospace;
+  }
+  body {
+      padding-left: 0px;
+  }
+  .page-header {
+      background-color: #B3424A;
+      margin-top: 0;
+      padding: 20px 20px 20px 20px;
+  }
+
+  .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+      color: #ffffff;
+      font-size: 28px;
+      text-decoration: none;
+  }
+
+  .content {
+      margin-left: 40px;
+  }
+
+  h1, h2, h3, h4 {
+      font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+      font-size: 24px;
+  }
+
+  .date {
+      color: #828282;
+  }
+
+  .save {
+      float: right;
+  }
+
+  .post-form textarea, .post-form input {
+      width: 100%;
+  }
+
+  .top-menu, .top-menu:hover, .top-menu:visited {
+      color: #ffffff;
+      float: right;
+      font-size: 26px;
+      margin-right: 20px;
+  }
+
+  .post {
+      margin-bottom: 70px;
+  }
+
+  .post h2 a, .post h2 a:visited {
+      color: #000000;
+  }
+
+  .image {
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    position: absolute;
+  }
+
+  img{
+    /*画像の幅を100%に設定*/
+    width:100%;
+  }
+
+  /** ボタン追加 **/
+
+  .button03 a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 300px;
+    color: #333333; /* 文字の色 */
+    font-size: 18px;
+    font-weight: 700;
+    border: 2px solid #e08899; /* ボタンと枠の色 */
+  }
+
+  .button03 a::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #e08899; /* ボタンの矢印の上部 */
+    border-right: 3px solid #e08899; /* ボタンの矢印の下部 */
+    transform: rotate(45deg);
+  }
+
+  .button03 a:hover {
+    color: #333333; /* ボタン選択後の文字の色 */
+    text-decoration: none;
+    background-color: #f2a0a1; /* ボタン選択後のボタンの中身の色 */
+  }
+
+  .button03 a:hover::after { /* 矢印 */
+    border-top: 3px solid #333333; /* ボタン選択後の矢印の上部 */
+    border-right: 3px solid #333333; /* ボタン選択後の矢印の下部 */
+  }
+
+  .page-footer{
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    height: 10%;
+    min-height: 20%; /*フッター枠の長さ*/
+    background-color: #B3424A;
+    padding: 30px 0;
+  }
+  .btn-gradient-radius a {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color:#000000;
+    background:#ffe4e1;
+    transition: .4s;
+  }
+
+  .btn-gradient-radius a:hover {
+    background:#d3d3d3;
+  }
 }
