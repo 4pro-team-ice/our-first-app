@@ -191,6 +191,28 @@ th {
 }
 
 
+.button_wrap {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  border: none;
+  text-decoration: none;
+  color:#000000;
+  background:#ffe4e1;
+  transition: .4s;
+}
+
+.button_wrap:hover {
+  background:#d3d3d3;
+}
+
+.example input:first-of-type{
+  margin-right: 50px;
+}
+.example{
+  text-align: center;
+}
+
 /*スマホ用*/
 @media screen and (max-width:480px) {
   h1 a, h2 a {
@@ -383,5 +405,27 @@ th {
 
   .btn-gradient-radius a:hover {
     background:#d3d3d3;
+  }
+
+  .button_wrap {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 25px;
+    border: none;
+    text-decoration: none;
+    color:#000000;
+    background:#ffe4e1;
+    transition: .4s;
+  }
+
+  .button_wrap:hover {
+    background:#d3d3d3;
+  }
+
+  .example input:first-of-type{
+    margin-right: 50px;
+  }
+  .example{
+    text-align: center;
   }
 }
