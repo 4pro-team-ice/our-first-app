@@ -4,24 +4,24 @@
     <div class="post">
       <form action="{% url 'move_to_jikannwari' %}" method="POST">
         {% csrf_token %}
-        <input type="hidden"  name="user" value ="{{monday1.author_jikanwari}}">
+        <input type="hidden"  name="user" value ="{{monday2.author_jikanwari_2}}">
         <input type="submit" value="戻る" class="jikanwari">
         <!-- <a class="btn btn-default" href="/jikannwari"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a> -->
       </form>
 
-      <h1>T1</h1>
-      <h3>{{monday1.get_dow_display}} /
-      {{monday1.get_pot_display}}</h3>
+      <h1>T2</h1>
+      <h3>{{monday2.get_dow_display}} /
+      {{monday2.get_pot_display}}</h3>
         <!-- {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
             </div>
         {% endif %} -->
         {% if user.is_authenticated %}
-          <a class="btn btn-default" href="{% url 'monday1_edit' pk=monday1.pk %}"><span class="glyphicon glyphicon-pencil"></span> 編集</a>
+          <a class="btn btn-default" href="{% url 'monday2_edit' pk=monday2.pk %}"><span class="glyphicon glyphicon-pencil"></span> 編集</a>
         {% endif %}
-        <h3>{{ monday1.className }}</h3>
-        <p>{{ monday1.class_number|linebreaksbr }}</p>
-        <p>{{ monday1.profName|linebreaksbr }}</p>
+        <h3>{{ monday2.className }}</h3>
+        <p>{{ monday2.class_number|linebreaksbr }}</p>
+        <p>{{ monday2.profName|linebreaksbr }}</p>
     </div>
 {% endblock %}
