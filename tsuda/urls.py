@@ -13,10 +13,25 @@ urlpatterns = [
     # path("home",views.home,name="home"),
 
     #時間割登録用のURL
-    path('jikannwari/', views.monday1_list, name='monday1'),
-    path('jikannwari/post/<int:pk>/', views.monday1_detail, name='monday1_detail'),
-    path('jikannwari/new/', views.monday1_new, name='monday1_new'),
-    path('jikannwari/post/<int:pk>/edit/', views.monday1_edit, name='monday1_edit'),
+    path('jikannwari/term1', views.monday1_list, name='monday1_list'),
+    path('jikannwari/term1/post/<int:pk>/', views.monday1_detail, name='monday1_detail'),
+    path('jikannwari/term1/new/', views.monday1_new, name='monday1_new'),
+    path('jikannwari/term1/post/<int:pk>/edit/', views.monday1_edit, name='monday1_edit'),
+
+    path('jikannwari/term2', views.monday2_list, name='monday2_list'),
+    path('jikannwari/term2/post/<int:pk>/', views.monday2_detail, name='monday2_detail'),
+    path('jikannwari/term2/new/', views.monday2_new, name='monday2_new'),
+    path('jikannwari/term2/post/<int:pk>/edit/', views.monday2_edit, name='monday2_edit'),
+
+    path('jikannwari/term3', views.monday3_list, name='monday3_list'),
+    path('jikannwari/term3/post/<int:pk>/', views.monday3_detail, name='monday3_detail'),
+    path('jikannwari/term3/new/', views.monday3_new, name='monday3_new'),
+    path('jikannwari/term3/post/<int:pk>/edit/', views.monday3_edit, name='monday3_edit'),
+
+    path('jikannwari/term4', views.monday4_list, name='monday4_list'),
+    path('jikannwari/term4/post/<int:pk>/', views.monday4_detail, name='monday4_detail'),
+    path('jikannwari/term4/new/', views.monday4_new, name='monday4_new'),
+    path('jikannwari/term4/post/<int:pk>/edit/', views.monday4_edit, name='monday4_edit'),
 
     #シラバスコメント用のURL
     path('syllabus/', views.syllabuscomment_list, name='syllabuscomment'),
@@ -36,6 +51,7 @@ urlpatterns = [
 
     path('menupage/', views.move_to_menupage, name='move_to_menupage'),
     path('jikannwari/', views.move_to_jikannwari, name='move_to_jikannwari'),
+    path('jikannwari/term/', views.move_to_jikannwari_term, name='move_to_jikannwari_term'),
     path('akikyoshitsu/', views.move_to_akikyoshitsu, name='move_to_akikyoshitsu'),
     path('akikyoshitsukekka/', views.akikyoshitsu_list, name='akikyoshitsukekka'),
     path('akikyoshitsukekka/', views.move_to_akikyoshitsukekka, name='move_to_akikyoshitsukekka'),

@@ -107,27 +107,174 @@ class Monday1(models.Model):
         return self.className
 
 class Monday2(models.Model):
-    className = models.TextField()
-    class_number = models.TextField()
-    profName = models.TextField()
+    author_jikanwari_2 = models.TextField(blank=True, null=True, verbose_name='作成者')
 
-    def __str__(self):
+    class Day_Of_Week(): #曜日にIDを与える
+        Monday = '0'
+        Tuesday = '1'
+        Wednesday = '2'
+        Thursday = '3'
+        Friday = '4'
+
+    DAY_OF_WEEK_CHOICES = ( #IDと曜日の表示名を紐付け
+        (Day_Of_Week.Monday, '月'),
+        (Day_Of_Week.Tuesday, '火'),
+        (Day_Of_Week.Wednesday, '水'),
+        (Day_Of_Week.Thursday, '木'),
+        (Day_Of_Week.Friday, '金')
+    )
+
+    dow = models.CharField(verbose_name='曜日',
+                            choices=DAY_OF_WEEK_CHOICES,
+                            max_length=50)
+
+    class Period_Of_Time(): #時限にIDを与える
+        First = '0'
+        Second = '1'
+        Third = '2'
+        Fourth = '3'
+        Fifth = '4'
+        Sixth = '5'
+
+    PERIOD_OF_TIME_CHOICES = ( #IDと時限の表示名を紐付け
+        (Period_Of_Time.First, '1限'),
+        (Period_Of_Time.Second, '2限'),
+        (Period_Of_Time.Third, '3限'),
+        (Period_Of_Time.Fourth, '4限'),
+        (Period_Of_Time.Fifth, '5限'),
+        (Period_Of_Time.Sixth, '6限'),
+    )
+
+    pot = models.CharField(verbose_name='時限',
+                            choices=PERIOD_OF_TIME_CHOICES,
+                            max_length=50)
+    #授業ID
+    #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
+    className = models.TextField(verbose_name='授業名' , default = '-----', blank=True, null=True)
+    class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
+    profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(default=timezone.now)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
 
 class Monday3(models.Model):
-    className = models.TextField()
-    class_number = models.TextField()
-    profName = models.TextField()
+    author_jikanwari_3 = models.TextField(blank=True, null=True, verbose_name='作成者')
 
-    def __str__(self):
+    class Day_Of_Week(): #曜日にIDを与える
+        Monday = '0'
+        Tuesday = '1'
+        Wednesday = '2'
+        Thursday = '3'
+        Friday = '4'
+
+    DAY_OF_WEEK_CHOICES = ( #IDと曜日の表示名を紐付け
+        (Day_Of_Week.Monday, '月'),
+        (Day_Of_Week.Tuesday, '火'),
+        (Day_Of_Week.Wednesday, '水'),
+        (Day_Of_Week.Thursday, '木'),
+        (Day_Of_Week.Friday, '金')
+    )
+
+    dow = models.CharField(verbose_name='曜日',
+                            choices=DAY_OF_WEEK_CHOICES,
+                            max_length=50)
+
+    class Period_Of_Time(): #時限にIDを与える
+        First = '0'
+        Second = '1'
+        Third = '2'
+        Fourth = '3'
+        Fifth = '4'
+        Sixth = '5'
+
+    PERIOD_OF_TIME_CHOICES = ( #IDと時限の表示名を紐付け
+        (Period_Of_Time.First, '1限'),
+        (Period_Of_Time.Second, '2限'),
+        (Period_Of_Time.Third, '3限'),
+        (Period_Of_Time.Fourth, '4限'),
+        (Period_Of_Time.Fifth, '5限'),
+        (Period_Of_Time.Sixth, '6限'),
+    )
+
+    pot = models.CharField(verbose_name='時限',
+                            choices=PERIOD_OF_TIME_CHOICES,
+                            max_length=50)
+    #授業ID
+    #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
+    className = models.TextField(verbose_name='授業名' , default = '-----', blank=True, null=True)
+    class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
+    profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(default=timezone.now)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
 
 class Monday4(models.Model):
-    className = models.TextField()
-    class_number = models.TextField()
-    profName = models.TextField()
+    author_jikanwari_4 = models.TextField(blank=True, null=True, verbose_name='作成者')
 
-    def __str__(self):
+    class Day_Of_Week(): #曜日にIDを与える
+        Monday = '0'
+        Tuesday = '1'
+        Wednesday = '2'
+        Thursday = '3'
+        Friday = '4'
+
+    DAY_OF_WEEK_CHOICES = ( #IDと曜日の表示名を紐付け
+        (Day_Of_Week.Monday, '月'),
+        (Day_Of_Week.Tuesday, '火'),
+        (Day_Of_Week.Wednesday, '水'),
+        (Day_Of_Week.Thursday, '木'),
+        (Day_Of_Week.Friday, '金')
+    )
+
+    dow = models.CharField(verbose_name='曜日',
+                            choices=DAY_OF_WEEK_CHOICES,
+                            max_length=50)
+
+    class Period_Of_Time(): #時限にIDを与える
+        First = '0'
+        Second = '1'
+        Third = '2'
+        Fourth = '3'
+        Fifth = '4'
+        Sixth = '5'
+
+    PERIOD_OF_TIME_CHOICES = ( #IDと時限の表示名を紐付け
+        (Period_Of_Time.First, '1限'),
+        (Period_Of_Time.Second, '2限'),
+        (Period_Of_Time.Third, '3限'),
+        (Period_Of_Time.Fourth, '4限'),
+        (Period_Of_Time.Fifth, '5限'),
+        (Period_Of_Time.Sixth, '6限'),
+    )
+
+    pot = models.CharField(verbose_name='時限',
+                            choices=PERIOD_OF_TIME_CHOICES,
+                            max_length=50)
+    #授業ID
+    #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
+    className = models.TextField(verbose_name='授業名' , default = '-----', blank=True, null=True)
+    class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
+    profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(default=timezone.now)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
 
 class Monday5(models.Model):
