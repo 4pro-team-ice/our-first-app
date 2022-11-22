@@ -26,6 +26,10 @@ h1, h2, h3, h4 {
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
+.under {
+  background: linear-gradient(transparent 70%, #e08899 70%);
+}
+
 .date {
     color: #828282;
 }
@@ -155,6 +159,10 @@ img{
   h1, h2, h3, h4 {
       font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
       font-size: 24px;
+  }
+
+  .under {
+    background: linear-gradient(transparent 70%, #e08899 70%);
   }
 
   .date {
