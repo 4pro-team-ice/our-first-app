@@ -22,13 +22,13 @@ body {
     margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
-.letter h5 {
+h4 {
   font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-  font-size: 24px;
+  font-size: 20px;
 }
 
 table {
@@ -180,14 +180,14 @@ th, td {
       margin-left: 40px;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3 {
       font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
       font-size: 24px;
   }
 
-  .letter h5 {
+  h4 {
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-    font-size: 22px;
+    font-size: 16px;
   }
 
   table {
