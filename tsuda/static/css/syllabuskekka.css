@@ -26,6 +26,11 @@ h1, h2, h3, h4 {
     font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
+.letter h5 {
+  font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  font-size: 24px;
+}
+
 table {
   border-collapse: collapse;
   text-align: center;
@@ -180,6 +185,11 @@ th, td {
       font-size: 24px;
   }
 
+  .letter h5 {
+    font-family: "monospace","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+    font-size: 22px;
+  }
+
   table {
     border-collapse: collapse;
     text-align: center;
@@ -198,7 +208,7 @@ th, td {
   .under {
     background: linear-gradient(transparent 70%, #ffdab9 70%);
   }
-  
+
   .date {
       color: #828282;
   }

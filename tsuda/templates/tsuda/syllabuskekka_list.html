@@ -1,5 +1,8 @@
 {% extends 'tsuda/syllabuskekka.html' %}
 {% block content %}
+<h5 class = "letter">※科目名をクリックすると、授業内容を直感的に把握できる機能(ワードクラウド)や、
+    授業の感想共有機能を見ることができます。</h5>
+<br>
     {% for syllabus in syllabuss %}
         <div class="post">
             <!-- <div class="date">
@@ -27,5 +30,4 @@
             <p><span style="white-space:nowrap;">{{ syllabus.teacher_name|linebreaksbr }}</span></p>
         </div>
     {% endfor %}
-    {% now "Y年m月d日 H:i:s" %}
 {% endblock %}
