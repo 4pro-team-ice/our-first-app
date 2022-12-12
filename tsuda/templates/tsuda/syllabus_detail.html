@@ -16,9 +16,31 @@
       </div>
       <h1><br></h1>
         <h2>{{ syllabus.className }}</h2>
-        <p>T{{ syllabus.term|linebreaksbr }}</p>
-        <p>{{ syllabus.day_of_week|linebreaksbr }}</p>
-        <p>{{ syllabus.period_of_time|linebreaksbr }}限</p>
-        <p>{{ syllabus.teacher_name|linebreaksbr }}</p>
+        <p><b>開講ターム：</b>{{ syllabus.term|linebreaksbr }}</p>
+        <!-- <p>{{ syllabus.day_of_week|linebreaksbr }}</p>
+        <p>{{ syllabus.period_of_time|linebreaksbr }}限</p> -->
+        <p><b>教員名　　：</b>{{ syllabus.teacher_name|linebreaksbr }}</p>
+        <br>
+        <p><b>【講義の目的と内容】</b></p><p>{{ syllabus.syllabusinfo|linebreaksbr }}</p>
+        <br>
+        <p><b>【授業の到達目標】</b></p><p>{{ syllabus.mokuhyo|linebreaksbr }}</p>
+        <br>
+        <p><b>【授業計画】</b></p><p>{{ syllabus.keikaku|linebreaksbr }}</p>
+        <br>
+        <p><b>【テキスト】</b></p><p>{{ syllabus.text|linebreaksbr }}</p>
+        <br>
+        <p><b>【参考書】</b></p><p>{{ syllabus.sankosho|linebreaksbr }}</p>
+        <br>
+        <p><b>【準備学習の内容】</b></p><p>{{ syllabus.junbi|linebreaksbr }}</p>
+        <br>
+        <p><b>【評価方法・基準】</b></p><p>{{ syllabus.hyoka|linebreaksbr }}</p>
+        <br>
+        <p><b>【課題に対するフィードバック】</b></p><p>{{ syllabus.feedback|linebreaksbr }}</p>
+        <br>
+        <p><b>【オフィスアワー】</b></p><p>{{ syllabus.office_hour|linebreaksbr }}</p>
+        <br>
+        <p><b>【授業の特色】</b></p><p>{{ syllabus.tokushoku|linebreaksbr }}</p>
+        <br>
+        <p><b>【その他】</b></p><p>{{ syllabus.sonota|linebreaksbr }}</p>
     </div>
 {% endblock %}

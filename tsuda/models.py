@@ -34,9 +34,9 @@ class Classroom(models.Model):
         return self.class_number
 
     class Meta:
-       db_table = 'akikyoushitu'
-       verbose_name = '空き教室'
-       verbose_name_plural = '空き教室リスト'
+       db_table = 'Akikyoushitu'
+       verbose_name = 'Akikyoushitu'
+       verbose_name_plural = 'Akikyoushitu'
 
 class Allclass(models.Model):
     #授業ID
@@ -488,26 +488,28 @@ class Friday6(models.Model):
 class Syllabus(models.Model):
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
-    classID = models.TextField() #授業ID
-    className = models.TextField() #授業名
-
-    term = models.TextField() #開講ターム
-    # term_1 = models.TextField() #開講ターム
-    # term_2 = models.TextField() #開講ターム
-    # term_3 = models.TextField() #開講ターム
-    # term_4 = models.TextField() #開講ターム
-    day_of_week = models.TextField() #曜日
-    period_of_time = models.TextField() #時限
-    teacher_name = models.TextField() #教員名
-    #ここから学科の名前
-    gakka = models.TextField() #開講ターム
-    # eibun = models.TextField()
-    # kokkan = models.TextField()
-    # tabunka = models.TextField()
-    # sugaku = models.TextField()
-    # johou = models.TextField()
-
-    syllabusinfo = models.TextField()
+    classID = models.TextField() #科目番号
+    className = models.TextField() #科目名
+    className_eng = models.TextField() #科目名(英語)
+    teacher_name = models.TextField() # 担当者名
+    term = models.TextField() # 開講ターム
+    tanni = models.TextField() # 単位
+    gengo = models.TextField() # 使用言語
+    nenji = models.TextField() # 配当年次
+    bunya = models.TextField() # 学問分野
+    level = models.TextField() # 推奨レベル
+    gakka = models.TextField() # 科目区分
+    syllabusinfo = models.TextField() # 講義の目的と内容
+    mokuhyo = models.TextField() # 授業の到達目標
+    keikaku = models.TextField() # 授業計画
+    text = models.TextField() # テキスト
+    sankosho = models.TextField() # 参考書
+    junbi = models.TextField() # 準備学習の内容
+    hyoka = models.TextField() # 評価方法・基準
+    feedback = models.TextField() # 課題に対するフィードバック
+    office_hour = models.TextField() # オフィスアワー
+    tokushoku = models.TextField() # 授業の特色
+    sonota = models.TextField() # その他
 
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
@@ -518,6 +520,11 @@ class Syllabus(models.Model):
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
+
+    class Meta:
+        db_table = 'Syllabus'
+        verbose_name = 'Syllabus'
+        verbose_name_plural = 'Syllabus'
 
 
 class SyllabusComment(models.Model): #シラバス用のコメント
