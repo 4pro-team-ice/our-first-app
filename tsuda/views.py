@@ -407,12 +407,14 @@ def syllabuskekka_list(request):
         kamoku = request.POST["kamoku"]
         kyoin = request.POST["kyoin"]
         term = request.POST["term"]
-        yobi = request.POST["yobi"]
-        jigen = request.POST["jigen"]
+        # yobi = request.POST["yobi"]
+        # jigen = request.POST["jigen"]
 
         # syllabuss = Syllabus.objects.filter(className__contains = kamoku , teacher_name__contains = kyoin).all()
+        # syllabuss = Syllabus.objects.filter(className__contains = kamoku , teacher_name__contains = kyoin ,
+        # day_of_week__contains = yobi , period_of_time__contains = jigen,
+        # term__contains = term , gakka__contains = gakka).all()
         syllabuss = Syllabus.objects.filter(className__contains = kamoku , teacher_name__contains = kyoin ,
-        day_of_week__contains = yobi , period_of_time__contains = jigen,
         term__contains = term , gakka__contains = gakka).all()
         syllabus_kekka = 'tsuda/syllabuskekka_list.html'
 
