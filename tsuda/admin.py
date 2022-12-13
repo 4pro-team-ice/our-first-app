@@ -5,10 +5,10 @@ from .models import Allclass
 from .models import Syllabus
 from .models import SyllabusComment
 
-from .models import Monday1
-from .models import Monday2
-from .models import Monday3
-from .models import Monday4
+from .models import T1
+from .models import T2
+from .models import T3
+from .models import T4
 
 
 from import_export import resources
@@ -21,10 +21,10 @@ from .models import Account
 admin.site.register(Post)
 # admin.site.register(Classroom)
 admin.site.register(Allclass)
-admin.site.register(Monday1)
-admin.site.register(Monday2)
-admin.site.register(Monday3)
-admin.site.register(Monday4)
+admin.site.register(T1)
+admin.site.register(T2)
+admin.site.register(T3)
+admin.site.register(T4)
 
 
 # admin.site.register(Syllabus)

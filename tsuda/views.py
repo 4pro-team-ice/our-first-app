@@ -4,10 +4,10 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
-from .models import Monday1
-from .models import Monday2
-from .models import Monday3
-from .models import Monday4
+from .models import T1
+from .models import T2
+from .models import T3
+from .models import T4
 from .forms import JikannwariForm1
 from .forms import JikannwariForm2
 from .forms import JikannwariForm3
@@ -137,209 +137,197 @@ def move_to_shokudo(request):
     return render(request, 'tsuda/shokudo.html')
 
 #時間割登録用
-def monday1_list(request):
-    # monday1s = Monday1.objects.all()
+def t1_list(request):
     if request.POST:
         user = request.POST["user"]
         print(user)
 
-    first = Monday1.objects.filter(author_jikanwari = user, pot = 0).order_by('dow')[0:5]
-    second = Monday1.objects.filter(author_jikanwari = user,pot = 1).order_by('dow')[0:5]
-    third = Monday1.objects.filter(author_jikanwari = user,pot = 2).order_by('dow')[0:5]
-    fourth = Monday1.objects.filter(author_jikanwari = user,pot = 3).order_by('dow')[0:5]
-    fifth = Monday1.objects.filter(author_jikanwari = user,pot = 4).order_by('dow')[0:5]
-    sixth = Monday1.objects.filter(author_jikanwari = user,pot = 5).order_by('dow')[0:5]
+    first = T1.objects.filter(author_jikanwari = user, pot = 0).order_by('dow')[0:5]
+    second = T1.objects.filter(author_jikanwari = user,pot = 1).order_by('dow')[0:5]
+    third = T1.objects.filter(author_jikanwari = user,pot = 2).order_by('dow')[0:5]
+    fourth = T1.objects.filter(author_jikanwari = user,pot = 3).order_by('dow')[0:5]
+    fifth = T1.objects.filter(author_jikanwari = user,pot = 4).order_by('dow')[0:5]
+    sixth = T1.objects.filter(author_jikanwari = user,pot = 5).order_by('dow')[0:5]
     params = {'data1': first , 'data2': second , 'data3': third ,
               'data4': fourth , 'data5':fifth , 'data6':sixth}
-    return render(request, 'tsuda/monday1_list.html', params)
+    return render(request, 'tsuda/t1_list.html', params)
 
-def monday1_detail(request, pk):
-    monday1 = get_object_or_404(Monday1, pk=pk)
-    return render(request, 'tsuda/monday1_detail.html', {'monday1': monday1})
+def t1_detail(request, pk):
+    t1 = get_object_or_404(T1, pk=pk)
+    return render(request, 'tsuda/t1_detail.html', {'t1': t1})
 
-def monday1_new(request):
+def t1_new(request):
     form = JikannwariForm1()
-    return render(request, 'tsuda/monday1_edit.html', {'form': form})
+    return render(request, 'tsuda/t1_edit.html', {'form': form})
 
-def monday1_new(request):
+def t1_new(request):
     if request.method == "POST":
         form = JikannwariForm1(request.POST)
         if form.is_valid():
-            monday1 = form.save(commit=False)
-            # monday1.author = request.user
-            monday1.published_date = timezone.now()
-            monday1.save()
-            return redirect('monday1_detail', pk=monday1.pk)
+            t1 = form.save(commit=False)
+            t1.published_date = timezone.now()
+            t1.save()
+            return redirect('t1_detail', pk=t1.pk)
     else:
         form = JikannwariForm1()
-    return render(request, 'tsuda/monday1_edit.html', {'form': form})
+    return render(request, 'tsuda/t1_edit.html', {'form': form})
 
-def monday1_edit(request, pk):
-    monday1 = get_object_or_404(Monday1, pk=pk)
+def t1_edit(request, pk):
+    t1 = get_object_or_404(T1, pk=pk)
     if request.method == "POST":
-        form = JikannwariForm1(request.POST, instance=monday1)
+        form = JikannwariForm1(request.POST, instance=t1)
         if form.is_valid():
-            monday1 = form.save(commit=False)
-            # monday1.author = request.user
-            monday1.published_date = timezone.now()
-            monday1.save()
-            return redirect('monday1_detail', pk=monday1.pk)
+            t1 = form.save(commit=False)
+            t1.published_date = timezone.now()
+            t1.save()
+            return redirect('t1_detail', pk=t1.pk)
     else:
-        form = JikannwariForm1(instance=monday1)
-    return render(request, 'tsuda/monday1_edit.html', {'form': form})
+        form = JikannwariForm1(instance=t1)
+    return render(request, 'tsuda/t1_edit.html', {'form': form})
 
-def monday2_list(request):
-    # monday1s = Monday1.objects.all()
+def t2_list(request):
     if request.POST:
         user = request.POST["user"]
         print(user)
 
-    first = Monday2.objects.filter(author_jikanwari_2 = user, pot = 0).order_by('dow')[0:5]
-    second = Monday2.objects.filter(author_jikanwari_2 = user,pot = 1).order_by('dow')[0:5]
-    third = Monday2.objects.filter(author_jikanwari_2 = user,pot = 2).order_by('dow')[0:5]
-    fourth = Monday2.objects.filter(author_jikanwari_2 = user,pot = 3).order_by('dow')[0:5]
-    fifth = Monday2.objects.filter(author_jikanwari_2 = user,pot = 4).order_by('dow')[0:5]
-    sixth = Monday2.objects.filter(author_jikanwari_2 = user,pot = 5).order_by('dow')[0:5]
+    first = T2.objects.filter(author_jikanwari_2 = user, pot = 0).order_by('dow')[0:5]
+    second = T2.objects.filter(author_jikanwari_2 = user,pot = 1).order_by('dow')[0:5]
+    third = T2.objects.filter(author_jikanwari_2 = user,pot = 2).order_by('dow')[0:5]
+    fourth = T2.objects.filter(author_jikanwari_2 = user,pot = 3).order_by('dow')[0:5]
+    fifth = T2.objects.filter(author_jikanwari_2 = user,pot = 4).order_by('dow')[0:5]
+    sixth = T2.objects.filter(author_jikanwari_2 = user,pot = 5).order_by('dow')[0:5]
     params = {'data1': first , 'data2': second , 'data3': third ,
               'data4': fourth , 'data5':fifth , 'data6':sixth}
-    return render(request, 'tsuda/monday2_list.html', params)
+    return render(request, 'tsuda/t2_list.html', params)
 
-def monday2_detail(request, pk):
-    monday2 = get_object_or_404(Monday2, pk=pk)
-    return render(request, 'tsuda/monday2_detail.html', {'monday2': monday2})
+def t2_detail(request, pk):
+    t2 = get_object_or_404(T2, pk=pk)
+    return render(request, 'tsuda/t2_detail.html', {'t2': t2})
 
-def monday2_new(request):
+def t2_new(request):
     form = JikannwariForm2()
-    return render(request, 'tsuda/monday2_edit.html', {'form': form})
+    return render(request, 'tsuda/t2_edit.html', {'form': form})
 
-def monday2_new(request):
+def t2_new(request):
     if request.method == "POST":
         form = JikannwariForm2(request.POST)
         if form.is_valid():
-            monday2 = form.save(commit=False)
-            # monday1.author = request.user
-            monday2.published_date = timezone.now()
-            monday2.save()
-            return redirect('monday2_detail', pk=monday2.pk)
+            t2 = form.save(commit=False)
+            t2.published_date = timezone.now()
+            t2.save()
+            return redirect('t2_detail', pk=t2.pk)
     else:
         form = JikannwariForm2()
-    return render(request, 'tsuda/monday2_edit.html', {'form': form})
+    return render(request, 'tsuda/t2_edit.html', {'form': form})
 
-def monday2_edit(request, pk):
-    monday2 = get_object_or_404(Monday2, pk=pk)
+def t2_edit(request, pk):
+    t2 = get_object_or_404(T2, pk=pk)
     if request.method == "POST":
-        form = JikannwariForm2(request.POST, instance=monday2)
+        form = JikannwariForm2(request.POST, instance=t2)
         if form.is_valid():
-            monday2 = form.save(commit=False)
-            # monday1.author = request.user
-            monday2.published_date = timezone.now()
-            monday2.save()
-            return redirect('monday2_detail', pk=monday2.pk)
+            t2 = form.save(commit=False)
+            t2.published_date = timezone.now()
+            t2.save()
+            return redirect('t2_detail', pk=t2.pk)
     else:
-        form = JikannwariForm2(instance=monday2)
-    return render(request, 'tsuda/monday2_edit.html', {'form': form})
+        form = JikannwariForm2(instance=t2)
+    return render(request, 'tsuda/t2_edit.html', {'form': form})
 
-def monday3_list(request):
-    # monday1s = Monday1.objects.all()
+def t3_list(request):
     if request.POST:
         user = request.POST["user"]
         print(user)
 
-    first = Monday3.objects.filter(author_jikanwari_3 = user, pot = 0).order_by('dow')[0:5]
-    second = Monday3.objects.filter(author_jikanwari_3 = user,pot = 1).order_by('dow')[0:5]
-    third = Monday3.objects.filter(author_jikanwari_3 = user,pot = 2).order_by('dow')[0:5]
-    fourth = Monday3.objects.filter(author_jikanwari_3 = user,pot = 3).order_by('dow')[0:5]
-    fifth = Monday3.objects.filter(author_jikanwari_3 = user,pot = 4).order_by('dow')[0:5]
-    sixth = Monday3.objects.filter(author_jikanwari_3 = user,pot = 5).order_by('dow')[0:5]
+    first = T3.objects.filter(author_jikanwari_3 = user, pot = 0).order_by('dow')[0:5]
+    second = T3.objects.filter(author_jikanwari_3 = user,pot = 1).order_by('dow')[0:5]
+    third = T3.objects.filter(author_jikanwari_3 = user,pot = 2).order_by('dow')[0:5]
+    fourth = T3.objects.filter(author_jikanwari_3 = user,pot = 3).order_by('dow')[0:5]
+    fifth = T3.objects.filter(author_jikanwari_3 = user,pot = 4).order_by('dow')[0:5]
+    sixth = T3.objects.filter(author_jikanwari_3 = user,pot = 5).order_by('dow')[0:5]
     params = {'data1': first , 'data2': second , 'data3': third ,
               'data4': fourth , 'data5':fifth , 'data6':sixth}
-    return render(request, 'tsuda/monday3_list.html', params)
+    return render(request, 'tsuda/t3_list.html', params)
 
-def monday3_detail(request, pk):
-    monday3 = get_object_or_404(Monday3, pk=pk)
-    return render(request, 'tsuda/monday3_detail.html', {'monday3': monday3})
+def t3_detail(request, pk):
+    t3 = get_object_or_404(T3, pk=pk)
+    return render(request, 'tsuda/t3_detail.html', {'t3': t3})
 
-def monday3_new(request):
+def t3_new(request):
     form = JikannwariForm3()
-    return render(request, 'tsuda/monday3_edit.html', {'form': form})
+    return render(request, 'tsuda/t3_edit.html', {'form': form})
 
-def monday3_new(request):
+def t3_new(request):
     if request.method == "POST":
         form = JikannwariForm3(request.POST)
         if form.is_valid():
-            monday3 = form.save(commit=False)
-            # monday1.author = request.user
-            monday3.published_date = timezone.now()
-            monday3.save()
-            return redirect('monday3_detail', pk=monday3.pk)
+            t3 = form.save(commit=False)
+            t3.published_date = timezone.now()
+            t3.save()
+            return redirect('t3_detail', pk=t3.pk)
     else:
         form = JikannwariForm3()
-    return render(request, 'tsuda/monday3_edit.html', {'form': form})
+    return render(request, 'tsuda/t3_edit.html', {'form': form})
 
-def monday3_edit(request, pk):
-    monday3 = get_object_or_404(Monday3, pk=pk)
+def t3_edit(request, pk):
+    t3 = get_object_or_404(T3, pk=pk)
     if request.method == "POST":
-        form = JikannwariForm3(request.POST, instance=monday3)
+        form = JikannwariForm3(request.POST, instance=t3)
         if form.is_valid():
-            monday3 = form.save(commit=False)
-            # monday1.author = request.user
-            monday3.published_date = timezone.now()
-            monday3.save()
-            return redirect('monday3_detail', pk=monday3.pk)
+            t3 = form.save(commit=False)
+            t3.published_date = timezone.now()
+            t3.save()
+            return redirect('t3_detail', pk=t3.pk)
     else:
-        form = JikannwariForm3(instance=monday3)
-    return render(request, 'tsuda/monday3_edit.html', {'form': form})
+        form = JikannwariForm3(instance=t3)
+    return render(request, 'tsuda/t3_edit.html', {'form': form})
 
-def monday4_list(request):
-    # monday1s = Monday1.objects.all()
+def t4_list(request):
     if request.POST:
         user = request.POST["user"]
         print(user)
 
-    first = Monday4.objects.filter(author_jikanwari_4 = user, pot = 0).order_by('dow')[0:5]
-    second = Monday4.objects.filter(author_jikanwari_4 = user,pot = 1).order_by('dow')[0:5]
-    third = Monday4.objects.filter(author_jikanwari_4 = user,pot = 2).order_by('dow')[0:5]
-    fourth = Monday4.objects.filter(author_jikanwari_4 = user,pot = 3).order_by('dow')[0:5]
-    fifth = Monday4.objects.filter(author_jikanwari_4 = user,pot = 4).order_by('dow')[0:5]
-    sixth = Monday4.objects.filter(author_jikanwari_4 = user,pot = 5).order_by('dow')[0:5]
+    first = T4.objects.filter(author_jikanwari_4 = user, pot = 0).order_by('dow')[0:5]
+    second = T4.objects.filter(author_jikanwari_4 = user,pot = 1).order_by('dow')[0:5]
+    third = T4.objects.filter(author_jikanwari_4 = user,pot = 2).order_by('dow')[0:5]
+    fourth = T4.objects.filter(author_jikanwari_4 = user,pot = 3).order_by('dow')[0:5]
+    fifth = T4.objects.filter(author_jikanwari_4 = user,pot = 4).order_by('dow')[0:5]
+    sixth = T4.objects.filter(author_jikanwari_4 = user,pot = 5).order_by('dow')[0:5]
     params = {'data1': first , 'data2': second , 'data3': third ,
               'data4': fourth , 'data5':fifth , 'data6':sixth}
-    return render(request, 'tsuda/monday4_list.html', params)
+    return render(request, 'tsuda/t4_list.html', params)
 
-def monday4_detail(request, pk):
-    monday4 = get_object_or_404(Monday4, pk=pk)
-    return render(request, 'tsuda/monday4_detail.html', {'monday4': monday4})
+def t4_detail(request, pk):
+    t4 = get_object_or_404(T4, pk=pk)
+    return render(request, 'tsuda/t4_detail.html', {'t4': t4})
 
-def monday4_new(request):
+def t4_new(request):
     form = JikannwariForm4()
-    return render(request, 'tsuda/monday4_edit.html', {'form': form})
+    return render(request, 'tsuda/t4_edit.html', {'form': form})
 
-def monday4_new(request):
+def t4_new(request):
     if request.method == "POST":
         form = JikannwariForm4(request.POST)
         if form.is_valid():
-            monday4 = form.save(commit=False)
-            # monday1.author = request.user
-            monday4.published_date = timezone.now()
-            monday4.save()
-            return redirect('monday4_detail', pk=monday4.pk)
+            t4 = form.save(commit=False)
+            t4.published_date = timezone.now()
+            t4.save()
+            return redirect('t4_detail', pk=t4.pk)
     else:
         form = JikannwariForm4()
-    return render(request, 'tsuda/monday4_edit.html', {'form': form})
+    return render(request, 'tsuda/t4_edit.html', {'form': form})
 
-def monday4_edit(request, pk):
-    monday4 = get_object_or_404(Monday4, pk=pk)
+def t4_edit(request, pk):
+    t4 = get_object_or_404(T4, pk=pk)
     if request.method == "POST":
-        form = JikannwariForm4(request.POST, instance=monday4)
+        form = JikannwariForm4(request.POST, instance=t4)
         if form.is_valid():
-            monday4 = form.save(commit=False)
-            # monday1.author = request.user
-            monday4.published_date = timezone.now()
-            monday4.save()
-            return redirect('monday4_detail', pk=monday4.pk)
+            t4 = form.save(commit=False)
+            t4.published_date = timezone.now()
+            t4.save()
+            return redirect('t4_detail', pk=t4.pk)
     else:
-        form = JikannwariForm4(instance=monday4)
-    return render(request, 'tsuda/monday4_edit.html', {'form': form})
+        form = JikannwariForm4(instance=t4)
+    return render(request, 'tsuda/t4_edit.html', {'form': form})
 
 # シラバスコメント用
 def syllabuscomment_list(request):
@@ -589,134 +577,135 @@ class  AccountRegistration(TemplateView):
 
                     first = []
                     for i in range(5):
-                        obj = Monday1(dow=i,pot=0)
+                        obj = T1(dow=i,pot=0)
                         # first.append(obj)????
-                    # Monday1.objects.bulk_create(obj)
-
-                    Monday1.objects.create(author_jikanwari = account.username, pot = 0, dow = 0)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 1)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 2)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 3)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 0, dow = 4)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 0)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 1)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 2)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 3)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 1, dow = 4)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 0)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 1)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 2)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 3)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 2, dow = 4)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 0)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 1)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 2)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 3)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 3, dow = 4)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 0)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 1)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 2)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 3)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 4, dow = 4)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 0)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 1)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 2)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 3)
-                    Monday1.objects.create(author_jikanwari = account.username,pot = 5, dow = 4)
 
 
-                    Monday2.objects.create(author_jikanwari_2 = account.username, pot = 0, dow = 0)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 0, dow = 1)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 0, dow = 2)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 0, dow = 3)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 0, dow = 4)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 1, dow = 0)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 1, dow = 1)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 1, dow = 2)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 1, dow = 3)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 1, dow = 4)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 2, dow = 0)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 2, dow = 1)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 2, dow = 2)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 2, dow = 3)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 2, dow = 4)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 3, dow = 0)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 3, dow = 1)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 3, dow = 2)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 3, dow = 3)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 3, dow = 4)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 4, dow = 0)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 4, dow = 1)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 4, dow = 2)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 4, dow = 3)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 4, dow = 4)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 5, dow = 0)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 5, dow = 1)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 5, dow = 2)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 5, dow = 3)
-                    Monday2.objects.create(author_jikanwari_2 = account.username,pot = 5, dow = 4)
+                    T1.objects.create(author_jikanwari = account.username, pot = 0, dow = 0)
+                    T1.objects.create(author_jikanwari = account.username,pot = 0, dow = 1)
+                    T1.objects.create(author_jikanwari = account.username,pot = 0, dow = 2)
+                    T1.objects.create(author_jikanwari = account.username,pot = 0, dow = 3)
+                    T1.objects.create(author_jikanwari = account.username,pot = 0, dow = 4)
+                    T1.objects.create(author_jikanwari = account.username,pot = 1, dow = 0)
+                    T1.objects.create(author_jikanwari = account.username,pot = 1, dow = 1)
+                    T1.objects.create(author_jikanwari = account.username,pot = 1, dow = 2)
+                    T1.objects.create(author_jikanwari = account.username,pot = 1, dow = 3)
+                    T1.objects.create(author_jikanwari = account.username,pot = 1, dow = 4)
+                    T1.objects.create(author_jikanwari = account.username,pot = 2, dow = 0)
+                    T1.objects.create(author_jikanwari = account.username,pot = 2, dow = 1)
+                    T1.objects.create(author_jikanwari = account.username,pot = 2, dow = 2)
+                    T1.objects.create(author_jikanwari = account.username,pot = 2, dow = 3)
+                    T1.objects.create(author_jikanwari = account.username,pot = 2, dow = 4)
+                    T1.objects.create(author_jikanwari = account.username,pot = 3, dow = 0)
+                    T1.objects.create(author_jikanwari = account.username,pot = 3, dow = 1)
+                    T1.objects.create(author_jikanwari = account.username,pot = 3, dow = 2)
+                    T1.objects.create(author_jikanwari = account.username,pot = 3, dow = 3)
+                    T1.objects.create(author_jikanwari = account.username,pot = 3, dow = 4)
+                    T1.objects.create(author_jikanwari = account.username,pot = 4, dow = 0)
+                    T1.objects.create(author_jikanwari = account.username,pot = 4, dow = 1)
+                    T1.objects.create(author_jikanwari = account.username,pot = 4, dow = 2)
+                    T1.objects.create(author_jikanwari = account.username,pot = 4, dow = 3)
+                    T1.objects.create(author_jikanwari = account.username,pot = 4, dow = 4)
+                    T1.objects.create(author_jikanwari = account.username,pot = 5, dow = 0)
+                    T1.objects.create(author_jikanwari = account.username,pot = 5, dow = 1)
+                    T1.objects.create(author_jikanwari = account.username,pot = 5, dow = 2)
+                    T1.objects.create(author_jikanwari = account.username,pot = 5, dow = 3)
+                    T1.objects.create(author_jikanwari = account.username,pot = 5, dow = 4)
 
-                    Monday3.objects.create(author_jikanwari_3 = account.username, pot = 0, dow = 0)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 0, dow = 1)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 0, dow = 2)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 0, dow = 3)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 0, dow = 4)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 1, dow = 0)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 1, dow = 1)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 1, dow = 2)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 1, dow = 3)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 1, dow = 4)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 2, dow = 0)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 2, dow = 1)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 2, dow = 2)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 2, dow = 3)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 2, dow = 4)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 3, dow = 0)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 3, dow = 1)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 3, dow = 2)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 3, dow = 3)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 3, dow = 4)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 4, dow = 0)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 4, dow = 1)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 4, dow = 2)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 4, dow = 3)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 4, dow = 4)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 5, dow = 0)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 5, dow = 1)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 5, dow = 2)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 5, dow = 3)
-                    Monday3.objects.create(author_jikanwari_3 = account.username,pot = 5, dow = 4)
 
-                    Monday4.objects.create(author_jikanwari_4 = account.username, pot = 0, dow = 0)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 0, dow = 1)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 0, dow = 2)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 0, dow = 3)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 0, dow = 4)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 1, dow = 0)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 1, dow = 1)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 1, dow = 2)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 1, dow = 3)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 1, dow = 4)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 2, dow = 0)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 2, dow = 1)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 2, dow = 2)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 2, dow = 3)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 2, dow = 4)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 3, dow = 0)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 3, dow = 1)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 3, dow = 2)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 3, dow = 3)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 3, dow = 4)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 4, dow = 0)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 4, dow = 1)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 4, dow = 2)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 4, dow = 3)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 4, dow = 4)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 5, dow = 0)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 5, dow = 1)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 5, dow = 2)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 5, dow = 3)
-                    Monday4.objects.create(author_jikanwari_4 = account.username,pot = 5, dow = 4)
+                    T2.objects.create(author_jikanwari = account.username, pot = 0, dow = 0)
+                    T2.objects.create(author_jikanwari = account.username,pot = 0, dow = 1)
+                    T2.objects.create(author_jikanwari = account.username,pot = 0, dow = 2)
+                    T2.objects.create(author_jikanwari = account.username,pot = 0, dow = 3)
+                    T2.objects.create(author_jikanwari = account.username,pot = 0, dow = 4)
+                    T2.objects.create(author_jikanwari = account.username,pot = 1, dow = 0)
+                    T2.objects.create(author_jikanwari = account.username,pot = 1, dow = 1)
+                    T2.objects.create(author_jikanwari = account.username,pot = 1, dow = 2)
+                    T2.objects.create(author_jikanwari = account.username,pot = 1, dow = 3)
+                    T2.objects.create(author_jikanwari = account.username,pot = 1, dow = 4)
+                    T2.objects.create(author_jikanwari = account.username,pot = 2, dow = 0)
+                    T2.objects.create(author_jikanwari = account.username,pot = 2, dow = 1)
+                    T2.objects.create(author_jikanwari = account.username,pot = 2, dow = 2)
+                    T2.objects.create(author_jikanwari = account.username,pot = 2, dow = 3)
+                    T2.objects.create(author_jikanwari = account.username,pot = 2, dow = 4)
+                    T2.objects.create(author_jikanwari = account.username,pot = 3, dow = 0)
+                    T2.objects.create(author_jikanwari = account.username,pot = 3, dow = 1)
+                    T2.objects.create(author_jikanwari = account.username,pot = 3, dow = 2)
+                    T2.objects.create(author_jikanwari = account.username,pot = 3, dow = 3)
+                    T2.objects.create(author_jikanwari = account.username,pot = 3, dow = 4)
+                    T2.objects.create(author_jikanwari = account.username,pot = 4, dow = 0)
+                    T2.objects.create(author_jikanwari = account.username,pot = 4, dow = 1)
+                    T2.objects.create(author_jikanwari = account.username,pot = 4, dow = 2)
+                    T2.objects.create(author_jikanwari = account.username,pot = 4, dow = 3)
+                    T2.objects.create(author_jikanwari = account.username,pot = 4, dow = 4)
+                    T2.objects.create(author_jikanwari = account.username,pot = 5, dow = 0)
+                    T2.objects.create(author_jikanwari = account.username,pot = 5, dow = 1)
+                    T2.objects.create(author_jikanwari = account.username,pot = 5, dow = 2)
+                    T2.objects.create(author_jikanwari = account.username,pot = 5, dow = 3)
+                    T2.objects.create(author_jikanwari = account.username,pot = 5, dow = 4)
+
+                    T3.objects.create(author_jikanwari = account.username, pot = 0, dow = 0)
+                    T3.objects.create(author_jikanwari = account.username,pot = 0, dow = 1)
+                    T3.objects.create(author_jikanwari = account.username,pot = 0, dow = 2)
+                    T3.objects.create(author_jikanwari = account.username,pot = 0, dow = 3)
+                    T3.objects.create(author_jikanwari = account.username,pot = 0, dow = 4)
+                    T3.objects.create(author_jikanwari = account.username,pot = 1, dow = 0)
+                    T3.objects.create(author_jikanwari = account.username,pot = 1, dow = 1)
+                    T3.objects.create(author_jikanwari = account.username,pot = 1, dow = 2)
+                    T3.objects.create(author_jikanwari = account.username,pot = 1, dow = 3)
+                    T3.objects.create(author_jikanwari = account.username,pot = 1, dow = 4)
+                    T3.objects.create(author_jikanwari = account.username,pot = 2, dow = 0)
+                    T3.objects.create(author_jikanwari = account.username,pot = 2, dow = 1)
+                    T3.objects.create(author_jikanwari = account.username,pot = 2, dow = 2)
+                    T3.objects.create(author_jikanwari = account.username,pot = 2, dow = 3)
+                    T3.objects.create(author_jikanwari = account.username,pot = 2, dow = 4)
+                    T3.objects.create(author_jikanwari = account.username,pot = 3, dow = 0)
+                    T3.objects.create(author_jikanwari = account.username,pot = 3, dow = 1)
+                    T3.objects.create(author_jikanwari = account.username,pot = 3, dow = 2)
+                    T3.objects.create(author_jikanwari = account.username,pot = 3, dow = 3)
+                    T3.objects.create(author_jikanwari = account.username,pot = 3, dow = 4)
+                    T3.objects.create(author_jikanwari = account.username,pot = 4, dow = 0)
+                    T3.objects.create(author_jikanwari = account.username,pot = 4, dow = 1)
+                    T3.objects.create(author_jikanwari = account.username,pot = 4, dow = 2)
+                    T3.objects.create(author_jikanwari = account.username,pot = 4, dow = 3)
+                    T3.objects.create(author_jikanwari = account.username,pot = 4, dow = 4)
+                    T3.objects.create(author_jikanwari = account.username,pot = 5, dow = 0)
+                    T3.objects.create(author_jikanwari = account.username,pot = 5, dow = 1)
+                    T3.objects.create(author_jikanwari = account.username,pot = 5, dow = 2)
+                    T3.objects.create(author_jikanwari = account.username,pot = 5, dow = 3)
+                    T3.objects.create(author_jikanwari = account.username,pot = 5, dow = 4)
+
+
+                    T4.objects.create(author_jikanwari = account.username, pot = 0, dow = 0)
+                    T4.objects.create(author_jikanwari = account.username,pot = 0, dow = 1)
+                    T4.objects.create(author_jikanwari = account.username,pot = 0, dow = 2)
+                    T4.objects.create(author_jikanwari = account.username,pot = 0, dow = 3)
+                    T4.objects.create(author_jikanwari = account.username,pot = 0, dow = 4)
+                    T4.objects.create(author_jikanwari = account.username,pot = 1, dow = 0)
+                    T4.objects.create(author_jikanwari = account.username,pot = 1, dow = 1)
+                    T4.objects.create(author_jikanwari = account.username,pot = 1, dow = 2)
+                    T4.objects.create(author_jikanwari = account.username,pot = 1, dow = 3)
+                    T4.objects.create(author_jikanwari = account.username,pot = 1, dow = 4)
+                    T4.objects.create(author_jikanwari = account.username,pot = 2, dow = 0)
+                    T4.objects.create(author_jikanwari = account.username,pot = 2, dow = 1)
+                    T4.objects.create(author_jikanwari = account.username,pot = 2, dow = 2)
+                    T4.objects.create(author_jikanwari = account.username,pot = 2, dow = 3)
+                    T4.objects.create(author_jikanwari = account.username,pot = 2, dow = 4)
+                    T4.objects.create(author_jikanwari = account.username,pot = 3, dow = 0)
+                    T4.objects.create(author_jikanwari = account.username,pot = 3, dow = 1)
+                    T4.objects.create(author_jikanwari = account.username,pot = 3, dow = 2)
+                    T4.objects.create(author_jikanwari = account.username,pot = 3, dow = 3)
+                    T4.objects.create(author_jikanwari = account.username,pot = 3, dow = 4)
+                    T4.objects.create(author_jikanwari = account.username,pot = 4, dow = 0)
+                    T4.objects.create(author_jikanwari = account.username,pot = 4, dow = 1)
+                    T4.objects.create(author_jikanwari = account.username,pot = 4, dow = 2)
+                    T4.objects.create(author_jikanwari = account.username,pot = 4, dow = 3)
+                    T4.objects.create(author_jikanwari = account.username,pot = 4, dow = 4)
+                    T4.objects.create(author_jikanwari = account.username,pot = 5, dow = 0)
+                    T4.objects.create(author_jikanwari = account.username,pot = 5, dow = 1)
+                    T4.objects.create(author_jikanwari = account.username,pot = 5, dow = 2)
+                    T4.objects.create(author_jikanwari = account.username,pot = 5, dow = 3)
+                    T4.objects.create(author_jikanwari = account.username,pot = 5, dow = 4)
 
         else:
             # フォームが有効でない場合

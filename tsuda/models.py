@@ -29,7 +29,7 @@ class Classroom(models.Model):
     class_number = models.TextField(verbose_name='教室名')
     # building_number = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(default=timezone.now)
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
@@ -48,7 +48,7 @@ class Allclass(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
 
-class Monday1(models.Model):
+class T1(models.Model):
     #inquiry_id = models.IntegerField(verbose_name='day')
     author_jikanwari = models.TextField(blank=True, null=True, verbose_name='作成者')
 
@@ -106,7 +106,7 @@ class Monday1(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
 
-class Monday2(models.Model):
+class T2(models.Model):
     author_jikanwari_2 = models.TextField(blank=True, null=True, verbose_name='作成者')
 
     class Day_Of_Week(): #曜日にIDを与える
@@ -163,7 +163,7 @@ class Monday2(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
 
-class Monday3(models.Model):
+class T3(models.Model):
     author_jikanwari_3 = models.TextField(blank=True, null=True, verbose_name='作成者')
 
     class Day_Of_Week(): #曜日にIDを与える
@@ -220,7 +220,7 @@ class Monday3(models.Model):
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
 
-class Monday4(models.Model):
+class T4(models.Model):
     author_jikanwari_4 = models.TextField(blank=True, null=True, verbose_name='作成者')
 
     class Day_Of_Week(): #曜日にIDを与える
@@ -305,7 +305,7 @@ class Syllabus(models.Model):
     sonota = models.TextField() # その他
 
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    published_date = models.DateTimeField(default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
