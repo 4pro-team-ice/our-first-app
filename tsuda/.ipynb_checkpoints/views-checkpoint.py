@@ -407,14 +407,12 @@ def syllabuskekka_list(request):
         kamoku = request.POST["kamoku"]
         kyoin = request.POST["kyoin"]
         term = request.POST["term"]
-        # yobi = request.POST["yobi"]
-        # jigen = request.POST["jigen"]
+        yobi = request.POST["yobi"]
+        jigen = request.POST["jigen"]
 
         # syllabuss = Syllabus.objects.filter(className__contains = kamoku , teacher_name__contains = kyoin).all()
-        # syllabuss = Syllabus.objects.filter(className__contains = kamoku , teacher_name__contains = kyoin ,
-        # day_of_week__contains = yobi , period_of_time__contains = jigen,
-        # term__contains = term , gakka__contains = gakka).all()
         syllabuss = Syllabus.objects.filter(className__contains = kamoku , teacher_name__contains = kyoin ,
+        day_of_week__contains = yobi , period_of_time__contains = jigen,
         term__contains = term , gakka__contains = gakka).all()
         syllabus_kekka = 'tsuda/syllabuskekka_list.html'
 
@@ -426,7 +424,7 @@ def syllabus_detail(request, pk):
 
 def syllabus_wordcloud(request, pk):
     syllabus = get_object_or_404(Syllabus, pk=pk)
-    text = [syllabus.syllabusinfo,syllabus.mokuhyo]
+    text = syllabus.syllabusinfo
     # 形態素解析（tokenize）をインスタンスにする
     t = Tokenizer()
 
@@ -435,19 +433,15 @@ def syllabus_wordcloud(request, pk):
     others = []
 
     # 文章を形態素（token）に分ける
-    for i in text:
-        for token in t.tokenize(i):
-            pos = token.part_of_speech.split(',')  # 品詞情報抜き出し
-            if '名詞' == pos[0]:                    # 品詞名が名詞なら
-                noun.append(token.base_form)      # nounに追加
-            elif 'その他' == pos[0]:
-                others.append(token.base_form)
+    for token in t.tokenize(text):
+        pos = token.part_of_speech.split(',')  # 品詞情報抜き出し
+        if '名詞' == pos[0]:                    # 品詞名が名詞なら
+            noun.append(token.base_form)      # nounに追加
+        elif 'その他' == pos[0]:
+            others.append(token.base_form)
 
     #非表示単語の設定
-    stop_words = ['教科書','こと','よう','テキスト','講義','なか','ため','授業','の','ところ','目標','学習','学び','これら','が','それら','もの','紹介','理解','必要','受講','導入',
-                    '教材','毎週','的',
-                    'a','and','to','for','the','of','in','as','are','is','all','will','into','who','class','should','on','but','be','learn','how','This','this',
-                    'course','students','these','their','willbe','those']
+    stop_words = ['教科書','こと','よう','テキスト','講義','なか','ため','授業','の','ところ','目標','学習','学び','これら']
 
     #画像データの読み込み
     FILE_PATH = './tsuda/static/img/donuts.png' # ローカル用の画像パス
@@ -457,7 +451,7 @@ def syllabus_wordcloud(request, pk):
 
     # wordcloudの準備
     wc = WordCloud(background_color="white",  # 背景色
-               max_words=85,             # 最大表示単語数
+               max_words=100,             # 最大表示単語数
                max_font_size=100,         # 最大フォントサイズ
                random_state=42,           # 乱数設定
                font_path="/Library/Fonts//Arial Unicode.ttf", # ローカル用のフォントパス
