@@ -410,6 +410,8 @@ def syllabuskekka_list(request):
 
 def syllabus_detail(request, pk):
     syllabus = get_object_or_404(Syllabus, pk=pk)
+    # a = syllabus.keikaku
+    syllabus.keikaku = syllabus.keikaku.replace('◆', "\n") #◆で改行
     return render(request, 'tsuda/syllabus_detail.html', {'syllabus': syllabus})
 
 def syllabus_wordcloud(request, pk):
