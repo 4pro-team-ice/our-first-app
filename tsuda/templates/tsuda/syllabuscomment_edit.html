@@ -4,6 +4,10 @@
 <a class="btn btn-default" href="{% url 'move_to_syllabuskensaku' %}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
 
     <h4><br></h4>
+    <h4><p>※科目名はシラバスの記載通りでないと検索した時に反映されません。</p>
+        <p>　半角スペースに気をつけてください。</p></h4>
+    <h5><p>　(例)  × アルゴリズムa(演習付) → ○ アルゴリズム a (演習付)</p></h5>
+    <h4><br></h4>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
