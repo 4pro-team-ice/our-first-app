@@ -8,7 +8,8 @@ body {
     padding-left: 0px;
 }
 .page-header {
-    background-color: #B3424A;
+    background-color: #956daf;
+    border-bottom: solid 3px #6d4f97;
     margin-top: 0;
     padding: 20px 20px 20px 20px;
 }
@@ -93,7 +94,7 @@ th {
   height: auto !important;
   height: 100%;
   min-height: 20%; /*フッター枠の長さ*/
-  background-color: #B3424A;
+  background-color: #956daf;
   padding: 30px 0;
 }
 
@@ -229,7 +230,8 @@ th {
       padding-left: 0px;
   }
   .page-header {
-      background-color: #B3424A;
+      background-color: #956daf;
+      border-bottom: solid 3px #6d4f97;
       margin-top: 0;
       padding: 20px 20px 20px 20px;
   }
@@ -315,7 +317,7 @@ th {
     height: auto !important;
     height: 100%;
     min-height: 20%; /*フッター枠の長さ*/
-    background-color: #B3424A;
+    background-color: #956daf;
     padding: 30px 0;
   }
 

@@ -7,7 +7,8 @@ body {
     padding-left: 0px;
 }
 .page-header {
-    background-color: #B3424A;
+  background-color: #956daf;
+  border-bottom: solid 3px #6d4f97;
     margin-top: 0;
     padding: 20px 20px 20px 20px;
 }
@@ -112,7 +113,7 @@ img{
   height: auto !important;
   height: 10%;
   min-height: 20%; /*フッター枠の長さ*/
-  background-color: #B3424A;
+  background-color: #956daf;
   padding: 30px 0;
 }
 .btn-gradient-radius a {
@@ -139,7 +140,8 @@ img{
       padding-left: 0px;
   }
   .page-header {
-      background-color: #B3424A;
+    background-color: #956daf;
+    border-bottom: solid 3px #6d4f97;
       margin-top: 0;
       padding: 20px 20px 20px 20px;
   }
@@ -245,7 +247,7 @@ img{
     height: auto !important;
     height: 10%;
     min-height: 20%; /*フッター枠の長さ*/
-    background-color: #B3424A;
+    background-color: #956daf;
     padding: 30px 0;
   }
   .btn-gradient-radius a {

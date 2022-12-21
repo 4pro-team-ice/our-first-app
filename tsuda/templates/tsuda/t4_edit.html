@@ -1,11 +1,13 @@
 {% extends 'tsuda/jikannwari_term.html' %}
 
 {% block content %}
-    <h3>時間割登録</h3>
+<div class = "margin">
+  <h3>時間割登録</h3>
 
 
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default" onclick="location.href='jikanwari.html'">Save</button>
-    </form>
+  <form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default" onclick="location.href='jikanwari.html'">Save</button>
+  </form>
+</div>
 {% endblock %}

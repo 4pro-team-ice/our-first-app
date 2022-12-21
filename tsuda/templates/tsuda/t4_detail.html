@@ -5,10 +5,10 @@
       <form action="{% url 'move_to_jikannwari' %}" method="POST">
         {% csrf_token %}
         <input type="hidden"  name="user" value ="{{t4.author_jikanwari}}">
-        <input type="submit" value="戻る" class="jikanwari">
+        <input type="submit" value="◀︎戻る" class="jikanwari">
         <!-- <a class="btn btn-default" href="/jikannwari"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a> -->
       </form>
-
+      <div class = "margin">
       <h1>T4</h1>
       <h3>{{t4.get_dow_display}} /
       {{t4.get_pot_display}}</h3>
@@ -23,5 +23,6 @@
         <h3>{{ t4.className }}</h3>
         <p>{{ t4.class_number|linebreaksbr }}</p>
         <p>{{ t4.profName|linebreaksbr }}</p>
+    </div>
     </div>
 {% endblock %}
