@@ -213,6 +213,11 @@ th {
   text-align: center;
 }
 
+.margin {
+  padding: 0px 30px;
+}
+
+
 /*スマホ用*/
 @media screen and (max-width:480px) {
   h1 a, h2 a {

@@ -141,6 +141,7 @@ th, td {
   display: inline-block;
   padding: 7px 20px;
   border-radius: 25px;
+  font-size: 20px;
   text-decoration: none;
   color:#000000;
   background:#ffe4e1;
@@ -151,11 +152,16 @@ th, td {
   display: inline-block;
   padding: 7px 20px;
   border-radius: 25px;
+  font-size: 20px;
   text-decoration: none;
   color:#000000;
   background:#ffe4e1;
   transition: .4s;
   border:#ffe4e1;
+}
+
+.margin {
+  padding: 0px 30px;
 }
 
 

@@ -128,6 +128,9 @@ th, td {
   background:#d3d3d3;
 }
 
+.margin {
+  padding: 0px 30px;
+}
 
 /*スマホ用*/
 @media screen and (max-width:480px) {

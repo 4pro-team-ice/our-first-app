@@ -93,9 +93,9 @@ class T1(models.Model):
                             max_length=50)
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
-    className = models.TextField(verbose_name='授業名' , default = '-----', blank=True, null=True)
-    class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
-    profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
+    className = models.TextField(verbose_name='授業名' , default = '--', blank=True, null=True)
+    class_number = models.TextField(verbose_name='教室名', default = '--', blank=True, null=True)
+    profName = models.TextField(verbose_name='教授名', default = '--',blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(default=timezone.now)
 
@@ -150,9 +150,9 @@ class T2(models.Model):
                             max_length=50)
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
-    className = models.TextField(verbose_name='授業名' , default = '-----', blank=True, null=True)
-    class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
-    profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
+    className = models.TextField(verbose_name='授業名' , default = '--', blank=True, null=True)
+    class_number = models.TextField(verbose_name='教室名', default = '--', blank=True, null=True)
+    profName = models.TextField(verbose_name='教授名', default = '--',blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(default=timezone.now)
 
@@ -207,9 +207,9 @@ class T3(models.Model):
                             max_length=50)
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
-    className = models.TextField(verbose_name='授業名' , default = '-----', blank=True, null=True)
-    class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
-    profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
+    className = models.TextField(verbose_name='授業名' , default = '--', blank=True, null=True)
+    class_number = models.TextField(verbose_name='教室名', default = '--', blank=True, null=True)
+    profName = models.TextField(verbose_name='教授名', default = '--',blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(default=timezone.now)
 
@@ -264,9 +264,9 @@ class T4(models.Model):
                             max_length=50)
     #授業ID
     #on_delete=CASCADE:ユーザーのアカウントが削除されたら同時に投稿内容も削除される
-    className = models.TextField(verbose_name='授業名' , default = '-----', blank=True, null=True)
-    class_number = models.TextField(verbose_name='教室名', default = '-----', blank=True, null=True)
-    profName = models.TextField(verbose_name='教授名', default = '-----',blank=True, null=True)
+    className = models.TextField(verbose_name='授業名' , default = '--', blank=True, null=True)
+    class_number = models.TextField(verbose_name='教室名', default = '--', blank=True, null=True)
+    profName = models.TextField(verbose_name='教授名', default = '--',blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(default=timezone.now)
 

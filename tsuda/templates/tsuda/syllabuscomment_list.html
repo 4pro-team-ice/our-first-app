@@ -2,11 +2,15 @@
 {% block content %}
 <a class="btn btn-default" href="{{request.META.HTTP_REFERER}}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 戻る</a>
 
+<div class = "comment_marker">
+  <a href="{% url 'syllabuscomment_new' %}"><span class="glyphicon glyphicon-plus"></span>　授業のリアルを教えよう！</a>
+</div>
     {% for syllabuscomment in syllabuscomments %}
         <div class="post">
             <div class="date">
                 {{ post.published_date }}
             </div>
+            <div class = "margin">
             <h2>{{ syllabuscomment.className }}</h2>
             <table>
               <td>
@@ -19,6 +23,7 @@
                 <h3><span style="white-space:nowrap;">コメント(感想)：{{ syllabuscomment.comment|linebreaksbr }}</span></h3>
               </td>
             </table>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}

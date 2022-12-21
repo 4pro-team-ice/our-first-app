@@ -1,14 +1,16 @@
 {% extends 'tsuda/syllabuskekka.html' %}
 {% block content %}
+<div class = "margin">
 <h4>※科目名をクリックすると、授業内容を直感的に把握できる機能(ワードクラウド)や、
     授業の感想共有機能を見ることができます！</h4>
+</div>
 <br>
     {% for syllabus in syllabuss %}
         <div class="post">
             <!-- <div class="date">
                 {{ syllabus.published_date }}
             </div> -->
-
+            <div class = "margin">
             <h2><a href="{% url 'syllabus_detail' pk=syllabus.pk %}"><span class="under1">{{ syllabus.className }}</span></a></h2>
             <br>
             <p><span style="white-space:nowrap;"><b>Course 　  ：</b>{{ syllabus.className_eng|linebreaksbr }}</span></p>
@@ -21,6 +23,7 @@
             <p><span style="white-space:nowrap;"><b>配当年次　：</b>{{ syllabus.nenji|linebreaksbr }}</span></p>
             <p><span style="white-space:nowrap;"><b>推奨レベル：</b>{{ syllabus.level|linebreaksbr }}</span></p>
             <p><span style="white-space:nowrap;"><b>科目区分　：</b>{{ syllabus.gakka|linebreaksbr }}</span></p>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}
