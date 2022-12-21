@@ -5,12 +5,14 @@
       <div class = "margin">
       <div class="btn-gradient-radius1">
         <a href="{% url 'syllabus_wordcloud' pk=syllabus.pk %}">推しワードを見てみよう</a>
+        <h3></h3>
         <h5>シラバス内の単語の出現頻度を視覚化し、授業内容を直感的に把握できる機能</h5>
         <h2></h2>
         <form action="{% url 'syllabuscomment' %}" method="POST">
           {% csrf_token %}
           <input type="hidden"  name="className" value ="{{syllabus.className}}">
           <input type="submit" value="授業の感想を共有しよう" class="comment">
+          <h3></h3>
           <h5>授業の感想を書き込んだり、過去に授業を受講した先輩の感想を閲覧できる機能</h5>
         </form>
         <!-- <a href="/syllabus">コメント</a> -->
