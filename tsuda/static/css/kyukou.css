@@ -71,3 +71,93 @@ h1, h2, h3, h4 {
   background-color: #B3424A;
   padding: 30px 0;
 }
+/* // メニューボタン*/
+#btn_menu6 {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 70px;
+	height: 70px;
+	box-sizing: border-box;
+	background-color: #ffe4e1;
+	transition: background-color 0.3s ease;
+}
+#btn_menu6::before {
+	position: absolute;
+	top: 22%;
+	left: 30%;
+	display: block;
+	content: "";
+	width: 40%;
+	height: 2px;
+	background: #222;
+	transform: rotate(0deg);
+	transition: transform 0.3s ease, top 0.1s ease;
+}
+#btn_menu6::after {
+	position: absolute;
+	top: 48%;
+	left: 30%;
+	display: block;
+	content: "";
+	width: 40%;
+	height: 2px;
+	background: #222;
+	transform: rotate(0deg);
+	transition: transform 0.3s ease, bottom 0.1s ease;
+}
+#btn_menu6 span:nth-child(1) {
+	position: absolute;
+	top: 35%;
+	left: 30%;
+	display: block;
+	width: 40%;
+	height: 2px;
+	opacity: 1;
+	background-color: #222;
+	transition: opacity 0.1s ease;
+}
+#btn_menu6 span:nth-child(2) {
+	position: absolute;
+	bottom: 15%;
+	left: 0;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: #222;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+#btn_menu6 span:nth-child(3) {
+	position: absolute;
+	bottom: 15%;
+	left: 0;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: #222;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+#btn_menu6:hover {
+	background-color: #f5b199;
+}
+#btn_menu6.active span:nth-child(1) {
+	opacity: 0;
+}
+#btn_menu6.active span:nth-child(2) {
+	opacity: 0;
+}
+#btn_menu6.active span:nth-child(3) {
+	opacity: 1;
+}
+#btn_menu6.active::before {
+	top: calc(35% - 1px);
+	transform: rotate(315deg);
+}
+#btn_menu6.active::after {
+	top: calc(35% - 1px);
+	transform: rotate(-315deg);
+}
