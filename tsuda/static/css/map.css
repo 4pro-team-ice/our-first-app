@@ -282,6 +282,10 @@ img{
   background:#d3d3d3;
 }
 
+.margin {
+  padding: 0px 30px;
+}
+
 
 /*スマホ用*/
 @media screen and (max-width:480px) {
@@ -458,9 +462,9 @@ img{
     align-items: center;
     margin: 0 auto;
     padding: 1em 2em;
-    width: 50px;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    width: 150px;
+    /* writing-mode: vertical-rl; */
+    /* text-orientation: upright; */
     color: #333333; /* 文字の色 */
     font-size: 14px;
     font-weight: 700;
@@ -495,9 +499,9 @@ img{
     align-items: center;
     margin: 0 auto;
     padding: 1em 2em;
-    width: 50px;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    width: 260px;
+    /* writing-mode: vertical-rl;
+    text-orientation: upright; */
     color: #333333; /* 文字の色 */
     font-size: 18px;
     font-weight: 700;
@@ -532,9 +536,9 @@ img{
     align-items: center;
     margin: 0 auto;
     padding: 1em 2em;
-    width: 50px;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    width: 260px;
+    /* writing-mode: vertical-rl;
+    text-orientation: upright; */
     color: #333333; /* 文字の色 */
     font-size: 18px;
     font-weight: 700;

@@ -213,7 +213,9 @@ th {
   text-align: center;
 }
 
-
+.margin {
+  padding: 0px 30px;
+}
 
 
 /*スマホ用*/

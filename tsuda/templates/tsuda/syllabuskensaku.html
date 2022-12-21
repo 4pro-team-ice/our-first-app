@@ -29,7 +29,9 @@
   {% endif %}
     <h1><br><br><br></h1>
   <!-- <form method="post" action="{% url 'move_to_syllabuskekka' %}" method="get"> {% csrf_token %} -->
-  <form method="post" action="{% url 'move_to_syllabuskekka' %}"> {% csrf_token %}
+
+  <div class = "margin">
+    <form method="post" action="{% url 'move_to_syllabuskekka' %}"> {% csrf_token %}
     <p><strong><mark>学科</mark></strong>
       <h5>英語英文学科→"英文", 国際関係学科→"国際関係",
         <h4></h4>多文化・国際協力学科→"多文化", 数学科→"数学",　
@@ -54,7 +56,7 @@
         <h4></h4>フルネームで入れる場合は、苗字と名前の間に　
         <h4></h4><strong>全角スペース</strong>を入れてください。
         <h4></h4>(例) × 津田梅子 → ○ 津田　梅子
-        <h4></h4>(例) × 金明秀 → ○ 金 明秀
+        <h4></h4>(例) × 金明秀 → ○ 金　明秀
         <h4></h4>表記がアルファベットの教授を入力する場合は、
         <h4></h4><strong>半角スペース</strong>を入れてください。
         <h4></h4>(例) × AnnaCopeHartshorne → ○ Anna Cope Hartshorne
@@ -102,6 +104,7 @@
       <div class="btn-gradient-radius">
         <input type="submit" name="submit" value="結果を表示" >
       </form>
+    </div>
     </div>
 
     <br> <br> <br> <br> <br>

@@ -81,6 +81,10 @@ th, td {
   position: absolute;
 }
 
+img {
+  width: 100%;
+}
+
 .page-footer{
   position: relative;
   width: 100%;
@@ -126,6 +130,10 @@ th, td {
 
 .btn-gradient-radius a:hover {
   background:#d3d3d3;
+}
+
+.margin {
+  padding: 0px 30px;
 }
 
 

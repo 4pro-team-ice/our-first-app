@@ -112,6 +112,11 @@ img{
   background:#d3d3d3;
 }
 
+.margin {
+  padding: 0px 10px;
+}
+
+
 /*スマホ用*/
 @media screen and (max-width:480px) {
   h1 a, h2 a {

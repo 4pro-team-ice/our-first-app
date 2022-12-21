@@ -7,7 +7,8 @@ body {
     padding-left: 0px;
 }
 .page-header {
-    background-color: #B3424A;
+    background-color: #956daf;
+    border-bottom: solid 3px #6d4f97;
     margin-top: 0;
     padding: 20px 20px 20px 20px;
 }
@@ -90,6 +91,7 @@ input[type="submit"]{
   border-radius: 5px;
   background: #f5f5f5;
   font-weight: bold;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
 }
 
 input[type="submit"]:hover {
@@ -99,6 +101,7 @@ input[type="submit"]:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color .4s;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
 }
 /* .btn-flat-simple input:hover {
   background: #c9c9c4;
@@ -106,16 +109,20 @@ input[type="submit"]:hover {
 } */
 
 .login {
-  border: 2px solid #7a4171;
+  border: 2px solid #B3424A;
   width: 400px;
   height: 250px;
-  background-color: #fdede4;
+  background-color: #f4dedc;
   /* display: flex; */
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  border-radius: 40px;
 }
 
+.message {
+  font-size: 16px;
+}
 
 
 
@@ -130,7 +137,8 @@ input[type="submit"]:hover {
       padding-left: 0px;
   }
   .page-header {
-      background-color: #B3424A;
+      background-color: #956daf;
+      border-bottom: solid 3px #6d4f97;
       margin-top: 0;
       padding: 20px 20px 20px 20px;
   }
@@ -230,13 +238,18 @@ input[type="submit"]:hover {
   } */
 
   .login {
-    border: 2px solid #7a4171;
+    border: 2px solid #B3424A;
     width: 350px;
     height: 250px;
-    background-color: #fdede4;
+    background-color: #f4dedc;
     /* display: flex; */
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    border-radius: 40px;
   }
+}
+
+.message {
+  font-size: 14.5px;
 }

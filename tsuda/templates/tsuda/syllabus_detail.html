@@ -2,18 +2,21 @@
 
 {% block content %}
     <div class="post">
+      <div class = "margin">
       <div class="btn-gradient-radius1">
-        <a href="{% url 'syllabus_wordcloud' pk=syllabus.pk %}">ワードクラウド機能</a>
+        <a href="{% url 'syllabus_wordcloud' pk=syllabus.pk %}">推しワードを見てみよう</a>
         <h5>シラバス内の単語の出現頻度を視覚化し、授業内容を直感的に把握できる機能</h5>
         <h2></h2>
         <form action="{% url 'syllabuscomment' %}" method="POST">
           {% csrf_token %}
           <input type="hidden"  name="className" value ="{{syllabus.className}}">
-          <input type="submit" value="授業の感想共有機能" class="comment">
+          <input type="submit" value="授業の感想を共有しよう" class="comment">
           <h5>授業の感想を書き込んだり、過去に授業を受講した先輩の感想を閲覧できる機能</h5>
         </form>
         <!-- <a href="/syllabus">コメント</a> -->
+        </div>
       </div>
+      <div class = "margin">
       <h1><br></h1>
         <h2>{{ syllabus.className }}</h2>
         <p><b>開講ターム：</b>{{ syllabus.term|linebreaksbr }}</p>
@@ -42,5 +45,6 @@
         <p><b>【授業の特色】</b></p><p>{{ syllabus.tokushoku|linebreaksbr }}</p>
         <br>
         <p><b>【その他】</b></p><p>{{ syllabus.sonota|linebreaksbr }}</p>
+        </div>
     </div>
 {% endblock %}

@@ -25,6 +25,7 @@
 <h2>　空き教室検索</h2>
 <h1></h1><br>
 <!-- 検索機能 -->
+<div class = "margin">
 <form method="post" action="{% url 'move_to_akikyoshitsukekka' %}"> {% csrf_token %}
 
   <p><strong><mark>ターム</mark></strong>
@@ -113,6 +114,7 @@
   <h1></h1>
 	<input type="submit" name="submit" value="検索する" >
 </form>
+</div>
 
 
 <!--  試しに写真を入れてみた -->

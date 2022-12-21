@@ -128,6 +128,23 @@ th, td {
   background:#d3d3d3;
 }
 
+.comment_marker a{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-size: 17px;
+    font-weight: bold;
+    color: #222222;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    float: right;
+    margin-right: 50px;
+}
+
+.margin {
+  padding: 0px 30px;
+}
+
 /*スマホ用*/
 @media screen and (max-width:480px) {
   h1 a, h2 a {
@@ -258,5 +275,19 @@ th, td {
 
   .btn-gradient-radius a:hover {
     background:#d3d3d3;
+  }
+
+  .comment_marker a{
+      padding: 0.5em 1em;
+      margin: 2em 0;
+      font-size: 17px;
+      font-weight: bold;
+      color: #222222;/*文字色*/
+      text-decoration: none;
+      background: #FFF;
+      border: solid 3px #6091d3;/*線*/
+      border-radius: 10px;/*角の丸み*/
+      float: right;
+      margin-right: 20px;
   }
 }
