@@ -28,7 +28,7 @@ h1, h2, h3, h4 {
 }
 
 .comment_marker a{
-    padding: 0.5em 1em;
+    padding: 0.5em 0.5em;
     margin: 2em 0;
     font-size: 17px;
     font-weight: bold;
@@ -38,6 +38,7 @@ h1, h2, h3, h4 {
     border-radius: 10px;/*角の丸み*/
     float: right;
     margin-right: 50px;
+    width: 318px;
 
 }
 
@@ -237,6 +238,10 @@ mark {
 	transform: rotate(-315deg);
 }
 
+img {
+  width: 25%;
+}
+
 /*スマホ用*/
 @media screen and (max-width:480px) {
   h1 a, h2 a {
@@ -269,7 +274,7 @@ mark {
   }
 
   .comment_marker a{
-      padding: 0.5em 1em;
+      padding: 0.5em 0.5em;
       margin: 2em 0;
       font-size: 17px;
       font-weight: bold;
@@ -280,6 +285,7 @@ mark {
       border-radius: 10px;/*角の丸み*/
       float: right;
       margin-right: 20px;
+      width: 200px;
   }
 
   table {

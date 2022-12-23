@@ -14,7 +14,6 @@
             <h2><a href="{% url 'syllabus_detail' pk=syllabus.pk %}"><span class="under1">{{ syllabus.className }}</span></a></h2>
             <br>
             <p><span style="white-space:nowrap;"><b>Course 　  ：</b>{{ syllabus.className_eng|linebreaksbr }}</span></p>
-            <p><span style="white-space:nowrap;"><b>開講ターム：</b>{{ syllabus.term|linebreaksbr }}</span></p>
             <!-- <p><span style="white-space:nowrap;">{{ syllabus.day_of_week|linebreaksbr }}</span></p>
             <p><span style="white-space:nowrap;">{{ syllabus.period_of_time|linebreaksbr }}限</span></p> -->
             <p><span style="white-space:nowrap;"><b>教員名　　：</b>{{ syllabus.teacher_name|linebreaksbr }}</span></p>

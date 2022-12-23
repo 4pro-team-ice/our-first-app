@@ -130,7 +130,7 @@ th, td {
 }
 
 .comment_marker a{
-    padding: 0.5em 1em;
+    padding: 0.5em 0.5em;
     margin: 2em 0;
     font-size: 17px;
     font-weight: bold;
@@ -140,6 +140,7 @@ th, td {
     border-radius: 10px;/*角の丸み*/
     float: right;
     margin-right: 50px;
+    width: 318px;
 }
 
 .margin {
@@ -235,6 +236,12 @@ th, td {
 	top: calc(35% - 1px);
 	transform: rotate(-315deg);
 }
+
+img {
+  width: 25%;
+}
+
+
 /*スマホ用*/
 @media screen and (max-width:480px) {
   h1 a, h2 a {
@@ -380,5 +387,6 @@ th, td {
       border-radius: 10px;/*角の丸み*/
       float: right;
       margin-right: 20px;
+      width: 200px;
   }
 }

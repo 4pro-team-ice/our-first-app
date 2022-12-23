@@ -170,6 +170,10 @@ input[type="submit"]:hover {
   background: #f2a0a1;
 }
 
+img {
+  width: 13%;
+}
+
 /*スマホ用*/
 @media screen and (max-width:480px) {
 

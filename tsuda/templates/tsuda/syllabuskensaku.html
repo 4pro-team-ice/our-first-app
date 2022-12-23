@@ -21,8 +21,8 @@
 
   <h1>　シラバス検索</h1>
   {% if user.is_authenticated %}
-  <div class = "comment_marker">
-    <a href="{% url 'syllabuscomment_new' %}"><span class="glyphicon glyphicon-plus"></span>　授業のリアルを教えよう！</a>
+  <div class = "comment_marker" style="text-align: right">
+    <a href="{% url 'syllabuscomment_new' %}"><img src="../../static/img/comment.png"> 授業のリアルを教えよう！</a>
   </div>
   {% endif %}
     <h1><br><br><br></h1>
