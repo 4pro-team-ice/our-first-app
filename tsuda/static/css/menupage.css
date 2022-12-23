@@ -171,7 +171,8 @@ input[type="submit"]:hover {
 }
 
 img {
-  width: 13%;
+  width: 70px;
+  height: 70px;
 }
 
 /*スマホ用*/
