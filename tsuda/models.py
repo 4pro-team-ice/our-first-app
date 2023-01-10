@@ -34,9 +34,9 @@ class Classroom(models.Model):
         return self.class_number
 
     class Meta:
-       db_table = 'Akikyoushitu'
-       verbose_name = 'Akikyoushitu'
-       verbose_name_plural = 'Akikyoushitu'
+       db_table = 'Classroom'
+       verbose_name = 'Classroom'
+       verbose_name_plural = 'Classroom'
 
 class Allclass(models.Model):
     #授業ID
@@ -47,6 +47,10 @@ class Allclass(models.Model):
     published_date = models.DateTimeField(default=timezone.now)
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.class_number
+    class Meta:
+        db_table = 'Allclass'
+        verbose_name = 'Allclass'
+        verbose_name_plural = 'Allclass'
 
 class T1(models.Model):
     #inquiry_id = models.IntegerField(verbose_name='day')
@@ -105,6 +109,10 @@ class T1(models.Model):
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
+    class Meta:
+       db_table = 'T1'
+       verbose_name = 'T1'
+       verbose_name_plural = 'T1'
 
 class T2(models.Model):
     author_jikanwari_2 = models.TextField(blank=True, null=True, verbose_name='作成者')
@@ -162,6 +170,10 @@ class T2(models.Model):
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
+    class Meta:
+        db_table = 'T2'
+        verbose_name = 'T2'
+        verbose_name_plural = 'T2'
 
 class T3(models.Model):
     author_jikanwari_3 = models.TextField(blank=True, null=True, verbose_name='作成者')
@@ -219,6 +231,10 @@ class T3(models.Model):
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
+    class Meta:
+        db_table = 'T3'
+        verbose_name = 'T3'
+        verbose_name_plural = 'T3'
 
 class T4(models.Model):
     author_jikanwari_4 = models.TextField(blank=True, null=True, verbose_name='作成者')
@@ -276,6 +292,11 @@ class T4(models.Model):
 
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
+
+    class Meta:
+        db_table = 'T4'
+        verbose_name = 'T4'
+        verbose_name_plural = 'T4'
 
 
 class Syllabus(models.Model):
@@ -394,6 +415,11 @@ class SyllabusComment(models.Model): #シラバス用のコメント
     def __str__(self):#管理画面に表示されるモデル内のデータ(レコード)を判別するための、名前(文字列)を定義する
         return self.className
 
+    class Meta:
+        db_table = 'SyllabusComment'
+        verbose_name = 'SyllabusComment'
+        verbose_name_plural = 'SyllabusComment'
+
 # ユーザーアカウントのモデルクラス
 class Account(models.Model):
 
@@ -406,3 +432,8 @@ class Account(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    class Meta:
+        db_table = 'Account'
+        verbose_name = 'Account'
+        verbose_name_plural = 'Account'
